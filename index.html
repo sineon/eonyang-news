@@ -849,9 +849,10 @@ img { display: block; max-width: 100%; }
 .cl-item { display: flex; align-items: center; gap: 5px; font-size: 14px; color: var(--gray-600); }
 .cl-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
 @media (max-width: 640px) {
-  .cal-cell { min-height: 50px; }
-  .cal-ev { display: none; }
-  .cal-cell.has-ev::after { content: '·'; color: var(--coral); font-size: 16px; line-height: 1; display: block; margin-top: 2px; }
+  .cal-cell { min-height: 52px; }
+  .cal-ev { display: block; font-size: 10px; padding: 1px 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cal-ev ~ .cal-ev { display: none; }
+  .cal-cell.has-ev::after { display: none; }
 }
 
 /* ═══════════════════════════════════
@@ -896,6 +897,52 @@ img { display: block; max-width: 100%; }
 .archive-arrow { color: var(--gray-400); font-size: 16px; }
 .archive-empty { font-size: 15.5px; color: var(--gray-400); padding: 12px 0; }
 @media (max-width: 640px) { .archive-sec { padding: 20px; } }
+
+/* ═══════════════════════════════════
+   탭 네비게이션 (Pill/Segment 스타일)
+═══════════════════════════════════ */
+.tab-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  padding: 10px 20px;
+  display: flex; justify-content: center;
+}
+.tab-nav-inner {
+  display: flex; gap: 5px;
+  background: var(--gray-100);
+  border-radius: 10px;
+  padding: 4px;
+  width: 100%;
+  max-width: 520px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 8px 6px;
+  font-size: 13px; font-weight: 400;
+  color: var(--gray-400);
+  border: none; background: none;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .18s;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.4; text-align: center;
+}
+.tab-btn.active {
+  background: #fff;
+  color: #0b7a70;
+  font-weight: 700;
+  box-shadow: 0 1px 5px rgba(0,0,0,.10);
+}
+.tab-btn:hover:not(.active) { color: var(--gray-700); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+@media(max-width:640px){
+  .tab-nav { padding: 8px 12px; }
+  .tab-btn { font-size: 12px; padding: 7px 2px; }
+}
 </style>
 </head>
 <body>
@@ -951,10 +998,12 @@ img { display: block; max-width: 100%; }
 
 <!-- ════ 탭 네비게이션 ════ -->
 <nav class="tab-nav" id="main-tab-nav">
-  <button class="tab-btn active" onclick="showTab(0)" id="tab-btn-0">📅<br>이번 주</button>
-  <button class="tab-btn" onclick="showTab(1)" id="tab-btn-1">🏛<br>문화·예술</button>
-  <button class="tab-btn" onclick="showTab(2)" id="tab-btn-2">⚽<br>체육</button>
-  <button class="tab-btn" onclick="showTab(3)" id="tab-btn-3">🏘<br>지역 정보</button>
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="showTab(0)" id="tab-btn-0">📅 이번 주</button>
+    <button class="tab-btn" onclick="showTab(1)" id="tab-btn-1">🏛 문화·예술</button>
+    <button class="tab-btn" onclick="showTab(2)" id="tab-btn-2">⚽ 체육</button>
+    <button class="tab-btn" onclick="showTab(3)" id="tab-btn-3">🏘 지역 정보</button>
+  </div>
 </nav>
 
 <div class="tab-pane active" id="tab-0">
