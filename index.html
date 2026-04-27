@@ -949,6 +949,15 @@ img { display: block; max-width: 100%; }
   울주 공공미술 야화展(4/25~5/10) &nbsp;·&nbsp; 어린이날 주민자치 공연(5/5) &nbsp;·&nbsp; 반구대 유네스코 1주년 기념 행사 예고(7월)
 </div>
 
+<!-- ════ 탭 네비게이션 ════ -->
+<nav class="tab-nav" id="main-tab-nav">
+  <button class="tab-btn active" onclick="showTab(0)" id="tab-btn-0">📅<br>이번 주</button>
+  <button class="tab-btn" onclick="showTab(1)" id="tab-btn-1">🏛<br>문화·예술</button>
+  <button class="tab-btn" onclick="showTab(2)" id="tab-btn-2">⚽<br>체육</button>
+  <button class="tab-btn" onclick="showTab(3)" id="tab-btn-3">🏘<br>지역 정보</button>
+</nav>
+
+<div class="tab-pane active" id="tab-0">
 <!-- ════ 월별 행사 캘린더 ════ -->
 <section class="sec">
   <div class="sec-head">
@@ -996,9 +1005,9 @@ const CAL_DATA = {
     label: '2026년 5월',
     events: {
       1:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
+           {t:'⚽ 울산vs포항 14:00', c:'purple', u:'https://www.uhdfc.com/match/match_schedule.php'},
            {t:'SingSing 가요무대', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
       2:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
-           {t:'⚽ 울산vs포항 14:00', c:'purple', u:'https://www.uhdfc.com/match/match_schedule.php'},
            {t:'활력톡톡 가요무대', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
       3:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
            {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
@@ -1211,6 +1220,9 @@ renderCal(CAL_MONTHS[calIdx]);
   </div>
 </section>
 
+
+</div>
+<div class="tab-pane" id="tab-1">
 <!-- ════ 섹션 2: 문화유산 ════ -->
 <section class="sec">
   <div class="sec-head">
@@ -1289,89 +1301,6 @@ renderCal(CAL_MONTHS[calIdx]);
       </div>
     </div>
   </div>
-</section>
-
-<!-- ════ 섹션 3: 동호회·기관 안내 ════ -->
-<section class="sec">
-  <div class="sec-head">
-    <div class="sec-kicker">기관 · 단체 안내</div>
-    <h2 class="sec-title">언양·울주 주요 기관</h2>
-  </div>
-  <div class="org-grid">
-    <a class="org-card" href="https://www.onggi.or.kr/" target="_blank" rel="noopener">
-      <div class="org-head">
-        <div class="org-icon oi-teal">🏺</div>
-        <div><div class="org-name">외고산 옹기마을</div><div class="org-type">전통공예 · 체험</div></div>
-      </div>
-      <div class="org-desc">국내 최대 옹기 생산지. 체험 공방·박물관·카페 운영. 옹기 빚기 체험 예약 가능. ☎ 052-237-7894</div>
-      <span class="org-link">체험 예약</span>
-    </a>
-    <a class="org-card" href="https://www.ucf.or.kr/uljuart/index.html" target="_blank" rel="noopener">
-      <div class="org-head">
-        <div class="org-icon oi-coral">🎪</div>
-        <div><div class="org-name">울주문화예술회관</div><div class="org-type">공연 · 전시</div></div>
-      </div>
-      <div class="org-desc">287석 프로시니엄 극장 + 전시실·다목적실. 공연 예매·강좌 신청 모두 가능. ☎ 052-263-0811</div>
-      <span class="org-link">예매·강좌 신청</span>
-    </a>
-    <a class="org-card" href="https://www.uljusiseol.or.kr/uljusports/" target="_blank" rel="noopener">
-      <div class="org-head">
-        <div class="org-icon oi-blue">🏃</div>
-        <div><div class="org-name">울주군국민체육센터</div><div class="org-type">체육 · 스포츠</div></div>
-      </div>
-      <div class="org-desc">수영·헬스·에어로빅·구기 강좌 운영. 지역 주민 할인 혜택 적용.</div>
-      <span class="org-link">강좌 신청</span>
-    </a>
-    <a class="org-card" href="https://www.ucf.or.kr" target="_blank" rel="noopener">
-      <div class="org-head">
-        <div class="org-icon oi-green">📚</div>
-        <div><div class="org-name">오영수 문학관</div><div class="org-type">문학 · 역사</div></div>
-      </div>
-      <div class="org-desc">언양 출신 소설가 오영수(1909~1979) 기념관. 「갯마을」 육필 원고·유품 전시.</div>
-      <span class="org-link">울주문화재단 안내</span>
-    </a>
-  </div>
-  <div class="notice notice-teal" style="margin-top:16px">
-    📣 <b>동호회·소모임 무료 홍보!</b> 언양 소식지에 여러분의 단체를 소개해 드립니다. 독서·그림·축구·등산·합창 등 장르 불문.<br>
-    <a href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener"
-       style="display:inline-block; margin-top:10px; padding:9px 20px; background:#0b7a70; color:#ffffff; font-size: 15.5px; font-weight:700; border-radius:6px; text-decoration:none; border:2px solid #065c54;">
-      📋 홍보 신청서 작성하기 →
-    </a>
-  </div>
-</section>
-
-<!-- ════ 섹션 5: 체육 소식 ════ -->
-<section class="sec" style="border-top:3px solid #e8f0fb;">
-  <div class="sec-head">
-    <div class="sec-kicker" style="color:#163d78;">⚽ 체육 소식</div>
-    <h2 class="sec-title">이번 주 스포츠 &amp; 생활체육</h2>
-  </div>
-  <ul class="news-list">
-    <li class="ni">
-      <span class="ni-cat b-blue-o">체육</span>
-      <div>
-        <h4>울주군국민체육센터 5월 강좌 등록</h4>
-        <p>수영·헬스·에어로빅·요가 등 5월 강좌 등록을 울주군시설관리공단 홈페이지에서 받고 있습니다. 언양읍 주민 할인 혜택이 적용됩니다.</p>
-        <a class="ni-link" href="https://www.uljusiseol.or.kr/uljusports/" target="_blank" rel="noopener">강좌 등록 바로가기</a>
-      </div>
-    </li>
-    <li class="ni">
-      <span class="ni-cat b-blue-o">K리그</span>
-      <div>
-        <h4>울산 HD FC — 5월 2일(토) 홈경기 · 포항 스틸러스전</h4>
-        <p>울산문수축구경기장에서 동해안 더비가 펼쳐집니다. 오후 2시 킥오프. 티켓은 울산 HD FC 공식 홈페이지에서 예매하세요.</p>
-        <a class="ni-link" href="https://www.uhdfc.com/match/match_schedule.php" target="_blank" rel="noopener">경기 일정 · 티켓 예매</a>
-      </div>
-    </li>
-    <li class="ni">
-      <span class="ni-cat b-teal-o">안내</span>
-      <div>
-        <h4>언양 지역 동호회·체육 소식을 제보해 주세요</h4>
-        <p>언양읍 내 축구·배드민턴·탁구·수영·등산 등 동호회나 생활체육 행사 정보를 아래 신청서를 통해 보내주시면 다음 호에 소개해 드립니다.</p>
-        <a class="ni-link" href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener">체육 소식 제보하기</a>
-      </div>
-    </li>
-  </ul>
 </section>
 
 <!-- ════ 섹션 6: 예술 소식 ════ -->
@@ -1463,6 +1392,95 @@ renderCal(CAL_MONTHS[calIdx]);
   </a>
 </section>
 
+
+</div>
+<div class="tab-pane" id="tab-2">
+<!-- ════ 섹션 5: 체육 소식 ════ -->
+<section class="sec" style="border-top:3px solid #e8f0fb;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#163d78;">⚽ 체육 소식</div>
+    <h2 class="sec-title">이번 주 스포츠 &amp; 생활체육</h2>
+  </div>
+  <ul class="news-list">
+    <li class="ni">
+      <span class="ni-cat b-blue-o">체육</span>
+      <div>
+        <h4>울주군국민체육센터 5월 강좌 등록</h4>
+        <p>수영·헬스·에어로빅·요가 등 5월 강좌 등록을 울주군시설관리공단 홈페이지에서 받고 있습니다. 언양읍 주민 할인 혜택이 적용됩니다.</p>
+        <a class="ni-link" href="https://www.uljusiseol.or.kr/uljusports/" target="_blank" rel="noopener">강좌 등록 바로가기</a>
+      </div>
+    </li>
+    <li class="ni">
+      <span class="ni-cat b-blue-o">K리그</span>
+      <div>
+        <h4>울산 HD FC — 5월 2일(토) 홈경기 · 포항 스틸러스전</h4>
+        <p>울산문수축구경기장에서 동해안 더비가 펼쳐집니다. 오후 2시 킥오프. 티켓은 울산 HD FC 공식 홈페이지에서 예매하세요.</p>
+        <a class="ni-link" href="https://www.uhdfc.com/match/match_schedule.php" target="_blank" rel="noopener">경기 일정 · 티켓 예매</a>
+      </div>
+    </li>
+    <li class="ni">
+      <span class="ni-cat b-teal-o">안내</span>
+      <div>
+        <h4>언양 지역 동호회·체육 소식을 제보해 주세요</h4>
+        <p>언양읍 내 축구·배드민턴·탁구·수영·등산 등 동호회나 생활체육 행사 정보를 아래 신청서를 통해 보내주시면 다음 호에 소개해 드립니다.</p>
+        <a class="ni-link" href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener">체육 소식 제보하기</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+</div>
+<div class="tab-pane" id="tab-3">
+<!-- ════ 섹션 3: 동호회·기관 안내 ════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-kicker">기관 · 단체 안내</div>
+    <h2 class="sec-title">언양·울주 주요 기관</h2>
+  </div>
+  <div class="org-grid">
+    <a class="org-card" href="https://www.onggi.or.kr/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-teal">🏺</div>
+        <div><div class="org-name">외고산 옹기마을</div><div class="org-type">전통공예 · 체험</div></div>
+      </div>
+      <div class="org-desc">국내 최대 옹기 생산지. 체험 공방·박물관·카페 운영. 옹기 빚기 체험 예약 가능. ☎ 052-237-7894</div>
+      <span class="org-link">체험 예약</span>
+    </a>
+    <a class="org-card" href="https://www.ucf.or.kr/uljuart/index.html" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-coral">🎪</div>
+        <div><div class="org-name">울주문화예술회관</div><div class="org-type">공연 · 전시</div></div>
+      </div>
+      <div class="org-desc">287석 프로시니엄 극장 + 전시실·다목적실. 공연 예매·강좌 신청 모두 가능. ☎ 052-263-0811</div>
+      <span class="org-link">예매·강좌 신청</span>
+    </a>
+    <a class="org-card" href="https://www.uljusiseol.or.kr/uljusports/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-blue">🏃</div>
+        <div><div class="org-name">울주군국민체육센터</div><div class="org-type">체육 · 스포츠</div></div>
+      </div>
+      <div class="org-desc">수영·헬스·에어로빅·구기 강좌 운영. 지역 주민 할인 혜택 적용.</div>
+      <span class="org-link">강좌 신청</span>
+    </a>
+    <a class="org-card" href="https://www.ucf.or.kr" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-green">📚</div>
+        <div><div class="org-name">오영수 문학관</div><div class="org-type">문학 · 역사</div></div>
+      </div>
+      <div class="org-desc">언양 출신 소설가 오영수(1909~1979) 기념관. 「갯마을」 육필 원고·유품 전시.</div>
+      <span class="org-link">울주문화재단 안내</span>
+    </a>
+  </div>
+  <div class="notice notice-teal" style="margin-top:16px">
+    📣 <b>동호회·소모임 무료 홍보!</b> 언양 소식지에 여러분의 단체를 소개해 드립니다. 독서·그림·축구·등산·합창 등 장르 불문.<br>
+    <a href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener"
+       style="display:inline-block; margin-top:10px; padding:9px 20px; background:#0b7a70; color:#ffffff; font-size: 15.5px; font-weight:700; border-radius:6px; text-decoration:none; border:2px solid #065c54;">
+      📋 홍보 신청서 작성하기 →
+    </a>
+  </div>
+</section>
+
 <!-- ════ 퀵링크 알림판 ════ -->
 <div class="board">
   <div class="board-title">📋 빠른 링크 — 자주 찾는 정보</div>
@@ -1524,6 +1542,16 @@ renderCal(CAL_MONTHS[calIdx]);
   </div>
 </div>
 
+
+</div>
+<script>
+function showTab(idx) {
+  document.querySelectorAll('.tab-pane').forEach((p,i) => p.classList.toggle('active', i===idx));
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  // 탭 전환 시 스크롤을 탭 네비게이션 위치로
+  document.getElementById('main-tab-nav').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
 <!-- ════ FOOTER ════ -->
 <footer class="footer">
   <div class="footer-top">
