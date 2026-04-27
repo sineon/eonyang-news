@@ -820,6 +820,13 @@ img { display: block; max-width: 100%; }
 /* ═══════════════════════════════════
    월별 캘린더
 ═══════════════════════════════════ */
+.cal-nav-row { display:flex; align-items:center; gap:10px; margin-top:6px; }
+.cal-nav-row .sec-title { flex:1; text-align:center; }
+.cal-nav-btn { background:#0b7a70; color:#fff; border:none; border-radius:6px; width:32px; height:32px; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s; flex-shrink:0; padding:0; }
+.cal-nav-btn:hover:not(:disabled) { background:#065c54; }
+.cal-nav-btn:disabled { opacity:.3; cursor:default; }
+.cal-ev-link { cursor:pointer; transition:opacity .15s; text-decoration:none !important; }
+.cal-ev-link:hover { opacity:.75; filter:brightness(.9); }
 .cal-wrap { margin-top: 16px; }
 .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
 .cal-dow { text-align: center; font-size: 13px; font-weight: 700; color: var(--gray-400); padding: 6px 0; letter-spacing: .04em; }
@@ -935,64 +942,15 @@ img { display: block; max-width: 100%; }
       <div class="sec-kicker">월별 일정</div>
       <a class="sec-more" href="https://korean.visitkorea.or.kr/kfes/list/festivalCalendar.do" target="_blank" rel="noopener">전체 일정 →</a>
     </div>
-    <h2 class="sec-title">2026년 5월 행사 캘린더</h2>
-  <p style="font-size:13px; color:var(--gray-400); margin-top:4px;">🏟 울산 HD FC K리그 홈경기 포함 · ⚽ 표시 참조</p>
+    <div class="cal-nav-row">
+      <button class="cal-nav-btn" id="cal-prev" onclick="calMove(-1)" aria-label="이전 달">◀</button>
+      <h2 class="sec-title" id="cal-title">2026년 5월 행사 캘린더</h2>
+      <button class="cal-nav-btn" id="cal-next" onclick="calMove(1)" aria-label="다음 달">▶</button>
+    </div>
+    <p style="font-size:13px; color:var(--gray-400); margin-top:4px;">🏟 울산 HD FC K리그 홈경기 포함 · ⚽ 표시 참조</p>
   </div>
   <div class="cal-wrap">
-    <div class="cal-grid">
-      <!-- 요일 헤더 -->
-      <div class="cal-dow sun">일</div>
-      <div class="cal-dow">월</div>
-      <div class="cal-dow">화</div>
-      <div class="cal-dow">수</div>
-      <div class="cal-dow">목</div>
-      <div class="cal-dow">금</div>
-      <div class="cal-dow sat">토</div>
-      <!-- 1주차: 1일(금)~2일(토) -->
-      <div class="cal-cell"></div>
-      <div class="cal-cell"></div>
-      <div class="cal-cell"></div>
-      <div class="cal-cell"></div>
-      <div class="cal-cell"></div>
-      <div class="cal-cell has-ev"><span class="cal-num">1</span><span class="cal-ev ce-coral">야화展</span></div>
-      <div class="cal-cell cal-sat has-ev"><span class="cal-num">2</span><span class="cal-ev ce-coral">야화展</span><span class="cal-ev ce-purple">⚽ 울산vs포항 14:00</span></div>
-      <!-- 2주차: 3~9 -->
-      <div class="cal-cell cal-sun has-ev"><span class="cal-num">3</span><span class="cal-ev ce-coral">야화展</span><span class="cal-ev ce-coral">옹기思索</span></div>
-      <div class="cal-cell has-ev"><span class="cal-num">4</span><span class="cal-ev ce-coral">야화展</span><span class="cal-ev ce-coral">옹기思索</span></div>
-      <div class="cal-cell cal-holiday has-ev"><span class="cal-num">5 🌟</span><span class="cal-ev ce-blue">어린이날 공연</span><span class="cal-ev ce-coral">옹기思索</span></div>
-      <div class="cal-cell has-ev"><span class="cal-num">6</span><span class="cal-ev ce-coral">야화展</span></div>
-      <div class="cal-cell has-ev"><span class="cal-num">7</span><span class="cal-ev ce-coral">야화展</span></div>
-      <div class="cal-cell has-ev"><span class="cal-num">8</span><span class="cal-ev ce-coral">야화展</span></div>
-      <div class="cal-cell cal-sat has-ev"><span class="cal-num">9</span><span class="cal-ev ce-coral">야화展</span></div>
-      <!-- 3주차: 10~16 -->
-      <div class="cal-cell cal-sun has-ev"><span class="cal-num">10</span><span class="cal-ev ce-coral">야화展 마지막</span></div>
-      <div class="cal-cell"><span class="cal-num">11</span></div>
-      <div class="cal-cell"><span class="cal-num">12</span></div>
-      <div class="cal-cell"><span class="cal-num">13</span></div>
-      <div class="cal-cell"><span class="cal-num">14</span></div>
-      <div class="cal-cell"><span class="cal-num">15</span></div>
-      <div class="cal-cell cal-sat"><span class="cal-num">16</span></div>
-      <!-- 4주차: 17~23 -->
-      <div class="cal-cell cal-sun"><span class="cal-num">17</span></div>
-      <div class="cal-cell"><span class="cal-num">18</span></div>
-      <div class="cal-cell"><span class="cal-num">19</span></div>
-      <div class="cal-cell"><span class="cal-num">20</span></div>
-      <div class="cal-cell"><span class="cal-num">21</span></div>
-      <div class="cal-cell"><span class="cal-num">22</span></div>
-      <div class="cal-cell cal-sat"><span class="cal-num">23</span></div>
-      <!-- 5주차: 24~30 -->
-      <div class="cal-cell cal-sun"><span class="cal-num">24</span></div>
-      <div class="cal-cell"><span class="cal-num">25</span></div>
-      <div class="cal-cell"><span class="cal-num">26</span></div>
-      <div class="cal-cell has-ev"><span class="cal-num">27</span><span class="cal-ev ce-green">서은혜展 마지막</span></div>
-      <div class="cal-cell"><span class="cal-num">28</span></div>
-      <div class="cal-cell"><span class="cal-num">29</span></div>
-      <div class="cal-cell cal-sat"><span class="cal-num">30</span></div>
-      <!-- 6주차: 31 -->
-      <div class="cal-cell cal-sun"><span class="cal-num">31</span></div>
-      <div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div>
-      <div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div>
-    </div>
+    <div class="cal-grid" id="cal-grid"><!-- JS 렌더링 --></div>
     <div class="cal-legend">
       <span class="cl-item"><span class="cl-dot" style="background:#fde8d8;"></span>공공미술·전시</span>
       <span class="cl-item"><span class="cl-dot" style="background:#dce8fb;"></span>공연·행사</span>
@@ -1002,6 +960,109 @@ img { display: block; max-width: 100%; }
     </div>
   </div>
 </section>
+<script>
+// ── 캘린더 월 목록 ──
+const CAL_MONTHS = ['2026-04','2026-05','2026-06'];
+let calIdx = 1; // 기본: 5월
+
+// ── 행사 데이터 (날짜별, 출처 확인된 항목만) ──
+const CAL_DATA = {
+  '2026-04': {
+    label: '2026년 4월',
+    events: {
+      25: [{t:'야화展 개막', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      26: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      27: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      28: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      29: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      30: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}]
+    }
+  },
+  '2026-05': {
+    label: '2026년 5월',
+    events: {
+      1:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      2:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
+           {t:'⚽ 울산vs포항 14:00', c:'purple', u:'https://www.uhdfc.com/match/match_schedule.php'}],
+      3:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
+           {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
+      4:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
+           {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
+      5:  [{t:'어린이날 공연 🌟', c:'blue', u:'https://ticket.ulju.ulsan.kr/rsvc/rsv_pm_detail.html?pfmIng=1&p_idx=132'},
+           {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
+      6:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      7:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      8:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      9:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      10: [{t:'야화展 마지막', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      27: [{t:'서은혜展 마지막', c:'green', u:'https://www.ucf.or.kr/uljuart/index.html'}]
+    }
+  },
+  '2026-06': {
+    label: '2026년 6월',
+    events: {
+      6: [{t:'현충일 🌟', c:'blue', u:''}]
+    }
+  }
+};
+
+function renderCal(key) {
+  const data = CAL_DATA[key];
+  const [y, m] = key.split('-').map(Number);
+  const fd = new Date(y, m-1, 1).getDay();
+  const days = new Date(y, m, 0).getDate();
+  const now = new Date();
+  const isThisMonth = now.getFullYear()===y && now.getMonth()===m-1;
+
+  document.getElementById('cal-title').textContent = data.label + ' 행사 캘린더';
+  const prevBtn = document.getElementById('cal-prev');
+  const nextBtn = document.getElementById('cal-next');
+  prevBtn.disabled = calIdx === 0;
+  nextBtn.disabled = calIdx === CAL_MONTHS.length - 1;
+
+  const dows = ['일','월','화','수','목','금','토'];
+  let html = dows.map((d,i) =>
+    `<div class="cal-dow${i===0?' sun':i===6?' sat':''}">${d}</div>`
+  ).join('');
+
+  for (let i = 0; i < fd; i++) html += '<div class="cal-cell"></div>';
+
+  for (let d = 1; d <= days; d++) {
+    const dow = (fd + d - 1) % 7;
+    const evs = data.events[d] || [];
+    let cls = 'cal-cell';
+    if (dow === 0) cls += ' cal-sun';
+    if (dow === 6) cls += ' cal-sat';
+    if (isThisMonth && now.getDate() === d) cls += ' cal-today';
+    if (evs.length) cls += ' has-ev';
+    html += `<div class="${cls}"><span class="cal-num">${d}</span>`;
+    evs.forEach(ev => {
+      if (ev.u) {
+        html += `<a class="cal-ev ce-${ev.c} cal-ev-link" href="${ev.u}" target="_blank" rel="noopener" title="${ev.t}">${ev.t}</a>`;
+      } else {
+        html += `<span class="cal-ev ce-${ev.c}">${ev.t}</span>`;
+      }
+    });
+    html += '</div>';
+  }
+
+  const used = (fd + days) % 7;
+  if (used) for (let i = used; i < 7; i++) html += '<div class="cal-cell"></div>';
+
+  document.getElementById('cal-grid').innerHTML = html;
+}
+
+function calMove(dir) {
+  const ni = calIdx + dir;
+  if (ni < 0 || ni >= CAL_MONTHS.length) return;
+  calIdx = ni;
+  renderCal(CAL_MONTHS[calIdx]);
+}
+
+renderCal(CAL_MONTHS[calIdx]);
+</script>
+
+
 
 <!-- ════ 섹션 1: 이번 주 행사 ════ -->
 <section class="sec">
