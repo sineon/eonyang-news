@@ -866,6 +866,20 @@ img { display: block; max-width: 100%; }
 .nw-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 10px; margin-bottom: 6px; }
 @media (max-width: 640px) { .nw-grid { grid-template-columns: 1fr; } }
 
+
+/* ═══════════════════════════════════
+   강좌 안내 섹션
+═══════════════════════════════════ */
+.class-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(155px,1fr)); gap:10px; margin-top:16px; }
+.class-cat { background:var(--gray-50); border-radius:9px; padding:13px 14px; border:1px solid var(--gray-200); }
+.class-cat-title { font-size:14px; font-weight:800; color:var(--gray-700); margin-bottom:9px; }
+.class-list { list-style:none; padding:0; }
+.class-list li { font-size:13px; color:var(--gray-600); padding:3px 0; border-bottom:1px solid var(--gray-200); line-height:1.5; }
+.class-list li:last-child { border-bottom:none; }
+.class-apply-btn { display:inline-block; margin-top:16px; padding:10px 22px; background:#1e56a0; color:#fff; font-size:14px; font-weight:700; border-radius:7px; text-decoration:none; }
+.class-apply-btn:hover { background:#163d78; }
+@media(max-width:640px){ .class-grid { grid-template-columns:repeat(2,1fr); } }
+
 /* ═══════════════════════════════════
    이전 소식지 아카이브
 ═══════════════════════════════════ */
@@ -981,9 +995,11 @@ const CAL_DATA = {
   '2026-05': {
     label: '2026년 5월',
     events: {
-      1:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
+      1:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
+           {t:'⚽ 울산vs포항 14:00', c:'purple', u:'https://www.uhdfc.com/match/match_schedule.php'},
+           {t:'SingSing 가요무대', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
       2:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
-           {t:'⚽ 울산vs포항 14:00', c:'purple', u:'https://www.uhdfc.com/match/match_schedule.php'}],
+           {t:'활력톡톡 가요무대', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
       3:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
            {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
       4:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
@@ -995,7 +1011,19 @@ const CAL_DATA = {
       8:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
       9:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
       10: [{t:'야화展 마지막', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      27: [{t:'서은혜展 마지막', c:'green', u:'https://www.ucf.or.kr/uljuart/index.html'}]
+      16: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
+           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
+      17: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
+           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
+      23: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
+           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
+      24: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
+           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
+      27: [{t:'서은혜展 마지막', c:'green', u:'https://www.ucf.or.kr/uljuart/index.html'}],
+      30: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
+           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
+      31: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
+           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}]
     }
   },
   '2026-06': {
@@ -1370,6 +1398,69 @@ renderCal(CAL_MONTHS[calIdx]);
       </div>
     </li>
   </ul>
+</section>
+
+<!-- ════ 울주문화재단 강좌 안내 ════ -->
+<section class="sec" style="border-top:3px solid #e8f0fb;">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div class="sec-kicker" style="color:#163d78;">🎓 강좌 안내</div>
+      <a class="sec-more" href="https://www.ucf.or.kr/culturearts/schedule.html" target="_blank" rel="noopener">전체 일정 →</a>
+    </div>
+    <h2 class="sec-title">울주문화재단 5월 강좌 프로그램</h2>
+    <p style="font-size:13px; color:var(--gray-400); margin-top:4px;">울주문화예술회관 · 서울주문화센터 · 온양문화복지센터 · 오영수문학관 운영</p>
+  </div>
+  <div class="class-grid">
+    <div class="class-cat">
+      <div class="class-cat-title">🏃 체육·운동</div>
+      <ul class="class-list">
+        <li>헬스</li>
+        <li>줌바 / 점핑 / 스피닝</li>
+        <li>필라테스 / 요가</li>
+        <li>밸리댄스 / 라인댄스</li>
+        <li>댄스스포츠 · 댄스로빅</li>
+        <li>기초근력트레이닝</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">🎨 예술·공예</div>
+      <ul class="class-list">
+        <li>도예 / 수묵화 / 민화</li>
+        <li>어반스케치 · 드로잉</li>
+        <li>여행스케치 / 사진</li>
+        <li>초크아트 / 손뜨개</li>
+        <li>목공예 (가구·소품)</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">🎵 음악·공연</div>
+      <ul class="class-list">
+        <li>성악 (A·B반)</li>
+        <li>장구 (초급·응용반)</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">📚 인문·교양</div>
+      <ul class="class-list">
+        <li>원어민 영어토론</li>
+        <li>몸의 인문학</li>
+        <li>미술시장 강좌</li>
+        <li>길 위의 인문학</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">👶 어린이·유아</div>
+      <ul class="class-list">
+        <li>발레교실 (5세·6세 이상)</li>
+        <li>음악줄넘기 (유아·초등)</li>
+        <li>오감놀이 (5~25개월)</li>
+        <li>우리아이 (6~20개월)</li>
+      </ul>
+    </div>
+  </div>
+  <a class="class-apply-btn" href="https://www.ucf.or.kr/culturearts/schedule.html" target="_blank" rel="noopener">
+    📋 강좌 전체 일정 · 신청하기 →
+  </a>
 </section>
 
 <!-- ════ 퀵링크 알림판 ════ -->
