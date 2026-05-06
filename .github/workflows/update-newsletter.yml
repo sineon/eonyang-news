@@ -1,0 +1,35 @@
+name: 주간 소식지 자동 업데이트
+
+on:
+  schedule:
+    # 매주 월요일 00:00 UTC = 09:00 KST
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+    # 수동 실행 버튼 (GitHub Actions 탭에서 언제든 실행 가능)
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 소식지 업데이트 실행
+        run: python scripts/update.py
+
+      - name: 변경사항 커밋 & 푸시
+        run: |
+          git config user.name  "newsletter-bot"
+          git config user.email "bot@sineon.github.io"
+          git add index.html
+          git diff --staged --quiet && echo "변경 없음" || \
+          git commit -m "자동 업데이트: $(TZ=Asia/Seoul date +'%Y년 %m월 %d일') 주간 소식지"
+          git push
