@@ -307,7 +307,17 @@ def main():
 
     # 6. 기관별 행사 목록
     org_blocks = "\n".join(org_html(o, this_week) for o in ORGS)
-    org_list_html = f'  <div class="org-list">\n{org_blocks}\n  </div>'
+    # 울주종합체육센터: ucf.or.kr 스크래핑 대상이 아니므로 정적 블록 추가
+    uljusc_block = """
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🏊</span>
+        <span class="org-name">울주종합체육센터</span>
+        <a class="org-site-link" href="https://www.uljusiseol.or.kr/uljusc/index_main" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <p class="org-empty">수영·볼링·스쿼시·배드민턴·탁구 강좌 상시 운영 — <a href="https://crs.uljusiseol.or.kr/index" target="_blank" style="color:#0b7a70;">CRS 예약 시스템</a>에서 신청 (☎ 052-229-9500)</p>
+    </div>"""
+    org_list_html = f'  <div class="org-list">\n{org_blocks}\n{uljusc_block}\n  </div>'
     html = replace_section(html, "ORG_LIST", org_list_html)
 
     # 7. 다음 주 예고 제목
@@ -336,28 +346,4 @@ def main():
     <a class="archive-item" href="https://sineon.github.io/eonyang-news/archive/{prev_slug}.html" target="_blank" rel="noopener" style="opacity:.75;">
       <span class="archive-badge" style="background:#e0e0e0;color:#555;">제{prev_num}호</span>
       <div class="archive-info">
-        <div class="archive-info-date">{prev_mon.year}년 {prev_mon.month}월 {prev_mon.day}일 (제{prev_num}호)</div>
-        <div class="archive-info-title">이전 호 보기</div>
-      </div>
-      <span class="archive-arrow">보기 →</span>
-    </a>
-  </div>"""
-    html = replace_section(html, "ARCHIVE", archive_html)
-
-    # 10. 푸터 날짜
-    html = re.sub(
-        r"현재 제\d+호 \(\d+년 \d+월 \d+일\)",
-        f"현재 제{issue_num}호 ({monday.year}년 {monday.month}월 {monday.day}일)",
-        html
-    )
-
-    # ── 파일 저장 ──
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(html)
-
-    print(f"\n✅ index.html 업데이트 완료 — 제{issue_num}호 ({pub_date})")
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())
+        <div class="archive-info-date">{prev_mon.year}년 {prev_mon.month}월 {prev_mon.d
