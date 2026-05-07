@@ -1579,28 +1579,21 @@ renderCal(CAL_MONTHS[calIdx]);
     <h2 class="sec-title">이번 주 스포츠 &amp; 생활체육</h2>
   </div>
   <ul class="news-list">
+<!-- SPORTS_START -->
     <li class="ni">
       <span class="ni-cat b-blue-o">체육</span>
       <div>
-        <h4>울주군국민체육센터 5월 강좌 등록</h4>
-        <p>수영·헬스·에어로빅·요가 등 5월 강좌 등록을 울주군시설관리공단 홈페이지에서 받고 있습니다. 언양읍 주민 할인 혜택이 적용됩니다.</p>
-        <a class="ni-link" href="https://www.uljusiseol.or.kr/uljusports/" target="_blank" rel="noopener">강좌 등록 바로가기</a>
+        <h4>울주종합체육센터 2026년 5월 프로그램 안내</h4>
+        <p>이용기간: 2026. 5. 1.(금) ~ 5. 31.(일) · 휴관일: 매주 월요일(5/4, 5/11, 5/18, 5/25) · 5/1(금)·5/5(화) 강습없음(자유이용 가능) · 5/19~5/31 다목적실 휴강(냉난방기 공사) · 5/29(금) 체육관 강좌 휴강(지방선거 개표소)<br>수영강습·아쿠아로빅·배드민턴·탁구·볼링·스쿼시 등 강좌 운영 중. ☎ 신청 052-229-9506~7 / 강좌 052-229-9511~14</p>
+        <a class="ni-link" href="https://crs.uljusiseol.or.kr/index" target="_blank" rel="noopener">CRS 온라인 신청 →</a>
       </div>
     </li>
     <li class="ni">
       <span class="ni-cat b-blue-o">체육</span>
       <div>
-        <h4>울주종합체육센터 — 언양 인근 최대 공공체육시설</h4>
-        <p>삼남읍 향교로 113에 위치한 2024년 신규 개관 대형 체육시설입니다. 50m 수영장(8레인), 볼링장(16레인), 스쿼시장(4코트), 체육관, 헬스장 등을 갖추고 있으며 수영강습·아쿠아로빅·배드민턴·탁구·서킷트레이닝 등 다양한 강좌를 운영합니다. ☎ 052-229-9500</p>
-        <a class="ni-link" href="https://crs.uljusiseol.or.kr/index" target="_blank" rel="noopener">강좌·시설 예약 (CRS)</a>
-      </div>
-    </li>
-    <li class="ni">
-      <span class="ni-cat b-blue-o">K리그</span>
-      <div>
-        <h4>울산 HD FC — 5월 2일(토) 홈경기 · 포항 스틸러스전</h4>
-        <p>울산문수축구경기장에서 동해안 더비가 펼쳐집니다. 오후 2시 킥오프. 티켓은 울산 HD FC 공식 홈페이지에서 예매하세요.</p>
-        <a class="ni-link" href="https://www.uhdfc.com/match/match_schedule.php" target="_blank" rel="noopener">경기 일정 · 티켓 예매</a>
+        <h4>울주군국민체육센터 2026년 5월 강좌</h4>
+        <p>수영·헬스·에어로빅·요가 등 5월 강좌 운영 중. 언양읍 주민 할인 혜택 적용. ☎ 052-229-9000</p>
+        <a class="ni-link" href="https://crs.uljusiseol.or.kr/index" target="_blank" rel="noopener">강좌 등록 (CRS)</a>
       </div>
     </li>
     <li class="ni">
@@ -1611,6 +1604,7 @@ renderCal(CAL_MONTHS[calIdx]);
         <a class="ni-link" href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener">체육 소식 제보하기</a>
       </div>
     </li>
+<!-- SPORTS_END -->
   </ul>
 </section>
 
@@ -1748,4 +1742,14 @@ renderCal(CAL_MONTHS[calIdx]);
 </div>
 <script>
 function showTab(idx) {
-  document.querySelectorAll('.tab-pane').forEach((p,i) => p.classList.toggle(
+  document.querySelectorAll('.tab-pane').forEach((p,i) => p.classList.toggle('active', i===idx));
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  // 탭 전환 시 스크롤을 탭 네비게이션 위치로
+  document.getElementById('main-tab-nav').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+<!-- ════ FOOTER ════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">언양 <span>문화·예술·체육</span> 소식지</div>
+    <d
