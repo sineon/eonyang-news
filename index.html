@@ -606,6 +606,12 @@ img { display: block; max-width: 100%; }
   color: #08302c;            /* 매우 진한 청록 on 연청록 → 10:1+ ✓ */
 }
 .notice-teal b { color: var(--teal-dk); }
+.notice-blue {
+  background: var(--blue-lt);
+  border-left: 4px solid var(--blue);
+  color: #0d2a52;
+}
+.notice-blue b { color: var(--blue-dk); }
 
 /* ═══════════════════════════════════
    ORG CARDS
@@ -893,6 +899,33 @@ img { display: block; max-width: 100%; }
 @media(max-width:640px){ .class-grid { grid-template-columns:repeat(2,1fr); } }
 
 /* ═══════════════════════════════════
+   체육시설 강좌 카드 (sf = sports facility)
+═══════════════════════════════════ */
+.sf-list { display:flex; flex-direction:column; gap:18px; margin-top:16px; }
+.sf-block { background:#fff; border:1.5px solid var(--blue-lt); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); }
+.sf-header { display:flex; align-items:center; gap:12px; padding:14px 18px; background:var(--blue-lt); }
+.sf-icon { font-size:22px; flex-shrink:0; }
+.sf-info { flex:1; min-width:0; }
+.sf-name { font-size:16px; font-weight:800; color:var(--blue-dk); line-height:1.3; }
+.sf-addr { font-size:13px; color:var(--blue); margin-top:2px; }
+.sf-site-link { flex-shrink:0; font-size:13px; font-weight:700; color:var(--blue-dk); background:#fff; border:1.5px solid var(--blue); border-radius:20px; padding:4px 12px; text-decoration:none; white-space:nowrap; transition:background .2s, color .2s; }
+.sf-site-link:hover { background:var(--blue); color:#fff; }
+.sf-body { padding:14px 18px 16px; }
+.sf-desc { font-size:14px; color:var(--gray-600); margin-bottom:10px; line-height:1.65; }
+.sf-course-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.sf-tag { display:inline-block; font-size:13px; font-weight:600; padding:4px 11px; border-radius:20px; }
+.sf-tag-swim  { background:#dce8fb; color:#163d78; }
+.sf-tag-fit   { background:#e8f5ec; color:#144d22; }
+.sf-tag-yoga  { background:#f0eafb; color:#4a1f8a; }
+.sf-tag-dance { background:#fef1eb; color:#a83c10; }
+.sf-tag-kids  { background:#fef9e0; color:#7a5500; }
+.sf-tag-sport { background:#e4f4f2; color:#065c54; }
+.sf-notice { font-size:13px; color:var(--gray-600); background:var(--gray-50); border-radius:var(--radius-sm); padding:9px 13px; margin-top:10px; border-left:3px solid var(--blue); line-height:1.7; }
+.sf-crs-btn { display:inline-block; margin-top:12px; padding:8px 18px; background:var(--blue); color:#fff; font-size:14px; font-weight:700; border-radius:6px; text-decoration:none; transition:background .2s; }
+.sf-crs-btn:hover { background:var(--blue-dk); }
+@media(max-width:640px){ .sf-header { flex-wrap:wrap; gap:8px; } .sf-site-link { width:100%; text-align:center; } }
+
+/* ═══════════════════════════════════
    이전 소식지 아카이브
 ═══════════════════════════════════ */
 .archive-sec { padding: 24px 40px 30px; border-top: 2px solid var(--teal-lt); background: var(--gray-50); }
@@ -984,31 +1017,6 @@ img { display: block; max-width: 100%; }
   .org-ev-left { min-width: auto; text-align: left; display: flex; align-items: center; gap: 6px; }
   .org-ev-date { margin-top: 0; }
 }
-
-/* ═══════════════════════════════════
-   체육시설 강좌 카드 (sf = sports facility)
-═══════════════════════════════════ */
-.sf-list { display:flex; flex-direction:column; gap:18px; margin-top:16px; }
-.sf-block { background:#fff; border:1.5px solid var(--blue-lt); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); }
-.sf-header { display:flex; align-items:center; gap:12px; padding:14px 18px; background:var(--blue-lt); }
-.sf-icon { font-size:22px; flex-shrink:0; }
-.sf-info { flex:1; min-width:0; }
-.sf-name { font-size:16px; font-weight:800; color:var(--blue-dk); line-height:1.3; }
-.sf-addr { font-size:13px; color:var(--blue); margin-top:2px; }
-.sf-site-link { flex-shrink:0; font-size:13px; font-weight:700; color:var(--blue-dk); background:#fff; border:1.5px solid var(--blue); border-radius:20px; padding:4px 12px; text-decoration:none; white-space:nowrap; }
-.sf-body { padding:14px 18px 16px; }
-.sf-desc { font-size:14px; color:var(--gray-600); margin-bottom:10px; line-height:1.65; }
-.sf-course-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
-.sf-tag { display:inline-block; font-size:13px; font-weight:600; padding:4px 11px; border-radius:20px; }
-.sf-tag-swim  { background:#dce8fb; color:#163d78; }
-.sf-tag-fit   { background:#e8f5ec; color:#144d22; }
-.sf-tag-yoga  { background:#f0eafb; color:#4a1f8a; }
-.sf-tag-dance { background:#fef1eb; color:#a83c10; }
-.sf-tag-kids  { background:#fef9e0; color:#7a5500; }
-.sf-tag-sport { background:#e4f4f2; color:#065c54; }
-.sf-notice { font-size:13px; color:var(--gray-600); background:var(--gray-50); border-radius:var(--radius-sm); padding:9px 13px; margin-top:10px; border-left:3px solid var(--blue); line-height:1.7; }
-@media(max-width:640px){ .sf-header { flex-wrap:wrap; } .sf-site-link { width:100%; text-align:center; } }
-
 </style>
 <script>
 function showTab(idx) {
@@ -1083,6 +1091,7 @@ function showTab(idx) {
     <button class="tab-btn" onclick="showTab(1)" id="tab-btn-1">🏛 문화·예술</button>
     <button class="tab-btn" onclick="showTab(2)" id="tab-btn-2">⚽ 체육</button>
     <button class="tab-btn" onclick="showTab(3)" id="tab-btn-3">🏘 지역 정보</button>
+    <button class="tab-btn" onclick="showTab(4)" id="tab-btn-4">🎓 청소년 참여</button>
   </div>
 </nav>
 
@@ -1422,44 +1431,6 @@ renderCal(CAL_MONTHS[calIdx]);
 <!-- NEXTWEEK_CARDS_END -->
 </section>
 
-<!-- BANGUDAE_FILM_START -->
-<section class="sec" style="border-top:3px solid var(--coral);background:linear-gradient(135deg,#fff8f5 0%,#fff 100%);">
-  <div class="sec-head">
-    <div class="sec-row">
-      <div class="sec-kicker" style="background:var(--coral);color:#fff;">🎬 특별 행사 예고</div>
-    </div>
-    <h2 class="sec-title">제15회 울산 반구대 산골영화제 — "바람"</h2>
-    <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">📌 출처: ubmf.co.kr · 2026. 5. 29 ~ 31</div>
-  </div>
-  <a class="ev-feat" href="https://ubmf.co.kr/" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#1a0800 0%,#3d1a00 45%,#0a1008 100%);">
-    <div class="ev-feat-overlay"></div>
-    <div class="ev-feat-body">
-      <span class="ev-badge b-coral">🎬 반구대 산골영화제</span>
-      <div class="ev-feat-title">🏔️ 수천 년의 바람 속, 반구대에서 만나는 영화</div>
-      <div class="ev-feat-meta">
-        <span>📅 2026년 5월 29일(금) ~ 31일(일) · 3일간</span>
-        <span>📍 울주군 반구대 일원 · 야외 상영</span>
-        <span>🎬 전야제 16:30 / 리스본행 야간열차 18:30 / 멋진 인생 20:30</span>
-      </div>
-    </div>
-  </a>
-  <div class="nw-grid" style="margin-top:16px;">
-    <div class="nw-card" style="border-left:3px solid var(--coral);">
-      <div class="nw-badge b-coral-o">전야제</div>
-      <div class="nw-date">5월 29일(금) 16:30~</div>
-      <div class="nw-title">개막 · 리스본행 야간열차 (18:30) · 멋진 인생 (20:30)</div>
-      <div class="nw-desc">📍 반구대 야외 · 제레미 아이언스, 제임스 스튜어트 주연</div>
-    </div>
-    <a class="nw-card" href="https://ubmf.co.kr/" target="_blank" rel="noopener" style="border-left:3px solid var(--coral);">
-      <div class="nw-badge b-coral-o">본행사</div>
-      <div class="nw-date">5월 30일(토) ~ 31일(일)</div>
-      <div class="nw-title">본 상영 및 문화 프로그램 — 전체 일정 확인</div>
-      <div class="nw-desc">📍 ubmf.co.kr에서 상세 프로그램·예매 안내</div>
-    </a>
-  </div>
-</section>
-<!-- BANGUDAE_FILM_END -->
-
 
 </div>
 <div class="tab-pane" id="tab-1">
@@ -1470,8 +1441,12 @@ renderCal(CAL_MONTHS[calIdx]);
       <div class="sec-kicker">문화유산 이야기</div>
       <a class="sec-more" href="https://heritage.go.kr" target="_blank" rel="noopener">국가유산포털 →</a>
     </div>
-    <h2 class="sec-title">이달의 문화재 3선</h2>
+<!-- HERITAGE_TITLE_START -->
+    <h2 class="sec-title">언양 문화유산 시리즈 — 언양읍성</h2>
+    <p style="font-size:12px;color:var(--gray-400);margin-top:4px;">📚 2026년 5월호 · 시리즈 2부: 500년을 버틴 평지 읍성</p>
+<!-- HERITAGE_TITLE_END -->
   </div>
+<!-- HERITAGE_CARDS_START -->
   <div class="hc-list">
 
     <a class="hc" href="https://heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1112602850000" target="_blank" rel="noopener">
@@ -1641,16 +1616,18 @@ renderCal(CAL_MONTHS[calIdx]);
     <div class="sec-kicker" style="color:#163d78;">⚽ 체육 소식</div>
     <h2 class="sec-title">이번 주 스포츠 &amp; 생활체육</h2>
   </div>
-  <ul class="news-list">
 <!-- SPORTS_START -->
+  <!-- 강좌 신청 안내 배너 -->
   <div class="notice notice-blue" style="margin-bottom:8px;">
-    🏅 아래 강좌는 <strong>울주군공공시설예약서비스(CRS)</strong>에서 온라인으로 신청할 수 있습니다. 매월 초 새 강좌가 등록되며, 인기 강좌는 빠르게 마감됩니다.
+    🏅 아래 강좌는 <strong>울주군공공시설예약서비스(CRS)</strong>에서 온라인으로 신청할 수 있습니다.
+    매월 초 새 강좌가 등록되며, 인기 강좌는 빠르게 마감됩니다.
     <a href="https://crs.uljusiseol.or.kr/new_lecture/lecture" target="_blank" rel="noopener"
        style="display:inline-block;margin-top:8px;padding:7px 16px;background:var(--blue);color:#fff;font-size:13.5px;font-weight:700;border-radius:6px;text-decoration:none;">
       CRS 강좌 통합 신청 바로가기 →
     </a>
   </div>
 
+  <!-- 시설별 강좌 카드 -->
   <div class="sf-list">
 
     <!-- 울주군국민체육센터 -->
@@ -1659,12 +1636,13 @@ renderCal(CAL_MONTHS[calIdx]);
         <div class="sf-icon">🏊</div>
         <div class="sf-info">
           <div class="sf-name">울주군국민체육센터</div>
-          <div class="sf-addr">📍 울주군 범서읍 · ☎ 052-229-9000</div>
+          <div class="sf-addr">📍 울주군 범서읍 대리로 10 (언양 인근) · ☎ 052-229-9000</div>
         </div>
         <a class="sf-site-link" href="https://crs.uljusiseol.or.kr/new_lecture/lecture?mem_id=B0000188" target="_blank" rel="noopener">강좌 신청</a>
       </div>
       <div class="sf-body">
-        <div class="sf-desc">언양·범서 주민 접근이 편리한 종합 체육시설. 50m 수영장, 스쿼시장, 다목적실 보유. <strong>지역 주민 할인 적용.</strong></div>
+        <div class="sf-desc">언양·범서 주민 접근이 가장 편리한 종합 체육시설. 50m 수영장, 스쿼시장, 다목적실 보유. <strong>지역 주민 할인 적용.</strong></div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 6월 강습 안내 (준비중 — 접수 예정)</div>
         <div class="sf-course-row">
           <span class="sf-tag sf-tag-swim">🏊 수영 교정Ⅰ·Ⅱ·Ⅲ</span>
           <span class="sf-tag sf-tag-swim">🏊 수영 연수·종합</span>
@@ -1672,11 +1650,12 @@ renderCal(CAL_MONTHS[calIdx]);
           <span class="sf-tag sf-tag-swim">💦 아쿠아로빅</span>
           <span class="sf-tag sf-tag-sport">🏸 배드민턴</span>
           <span class="sf-tag sf-tag-sport">🏓 스쿼시 강습·자유</span>
-          <span class="sf-tag sf-tag-dance">💃 파워줌바·에어로빅·라인댄스·밸리댄스</span>
+          <span class="sf-tag sf-tag-sport">🧒 어린이 스쿼시 (초4~6)</span>
+          <span class="sf-tag sf-tag-dance">💃 댄스 — 파워줌바·에어로빅·라인댄스·밸리댄스</span>
           <span class="sf-tag sf-tag-fit">🤸 실버 스트레칭 (65세 이상)</span>
           <span class="sf-tag sf-tag-swim">🌊 자유수영</span>
         </div>
-        <div class="sf-notice">⏰ 강습 시간대 06:00 ~ 20:00 · 휴관: 매주 월요일</div>
+        <div class="sf-notice">⏰ 강습 시간대 06:00 ~ 20:00 (시간대별 모집) · 휴관: 매주 월요일</div>
       </div>
     </div>
 
@@ -1692,6 +1671,7 @@ renderCal(CAL_MONTHS[calIdx]);
       </div>
       <div class="sf-body">
         <div class="sf-desc">2024년 신규 개관. 50m 수영장 · 볼링장(12레인) · 스쿼시장 · 체육관 · 헬스장을 갖춘 울주 최대 복합체육시설. 총 <strong>237개 강좌</strong> 운영 중.</div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 5월 강습 운영 중</div>
         <div class="sf-course-row">
           <span class="sf-tag sf-tag-swim">🏊 수영 강습 (전 레벨 · 06~20시)</span>
           <span class="sf-tag sf-tag-swim">💦 아쿠아로빅</span>
@@ -1699,13 +1679,16 @@ renderCal(CAL_MONTHS[calIdx]);
           <span class="sf-tag sf-tag-sport">🏸 배드민턴 강습·자유</span>
           <span class="sf-tag sf-tag-sport">🎳 볼링 강습·자유 (주말 포함)</span>
           <span class="sf-tag sf-tag-sport">🏐 배구 강습</span>
-          <span class="sf-tag sf-tag-fit">💪 근력기구운동 · 서킷트레이닝</span>
+          <span class="sf-tag sf-tag-fit">💪 근력기구운동</span>
+          <span class="sf-tag sf-tag-fit">⚡ 서킷트레이닝</span>
+          <span class="sf-tag sf-tag-fit">🔥 점핑피트니스</span>
           <span class="sf-tag sf-tag-yoga">🧘 요가 (빈야사·인·아침·임산부)</span>
           <span class="sf-tag sf-tag-yoga">🩰 발레 &amp; 필라테스</span>
-          <span class="sf-tag sf-tag-dance">💃 K-POP·줌바·바디핏라인댄스</span>
+          <span class="sf-tag sf-tag-yoga">📐 자세교정 강습</span>
+          <span class="sf-tag sf-tag-dance">💃 댄스 — K-POP·줌바·바디핏라인</span>
           <span class="sf-tag sf-tag-kids">🧒 주말 K-POP 키즈 (초1~중3)</span>
         </div>
-        <div class="sf-notice">⚠️ <strong>5월 유의:</strong> 휴관 매주 월요일 · 5/1·5/5 강습 없음(자유이용 가능) · 5/19~31 다목적실 휴강(냉난방기 공사) · 5/29(금) 체육관 강좌 휴강(선거 개표소)</div>
+        <div class="sf-notice">⚠️ <strong>5월 이용 유의:</strong> 휴관 매주 월요일(5/4·11·18·25) · 5/1(금)·5/5(화) 강습 없음(자유이용 가능) · 5/19~31 다목적실 휴강(냉난방기 공사) · 5/29(금) 체육관 강좌 휴강(선거 개표소)</div>
       </div>
     </div>
 
@@ -1720,33 +1703,39 @@ renderCal(CAL_MONTHS[calIdx]);
         <a class="sf-site-link" href="https://crs.uljusiseol.or.kr/new_lecture/lecture?mem_id=B0000189" target="_blank" rel="noopener">강좌 신청</a>
       </div>
       <div class="sf-body">
-        <div class="sf-desc">수영장·골프연습장·체육관·헬스장 보유. <strong>실내 골프강습</strong>이 다양하며, 어린이 키즈 프로그램이 풍부. 총 <strong>128개 강좌</strong> 운영 중.</div>
+        <div class="sf-desc">수영장·골프연습장·체육관·헬스장 보유. 특히 <strong>실내 골프강습</strong>이 다양하게 운영되며, 어린이 대상 키즈 전문 프로그램이 풍부합니다. 총 <strong>128개 강좌</strong> 운영 중.</div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 5월 강습 운영 중</div>
         <div class="sf-course-row">
           <span class="sf-tag sf-tag-swim">🏊 수영 강습 (전 레벨)</span>
           <span class="sf-tag sf-tag-swim">💦 아쿠아로빅 · 아쿠아피트니스</span>
           <span class="sf-tag sf-tag-swim">🌊 아쿠아슬론 (신규)</span>
+          <span class="sf-tag sf-tag-swim">🌊 자유수영 · 주말수영</span>
           <span class="sf-tag sf-tag-sport">⛳ 골프 강습 (08~19시, 다양한 시간대)</span>
           <span class="sf-tag sf-tag-sport">⛳ 키즈골프 (초1~6 · 일요일)</span>
-          <span class="sf-tag sf-tag-sport">⛳ 토·일 가족골프</span>
+          <span class="sf-tag sf-tag-sport">⛳ 토요·일요 가족골프</span>
           <span class="sf-tag sf-tag-sport">🏸 배드민턴</span>
           <span class="sf-tag sf-tag-sport">🏐 배구 (토요일)</span>
           <span class="sf-tag sf-tag-sport">🏓 탁구</span>
-          <span class="sf-tag sf-tag-fit">💪 그룹헬스 · 서킷트레이닝 · 크로스핏</span>
+          <span class="sf-tag sf-tag-fit">💪 그룹헬스 · 자유헬스</span>
+          <span class="sf-tag sf-tag-fit">⚡ 서킷트레이닝 · 크로스핏</span>
           <span class="sf-tag sf-tag-fit">🧍 체형교정 · 근막스트레칭</span>
+          <span class="sf-tag sf-tag-fit">💪 군민체력왕 (기초체력향상)</span>
           <span class="sf-tag sf-tag-yoga">🧘 요가 (아침~저녁, 총 6시간대)</span>
           <span class="sf-tag sf-tag-yoga">🩰 소도구 필라테스</span>
           <span class="sf-tag sf-tag-dance">💃 줌바댄스</span>
           <span class="sf-tag sf-tag-kids">🩰 키즈발레 (2019~2022년생)</span>
           <span class="sf-tag sf-tag-kids">💃 키즈방송댄스 (2017~2021년생)</span>
           <span class="sf-tag sf-tag-kids">🧘 키즈 요가&amp;필라테스 (토요일)</span>
+          <span class="sf-tag sf-tag-kids">🏸 필라발레 (중학생 이상)</span>
           <span class="sf-tag sf-tag-sport">🥎 피크볼 특강 (무료)</span>
         </div>
-        <div class="sf-notice">⏰ 강습 시간대 06:00 ~ 20:00 · 주말 특별 강좌 별도 운영</div>
+        <div class="sf-notice">⏰ 강습 간대 06:00 ~ 20:00 · 주말 특별 강좌 별도 운영</div>
       </div>
     </div>
 
   </div><!-- /sf-list -->
 
+  <!-- 동호회 소식 제보 -->
   <div class="notice notice-teal" style="margin-top:18px;">
     📣 <b>동호회·체육 소식 제보 환영!</b> 언양읍 내 축구·배드민턴·탁구·수영·등산·풋살 동호회나 생활체육 행사 정보를 제보해 주시면 다음 호에 소개해 드립니다.<br>
     <a href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener"
@@ -1756,7 +1745,6 @@ renderCal(CAL_MONTHS[calIdx]);
   </div>
 
 <!-- SPORTS_END -->
-  </ul>
 </section>
 
 
@@ -1891,6 +1879,152 @@ renderCal(CAL_MONTHS[calIdx]);
 
 
 </div>
+
+<!-- ════ TAB 4: 청소년 참여 ════ -->
+<div class="tab-pane" id="tab-4">
+
+<!-- 안내 배너 -->
+<section class="sec" style="border-top:3px solid #7c3aed;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#7c3aed;">🎓 청소년 참여</div>
+    <h2 class="sec-title">관람이 아닌 <em>참여자</em>로 — 학생 무대·부스·스태프 모집</h2>
+  </div>
+  <p style="color:var(--gray-600);font-size:14px;margin:0 0 8px;">이 탭은 <strong>공연·댄스·밴드·미술·체육 등 운영자 또는 참가자로 직접 나설 수 있는 행사</strong>를 모아 안내합니다.<br>개최까지 여유가 있는 행사를 우선 소개하니, 팀이나 작품을 미리 준비해 보세요.</p>
+</section>
+
+<!-- 현재 모집 중 -->
+<section class="sec" style="margin-top:0;border-top:1px solid #ede9fe;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#7c3aed;">🟣 지금 신청 가능</div>
+    <h2 class="sec-title">현재 접수 중인 행사</h2>
+  </div>
+  <ul class="news-list">
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#ede9fe;color:#7c3aed;border-color:#c4b5fd;">댄스</span>
+      <div>
+        <h4>2026 강릉단오제 전국 청소년 댄스 페스티벌</h4>
+        <p><strong>대상</strong> 초3~고3 (9~18세) 그룹댄스팀 · <strong>예선</strong> 동영상 심사(5.29) · <strong>본선</strong> 2026년 6월 20일(토) 강릉단오제 야외무대<br>접수 마감 <strong>5월 27일(수) 18:00</strong> · 이메일 접수: jaedol@korea.kr</p>
+        <a class="ni-link" href="https://www.yesulsan.kr/teenager/area_view.jsp?ac_num=514&crp=35" target="_blank" rel="noopener">모집 공고 보기</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#ede9fe;color:#7c3aed;border-color:#c4b5fd;">영화·자원봉사</span>
+      <div>
+        <h4>제15회 울산 반구대 산골영화제 — 지킴이(운영봉사) 참여</h4>
+        <p>2026년 5월 29~31일 · 울주군 삼남읍 작천정 잔디광장. 순수 비영리 문화 자원봉사 단체가 운영하는 영화제로, 청소년 자원봉사 1365 봉사시간 인정 가능. 참여 문의: 조직위 사무국 010-8338-8909</p>
+        <a class="ni-link" href="http://ubmf.co.kr/" target="_blank" rel="noopener">산골영화제 공식 사이트</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#ede9fe;color:#7c3aed;border-color:#c4b5fd;">힙합댄스·디지털</span>
+      <div>
+        <h4>제22회 대한민국청소년박람회 — 전국 청소년 힙합댄스 경연 외</h4>
+        <p>2026년 5월 28~30일 · 여수엑스포컨벤션센터. 힙합댄스 경연대회, 디지털콘텐츠 경진대회, 청소년 대토론회 등 200여 개 체험 프로그램 참가 가능.</p>
+        <a class="ni-link" href="https://koreayouthexpo.co.kr/" target="_blank" rel="noopener">박람회 공식 사이트</a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- 여름·하반기 예정 행사 -->
+<section class="sec" style="margin-top:0;border-top:1px solid #ede9fe;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#059669;">📆 여름·하반기 모집 예정</div>
+    <h2 class="sec-title">준비하면 더 빛나는 행사 (개최 2개월 이상 전)</h2>
+  </div>
+  <ul class="news-list">
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">영화·스태프</span>
+      <div>
+        <h4>울산울주세계산악영화제 (UMFF) — 청소년 스태프·자원봉사</h4>
+        <p>매년 10~11월 개최. 영화제 스태프(안내·운영·통역 등) 모집은 보통 7~8월 공고. 만 15세 이상 지원 가능. 봉사시간 인정 및 수료증 발급.</p>
+        <a class="ni-link" href="https://www.umff.kr/kor/" target="_blank" rel="noopener">UMFF 공식 사이트에서 공고 확인</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">미술·전시</span>
+      <div>
+        <h4>울산학생교육문화회관 2026 전시기획 공모</h4>
+        <p>회화·조각·미디어아트·디자인·설치미술 등 자유주제 전시. 학생 단체·동아리 지원 가능. 상반기 중 2차 공모 예정. 울산시교육청 문의: 052-210-5700</p>
+        <a class="ni-link" href="https://www.use.go.kr/" target="_blank" rel="noopener">울산시교육청 공지 확인</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">공연·밴드·댄스</span>
+      <div>
+        <h4>울주군 청소년 여름방학 문화예술 프로그램</h4>
+        <p>울주 서부·중부·남부 청소년수련관에서 매년 7~8월 밴드·댄스·연극·미술 등 여름방학 특강 및 발표회를 운영합니다. 모집 공고는 6월 중 발표 예정.</p>
+        <a class="ni-link" href="https://www.uljusiseol.or.kr/ujyouth/" target="_blank" rel="noopener">울주 서부청소년수련관</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">체육</span>
+      <div>
+        <h4>울주군 청소년 체육대회 — 종목별 학교·동호회 팀 참가</h4>
+        <p>매년 9~10월 개최. 축구·배드민턴·탁구·육상 등 종목별 학교·동호회 대표팀으로 참가. 참가 신청은 보통 8월 중 울주군체육회(052-229-8700)로 접수.</p>
+        <a class="ni-link" href="https://ulju.ulsan.kr/" target="_blank" rel="noopener">울주군청 공지 확인</a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- 청소년 기관 안내 -->
+<section class="sec" style="margin-top:0;border-top:1px solid #ede9fe;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#7c3aed;">🏠 언양·울주 청소년 기관</div>
+    <h2 class="sec-title">상시 프로그램 운영 기관</h2>
+  </div>
+  <div class="org-grid">
+    <a class="org-card" href="https://www.uljusiseol.or.kr/ujyouth/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">🧑‍🤝‍🧑</div>
+        <div><div class="org-name">울주 서부청소년수련관</div><div class="org-type">언양읍 소재</div></div>
+      </div>
+      <div class="org-desc">밴드·댄스·미술·체육 등 방과후·방학 프로그램 운영. 청소년 동아리 공간 지원. ☎ 052-264-1318</div>
+      <span class="org-link">프로그램 신청</span>
+    </a>
+    <a class="org-card" href="https://www.yesulsan.kr/teenager/area.jsp?crp=1" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">📋</div>
+        <div><div class="org-name">울산청소년활동진흥센터</div><div class="org-type">울산 전체 청소년 행사</div></div>
+      </div>
+      <div class="org-desc">울산 전 지역 청소년 참여 행사·모집 정보 통합 안내. 자원봉사·경연·공모 정보 게시. ☎ 052-227-0606</div>
+      <span class="org-link">행사 목록 보기</span>
+    </a>
+    <a class="org-card" href="https://ulsan.go.kr/y/yes/main.do" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">🌟</div>
+        <div><div class="org-name">울산광역시 YES 청소년</div><div class="org-type">시청 청소년 포털</div></div>
+      </div>
+      <div class="org-desc">울산시 청소년 정책·행사 통합 안내. 청소년 참여위원회·공모전·봉사 기회 정보 제공.</div>
+      <span class="org-link">울산 YES 포털</span>
+    </a>
+    <a class="org-card" href="https://www.1365.go.kr/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">🤲</div>
+        <div><div class="org-name">1365 자원봉사포털</div><div class="org-type">봉사시간 인정</div></div>
+      </div>
+      <div class="org-desc">지역 행사 자원봉사 신청·봉사시간 인정. 울산 지역 문화·체육 행사 봉사 모집 정보 검색 가능.</div>
+      <span class="org-link">봉사 찾기</span>
+    </a>
+  </div>
+  <div style="margin:16px 0 4px;padding:12px 16px;background:#f5f3ff;border-radius:10px;font-size:13px;color:#5b21b6;">
+    💡 <strong>소식지에 청소년 행사 정보를 제보하고 싶다면?</strong> 아래 설문 링크로 알려주시면 다음 호에 소개해 드립니다.<br>
+    <a href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener" style="color:#7c3aed;font-weight:600;text-decoration:none;">👉 청소년 행사 제보하기 (구글 설문)</a>
+  </div>
+</section>
+
+</div><!-- /tab-4 -->
+
 <script>
 function showTab(idx) {
   document.querySelectorAll('.tab-pane').forEach((p,i) => p.classList.toggle('active', i===idx));
@@ -1903,4 +2037,21 @@ function showTab(idx) {
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-brand">언양 <span>문화·예술·체육</span> 소식지</div>
-    <d
+    <div class="footer-links">
+      <a href="https://www.ucf.or.kr:478/" target="_blank" rel="noopener">울주문화재단</a>
+      <a href="https://www.uljusiseol.or.kr" target="_blank" rel="noopener">울주군시설관리공단</a>
+      <a href="https://ulsan.grandculture.net" target="_blank" rel="noopener">울산역사문화대전</a>
+      <a href="https://heritage.go.kr" target="_blank" rel="noopener">국가유산포털</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    울산광역시 울주군 언양읍 주민·학생·학부모를 위한 주간 문화 뉴스레터 · 매주 월요일 오전 9시 발행 · 무료 배포<br>
+    창간 2026년 4월 27일 · 현재 제2호 (2026년 5월 4일) · 이미지 출처: Wikimedia Commons(CC 라이선스) / 국가유산포털<br>
+    <span style="margin-top:6px; display:inline-block; color:rgba(255,255,255,.6); font-size:12px;">🏫 제작 · 운영 — 신언중학교 · <a href="https://sineon.github.io/eonyang-news/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75); text-decoration:underline;">sineon.github.io/eonyang-news</a></span>
+  </div>
+</footer>
+
+</div><!-- /wrap -->
+</div><!-- /page-bg -->
+</body>
+</html> 
