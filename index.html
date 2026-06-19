@@ -860,17 +860,17 @@ img { display: block; max-width: 100%; }
 .cal-ev-link { cursor:pointer; transition:opacity .15s; text-decoration:none !important; }
 .cal-ev-link:hover { opacity:.75; filter:brightness(.9); }
 .cal-wrap { margin-top: 16px; }
-.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; width: 100%; }
 .cal-dow { text-align: center; font-size: 13px; font-weight: 700; color: var(--gray-400); padding: 6px 0; letter-spacing: .04em; }
 .cal-dow.sun { color: #d44e16; }
 .cal-dow.sat { color: #1e56a0; }
-.cal-cell { min-height: 62px; background: var(--gray-50); border-radius: 6px; padding: 5px 4px; }
+.cal-cell { min-height: 62px; background: var(--gray-50); border-radius: 6px; padding: 5px 4px; min-width: 0; overflow: hidden; }
 .cal-cell.cal-sun .cal-num { color: #c0391a; }
 .cal-cell.cal-sat .cal-num { color: #1e56a0; }
 .cal-cell.cal-holiday { background: #fff0eb; }
 .cal-cell.cal-today { background: var(--teal-lt); outline: 2px solid var(--teal); }
 .cal-num { font-size: 14.5px; font-weight: 700; color: var(--gray-700); display: block; margin-bottom: 3px; }
-.cal-ev { font-size: 11px; line-height: 1.35; padding: 1px 3px; border-radius: 3px; display: block; margin-bottom: 1px;
+.cal-ev { font-size: 11px; line-height: 1.35; padding: 1px 3px; border-radius: 3px; display: block; margin-bottom: 1px; overflow-wrap: anywhere; word-break: break-word;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ce-coral { background: #fde8d8; color: #a83c10; }
 .ce-blue  { background: #dce8fb; color: #163d78; }
