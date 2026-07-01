@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>언양 문화·예술·체육 소식지 — 2026년 6월 22일 제9호</title>
+<title>언양 문화·예술·체육 소식지 — 2026년 6월 29일 제10호</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap');
 
@@ -1074,8 +1074,8 @@ function showTab(idx) {
   </div>
   <div class="header-info">
 <!-- ISSUE_START -->
-    <div class="header-date">2026년 6월 22일 (월)</div>
-    <span class="header-issue">제9호</span>
+    <div class="header-date">2026년 6월 29일 (월)</div>
+    <span class="header-issue">제10호</span>
 <!-- ISSUE_END -->
   </div>
 </header>
@@ -1087,11 +1087,11 @@ function showTab(idx) {
   <div class="hero-body">
 <!-- HERO_START -->
     <span class="hero-badge">⭐ 이번 주 주목</span>
-    <div class="hero-title">슬도아트 기획전 3인전<br>「이번 주 일요일(6/28) 마감 — 마지막 주 관람 기회」</div>
+    <div class="hero-title">뮤지컬 「어차피 패밀리」<br>「이번 주 일요일(7/5)까지 — 온 가족 관람 추천」</div>
     <div class="hero-meta">
-      <span>📅 ~6월 28일(일) · 5/16 시작</span>
-      <span>📍 슬도아트 갤러리 (동구 슬도)</span>
-      <span>🎟 무료 관람 · 이민희·장하나·차보리 3인전 · ☎ 052-234-1033</span>
+      <span>📅 6월 28일(일) ~ 7월 5일(일)</span>
+      <span>📍 아트홀 마당</span>
+      <span>🎟 예매·문의 ☎ 052-269-8034</span>
     </div>
 <!-- HERO_END -->
   </div>
@@ -1101,7 +1101,7 @@ function showTab(idx) {
 <div class="ticker">
   <span class="ticker-pill">NOW</span>
 <!-- TICKER_START -->
-  🖼 슬도아트 3인전 ~6/28(일) 마감 — 마지막 주 &nbsp;·&nbsp; 🎤 울산 사위 심현섭쇼 ~6/25(목) 마감 — 마지막 공연 &nbsp;·&nbsp; 🪨 반구천 암각화박물관 연중 관람 (무료) &nbsp;·&nbsp; 🏺 외고산 옹기마을 상시 체험 &nbsp;·&nbsp; ⚽ 울산 HD FC — 월드컵 휴식기 (6/19~7/12 K리그 휴식, 7/11 전북전 복귀)
+  🎭 뮤지컬 어차피 패밀리 ~7/5(일) 아트홀 마당 &nbsp;·&nbsp; 🎡 문화가 있는 날 <재잘재잘울산> ~7/11 장생포 고래문화마을 &nbsp;·&nbsp; 🪨 반구천 암각화박물관 연중 관람 (무료) &nbsp;·&nbsp; 🏺 외고산 옹기마을 상시 체험 &nbsp;·&nbsp; ⚽ 울산 HD FC — 여름 리그 휴식기, 홈경기 일정 미확인 (uhdfc.com 확인)
 <!-- TICKER_END -->
 </div>
 
@@ -1127,7 +1127,7 @@ function showTab(idx) {
     </div>
     <div class="cal-nav-row">
       <button class="cal-nav-btn" id="cal-prev" onclick="calMove(-1)" aria-label="이전 달">◀</button>
-      <h2 class="sec-title" id="cal-title">2026년 6월 행사 캘린더</h2>
+      <h2 class="sec-title" id="cal-title">2026년 7월 행사 캘린더</h2>
       <button class="cal-nav-btn" id="cal-next" onclick="calMove(1)" aria-label="다음 달">▶</button>
     </div>
     <p style="font-size:13px; color:var(--gray-400); margin-top:4px;">🏟 울산 HD FC K리그 홈경기 포함 · ⚽ 표시 참조</p>
@@ -1145,11 +1145,21 @@ function showTab(idx) {
 </section>
 <script>
 // ── 캘린더 월 목록 ──
-const CAL_MONTHS = ['2026-04','2026-05','2026-06'];
+const CAL_MONTHS = ['2026-05','2026-06','2026-07'];
 let calIdx = 2; // 기본: 6월
 
 // ── 행사 데이터 (날짜별, 출처 확인된 항목만) ──
 const CAL_DATA = {
+  '2026-07': {
+    label: '2026년 7월',
+    events: {
+      5:  [{t:'뮤지컬 어차피 패밀리 (아트홀 마당)', c:'blue', u:'https://www.ulsanculture.kr/webuser/exhibit/%EB%AE%A4%EC%A7%80%EC%BB%AC-%EC%96%B4%EC%B0%A8%ED%94%BC-%ED%8C%A8%EB%B0%80%EB%A6%AC-3082'}],
+      8:  [{t:'찾아가는 장터누리소 (달동주공3차)', c:'green', u:'https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4'}],
+      11: [{t:'재잘재잘울산 마무리 (장생포)', c:'coral', u:'https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4'}],
+      15: [{t:'지속가능한 마이스·관광 울산포럼 (유에코)', c:'blue', u:'https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4'}],
+      17: [{t:'제헌절 🌟', c:'blue', u:''}]
+    }
+  },
   '2026-04': {
     label: '2026년 4월',
     events: {
@@ -1401,25 +1411,25 @@ renderCal(CAL_MONTHS[calIdx]);
   <div class="sec-head">
     <div class="sec-row">
       <div class="sec-kicker">이번 주 행사</div>
-      <a class="sec-more" href="https://www.ucf.or.kr/culturearts/schedule.html?vwYm=202606" target="_blank" rel="noopener">전체 일정 →</a>
+      <a class="sec-more" href="https://www.ucf.or.kr/culturearts/schedule.html?vwYm=202607" target="_blank" rel="noopener">전체 일정 →</a>
     </div>
 <!-- EVENTS_HEADING_START -->
-    <h2 class="sec-title">6월 22일(월) ~ 6월 28일(일) — 기관별 행사</h2>
+    <h2 class="sec-title">6월 29일(월) ~ 7월 5일(일) — 기관별 행사</h2>
 <!-- EVENTS_HEADING_END -->
     <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">📌 출처: 울주문화재단(ucf.or.kr) 월간일정 직접 확인</div>
   </div>
 
 <!-- FEATURED_START -->
-  <!-- Featured: 심현섭쇼 마지막 공연 ~6/25 -->
-  <a class="ev-feat" href="https://www.ulsanculture.kr/webuser/exhibit/%EC%9A%B8%EC%82%B0-%EC%82%AC%EC%9C%84-%EC%8B%AC%ED%98%84%EC%84%AD%EC%87%BC-%EC%8B%9C%EC%A6%8C-3084" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#071624 0%,#0d2a40 45%,#0a1e14 100%);">
+  <!-- Featured: 문화가 있는 날 재잘재잘울산 -->
+  <a class="ev-feat" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AC%B8%ED%99%94%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%9E%AC%EC%9E%98%EC%9E%98%EC%9A%B8%EC%82%B0-3162" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#071624 0%,#0d2a40 45%,#0a1e14 100%);">
     <div class="ev-feat-overlay"></div>
     <div class="ev-feat-body">
       <span class="ev-badge b-coral">⭐ 이번 주 주목 행사</span>
-      <div class="ev-feat-title">🎤 울산 사위 심현섭쇼 시즌1 — 마지막 공연 주간</div>
+      <div class="ev-feat-title">🎡 문화가 있는 날 &lt;재잘재잘울산&gt;</div>
       <div class="ev-feat-meta">
-        <span>📅 ~6/25(목) 마감 · 평일 19:30 / 일 17:00</span>
-        <span>📍 아트홀 마당</span>
-        <span>🎟 예매·문의 ☎ 052-269-8034</span>
+        <span>📅 6/29(월) ~ 7/11(토)</span>
+        <span>📍 장생포 고래문화마을</span>
+        <span>🆓 가족·아이 참여 프로그램 · ☎ 052-257-8094</span>
       </div>
     </div>
   </a>
@@ -1431,6 +1441,48 @@ renderCal(CAL_MONTHS[calIdx]);
   <div class="org-list">
 
 
+    <!-- 아트홀 마당 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🎤</span>
+        <span class="org-name">아트홀 마당</span>
+        <a class="org-site-link" href="https://www.arthallmadang.co.kr/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AE%A4%EC%A7%80%EC%BB%AC-%EC%96%B4%EC%B0%A8%ED%94%BC-%ED%8C%A8%EB%B0%80%EB%A6%AC-3082" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">뮤지컬</div>
+            <div class="org-ev-date">~7/5<br>일 마감</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">뮤지컬 「어차피 패밀리」 — 온 가족 관람작</div>
+            <div class="org-ev-meta">아트홀 마당 · 6/28~7/5 · ☎ 052-269-8034</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 고래문화마을 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🐋</span>
+        <span class="org-name">장생포 고래문화마을</span>
+        <a class="org-site-link" href="https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4" target="_blank" rel="noopener">전체 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AC%B8%ED%99%94%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%9E%AC%EC%9E%98%EC%9E%98%EC%9A%B8%EC%82%B0-3162" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">문화·체험</div>
+            <div class="org-ev-date">6/29~<br>7/11</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">문화가 있는 날 &lt;재잘재잘울산&gt; — 가족 참여 프로그램</div>
+            <div class="org-ev-meta">장생포 고래문화마을 · 6/29~7/11 · ☎ 052-257-8094</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
     <!-- 온양문화복지센터 -->
     <div class="org-block">
       <div class="org-header">
@@ -1441,54 +1493,12 @@ renderCal(CAL_MONTHS[calIdx]);
       <div class="org-events">
         <a class="org-ev" href="https://www.ucf.or.kr/onyang/" target="_blank" rel="noopener">
           <div class="org-ev-left">
-            <div class="org-ev-badge coral">가요무대</div>
-            <div class="org-ev-date">매주 목<br>15:00</div>
+            <div class="org-ev-badge coral">노래교실</div>
+            <div class="org-ev-date">여름학기<br>안내</div>
           </div>
           <div class="org-ev-right">
-            <div class="org-ev-title">활력톡톡 신나는 가요무대 — 노래교실·미니콘서트 (정기 프로그램)</div>
-            <div class="org-ev-meta">📍 온양문화복지센터 3층 공연장 · 무료 · ☎ 052-980-2290 · 학기별 운영, 회차는 사이트 확인</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- 아트홀 마당 -->
-    <div class="org-block">
-      <div class="org-header">
-        <span class="org-icon">🎤</span>
-        <span class="org-name">아트홀 마당</span>
-        <a class="org-site-link" href="https://www.arthallmadang.co.kr/" target="_blank" rel="noopener">사이트 →</a>
-      </div>
-      <div class="org-events">
-        <a class="org-ev" href="https://www.ulsanculture.kr/webuser/exhibit/%EC%9A%B8%EC%82%B0-%EC%82%AC%EC%9C%84-%EC%8B%AC%ED%98%84%EC%84%AD%EC%87%BC-%EC%8B%9C%EC%A6%8C-3084" target="_blank" rel="noopener">
-          <div class="org-ev-left">
-            <div class="org-ev-badge coral">쇼·마감</div>
-            <div class="org-ev-date">~6/25<br>마감!</div>
-          </div>
-          <div class="org-ev-right">
-            <div class="org-ev-title">울산 사위 심현섭쇼 시즌1 — 마지막 공연 주간</div>
-            <div class="org-ev-meta">아트홀 마당 · 평일 19:30 / 일 17:00 · ☎ 052-269-8034</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- 슬도아트 갤러리 -->
-    <div class="org-block">
-      <div class="org-header">
-        <span class="org-icon">🖼</span>
-        <span class="org-name">슬도아트 갤러리</span>
-        <a class="org-site-link" href="https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=2" target="_blank" rel="noopener">전체 →</a>
-      </div>
-      <div class="org-events">
-        <a class="org-ev" href="https://www.ulsanculture.kr/webuser/exhibit/%EC%8A%A4%EC%8A%A4%EB%A1%9C-%EC%A0%91%ED%9E%88%EB%8A%94-3077" target="_blank" rel="noopener">
-          <div class="org-ev-left">
-            <div class="org-ev-badge teal">전시·마감</div>
-            <div class="org-ev-date">~6/28<br>일 마감</div>
-          </div>
-          <div class="org-ev-right">
-            <div class="org-ev-title">슬도아트 기획전 3인전 (이민희·장하나·차보리) — 마지막 주</div>
-            <div class="org-ev-meta">슬도아트 갤러리 · 5/16~6/28 · 무료 · ☎ 052-234-1033</div>
+            <div class="org-ev-title">활력톡톡 신나는 가요무대 — 여름·하반기 학기 운영 안내</div>
+            <div class="org-ev-meta">📍 온양문화복지센터 3층 공연장 · 무료 · ☎ 052-980-2290 · 회차는 사이트 확인</div>
           </div>
         </a>
       </div>
@@ -1505,7 +1515,7 @@ renderCal(CAL_MONTHS[calIdx]);
         <a class="org-ev" href="https://www.ucf.or.kr/uljuart/" target="_blank" rel="noopener">
           <div class="org-ev-left">
             <div class="org-ev-badge green">상시</div>
-            <div class="org-ev-date">7월<br>준비중</div>
+            <div class="org-ev-date">7월<br>안내</div>
           </div>
           <div class="org-ev-right">
             <div class="org-ev-title">7월 기획공연·전시 안내 — 회관 누리집 공지 확인</div>
@@ -1557,27 +1567,6 @@ renderCal(CAL_MONTHS[calIdx]);
       </div>
     </div>
 
-    <!-- 울산문화예술회관 -->
-    <div class="org-block">
-      <div class="org-header">
-        <span class="org-icon">🎭</span>
-        <span class="org-name">울산문화예술회관</span>
-        <a class="org-site-link" href="https://ucac.ulsan.go.kr/" target="_blank" rel="noopener">사이트 →</a>
-      </div>
-      <div class="org-events">
-        <a class="org-ev" href="https://ucac.ulsan.go.kr/content/performance/content01_03/main.do" target="_blank" rel="noopener">
-          <div class="org-ev-left">
-            <div class="org-ev-badge blue">공연</div>
-            <div class="org-ev-date">7월<br>안내</div>
-          </div>
-          <div class="org-ev-right">
-            <div class="org-ev-title">7월 기획·대관 공연 일정 — 공식 누리집 확인</div>
-            <div class="org-ev-meta">대공연장·소공연장 · ☎ 052-275-9623</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
   </div>
 
 <!-- ORG_LIST_END -->
@@ -1590,17 +1579,23 @@ renderCal(CAL_MONTHS[calIdx]);
       <div class="sec-kicker" style="background:var(--gray-200); color:var(--gray-600);">다음 주 예고</div>
     </div>
 <!-- NEXTWEEK_HEADING_START -->
-    <h2 class="sec-title" style="color:var(--gray-700);">6월 29일 ~ 7월 5일 주요 일정</h2>
+    <h2 class="sec-title" style="color:var(--gray-700);">7월 6일 ~ 7월 12일 주요 일정</h2>
 <!-- NEXTWEEK_HEADING_END -->
     <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">📌 출처: ucf.or.kr 직접 확인</div>
   </div>
 <!-- NEXTWEEK_CARDS_START -->
   <div class="nw-grid">
-    <a class="nw-card" href="https://www.ucf.or.kr/uljuart/" target="_blank" rel="noopener">
-      <div class="nw-badge b-blue-o">공연·기획</div>
-      <div class="nw-date">7월 초 (예정)</div>
-      <div class="nw-title">울주문화예술회관 7월 기획공연 안내</div>
-      <div class="nw-desc">📍 울주문화예술회관 · 7월 일정은 공식 누리집 공지 참고 · ☎ 052-980-2270</div>
+    <a class="nw-card" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AC%B8%ED%99%94%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%9E%AC%EC%9E%98%EC%9E%98%EC%9A%B8%EC%82%B0-3162" target="_blank" rel="noopener">
+      <div class="nw-badge b-coral-o">문화·가족</div>
+      <div class="nw-date">~7월 11일(토)</div>
+      <div class="nw-title">문화가 있는 날 &lt;재잘재잘울산&gt;</div>
+      <div class="nw-desc">📍 장생포 고래문화마을 · 가족·아이 참여 프로그램 · ☎ 052-257-8094</div>
+    </a>
+    <a class="nw-card" href="https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4" target="_blank" rel="noopener">
+      <div class="nw-badge b-green-o">장터·나눔</div>
+      <div class="nw-date">7월 8일(수)</div>
+      <div class="nw-title">찾아가는 장터누리소 — 달동주공 3차 아파트</div>
+      <div class="nw-desc">📍 달동주공 3차 아파트 · 알뜰 나눔장터 · ☎ 052-255-1933</div>
     </a>
     <a class="nw-card" href="https://www.ulsan.go.kr/s/bangudae/main.ulsan" target="_blank" rel="noopener">
       <div class="nw-badge b-blue-o">전시·문화</div>
@@ -1610,15 +1605,9 @@ renderCal(CAL_MONTHS[calIdx]);
     </a>
     <a class="nw-card" href="https://www.uljusiseol.or.kr/" target="_blank" rel="noopener">
       <div class="nw-badge b-green-o">체육·강좌</div>
-      <div class="nw-date">7월 강좌 등록 예정</div>
-      <div class="nw-title">울주군국민체육센터 — 7월 프로그램 등록 안내</div>
+      <div class="nw-date">7월 강좌 등록 안내</div>
+      <div class="nw-title">울주군국민체육센터 — 7월 프로그램 등록</div>
       <div class="nw-desc">📍 울주군 각 체육센터 · uljusiseol.or.kr · ☎ 052-229-8700</div>
-    </a>
-    <a class="nw-card" href="https://www.uhdfc.com/match/match_schedule.php" target="_blank" rel="noopener">
-      <div class="nw-badge b-coral-o">축구·복귀전</div>
-      <div class="nw-date">7월 11일(토) 예정</div>
-      <div class="nw-title">울산 HD FC — 월드컵 휴식기 종료 후 복귀전 (전북현대전)</div>
-      <div class="nw-desc">📍 문수경기장 · 시간·예매는 공식 누리집 확인 · uhdfc.com</div>
     </a>
   </div>
 <!-- NEXTWEEK_CARDS_END -->
@@ -2133,11 +2122,11 @@ renderCal(CAL_MONTHS[calIdx]);
   <ul class="news-list">
 
     <li class="ni">
-      <span class="ni-cat" style="background:#ede9fe;color:#7c3aed;border-color:#c4b5fd;">댄스·경연</span>
+      <span class="ni-cat" style="background:#ede9fe;color:#7c3aed;border-color:#c4b5fd;">여름방학·특강</span>
       <div>
-        <h4>2026 강릉단오제 전국 청소년 댄스 페스티벌 — 참가팀 모집</h4>
-        <p>전국 청소년 팀 대상 댄스 경연. 울산청소년활동진흥센터 공지를 통해 참가 안내 진행 중. 학교·동아리 단위 또는 자유 팀으로 신청 가능. 자세한 일정·심사 기준은 공지 확인.</p>
-        <a class="ni-link" href="https://www.yesulsan.kr/teenager/area_view.jsp?ac_num=514&crp=35" target="_blank" rel="noopener">울산청소년활동진흥센터 공지</a>
+        <h4>울산청소년활동진흥센터 — 여름방학 청소년 참여 프로그램 안내</h4>
+        <p>여름방학을 맞아 밴드·댄스·미술·체험 등 청소년이 직접 참여·운영하는 프로그램 공고가 순차 게시됩니다. 학교·동아리 단위 또는 개인 신청 가능. 모집 일정은 공지사항에서 확인하세요.</p>
+        <a class="ni-link" href="https://www.yesulsan.kr/teenager/area.jsp" target="_blank" rel="noopener">울산청소년활동진흥센터 공지</a>
       </div>
     </li>
 
