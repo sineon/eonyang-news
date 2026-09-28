@@ -1,11 +1,11 @@
-name: 주간 소식지 자동 업데이트
+name: 주간 소식지 자동 업데이트 (수동)
 
+# 매주 발행은 학교 PC에서 한다: `node scripts/update.mjs --push` (윈도우 작업 스케줄러, 월요일 아침)
+#   울주문화재단(ucf.or.kr)이 해외 서버(GitHub Actions)의 접속을 막아, 여기서 돌리면 행사를 읽지 못한다
+#   (2026. 6. 28.부터 서울주문화센터 칸이 비어 온 원인). 예전 scripts/update.py 는 5. 7. 이후 파일 끝이 잘려 있었다.
+# 여기에는 수동 실행 버튼만 남긴다 — 행사를 하나도 못 읽으면 스크립트가 index.html 을 바꾸지 않고 끝난다.
 on:
-  schedule:
-    # 매주 월요일 00:00 UTC = 09:00 KST
-    - cron: '0 0 * * 1'
   workflow_dispatch:
-    # 수동 실행 버튼 (GitHub Actions 탭에서 언제든 실행 가능)
 
 permissions:
   contents: write
@@ -17,19 +17,13 @@ jobs:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
 
-      - name: Python 설정
-        uses: actions/setup-python@v5
+      - name: Node 설정
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: '20'
 
-      - name: 소식지 업데이트 실행
-        run: python scripts/update.py
-
-      - name: 변경사항 커밋 & 푸시
+      - name: 소식지 발행
         run: |
           git config user.name  "newsletter-bot"
           git config user.email "bot@sineon.github.io"
-          git add index.html
-          git diff --staged --quiet && echo "변경 없음" || \
-          git commit -m "자동 업데이트: $(TZ=Asia/Seoul date +'%Y년 %m월 %d일') 주간 소식지"
-          git push
+          node scripts/update.mjs --push

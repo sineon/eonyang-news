@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>언양 문화·예술·체육 소식지 — 2026년 6월 29일 제10호</title>
+<title>언양 문화·예술·체육 소식지 — 2026년 9월 28일 제11호</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap');
 
@@ -1074,8 +1074,8 @@ function showTab(idx) {
   </div>
   <div class="header-info">
 <!-- ISSUE_START -->
-    <div class="header-date">2026년 6월 29일 (월)</div>
-    <span class="header-issue">제10호</span>
+    <div class="header-date">2026년 9월 28일 (월)</div>
+    <span class="header-issue">제11호</span>
 <!-- ISSUE_END -->
   </div>
 </header>
@@ -1087,11 +1087,11 @@ function showTab(idx) {
   <div class="hero-body">
 <!-- HERO_START -->
     <span class="hero-badge">⭐ 이번 주 주목</span>
-    <div class="hero-title">뮤지컬 「어차피 패밀리」<br>「이번 주 일요일(7/5)까지 — 온 가족 관람 추천」</div>
+    <div class="hero-title">2026 울주오디세이</div>
     <div class="hero-meta">
-      <span>📅 6월 28일(일) ~ 7월 5일(일)</span>
-      <span>📍 아트홀 마당</span>
-      <span>🎟 예매·문의 ☎ 052-269-8034</span>
+      <span>📅 10/3(토) 13:00</span>
+      <span>📍 신불산 간월재</span>
+      <span>🎟 무료</span>
     </div>
 <!-- HERO_END -->
   </div>
@@ -1101,7 +1101,7 @@ function showTab(idx) {
 <div class="ticker">
   <span class="ticker-pill">NOW</span>
 <!-- TICKER_START -->
-  🎭 뮤지컬 어차피 패밀리 ~7/5(일) 아트홀 마당 &nbsp;·&nbsp; 🎡 문화가 있는 날 <재잘재잘울산> ~7/11 장생포 고래문화마을 &nbsp;·&nbsp; 🪨 반구천 암각화박물관 연중 관람 (무료) &nbsp;·&nbsp; 🏺 외고산 옹기마을 상시 체험 &nbsp;·&nbsp; ⚽ 울산 HD FC — 여름 리그 휴식기, 홈경기 일정 미확인 (uhdfc.com 확인)
+  🎭 문화가 있는 날: 뮤지컬로 보는 동화 9월＜흥부와놀부＞ 9/30(수) 온양문화복지센터 &nbsp;·&nbsp; 🎭 색소포니스트 윤여민과 친구들의「The Song of Ulju」 9/30(수) 울주문화예술회관 &nbsp;·&nbsp; 🎭 신명나는 울주 어울림 한마당 10/2(금) 서울주문화센터 &nbsp;·&nbsp; 🎭 2026 울주오디세이 10/3(토) 신불산 간월재 &nbsp;·&nbsp; 🎭 2026년 ＜8시 클래식 울주＞ 시즌권 3/25(수)~10/28(수) 울주문화예술회관 &nbsp;·&nbsp; 🪨 반구천 암각화박물관 연중 관람 (무료) &nbsp;·&nbsp; 🏺 외고산 옹기마을 상시 체험
 <!-- TICKER_END -->
 </div>
 
@@ -1127,7 +1127,7 @@ function showTab(idx) {
     </div>
     <div class="cal-nav-row">
       <button class="cal-nav-btn" id="cal-prev" onclick="calMove(-1)" aria-label="이전 달">◀</button>
-      <h2 class="sec-title" id="cal-title">2026년 7월 행사 캘린더</h2>
+      <h2 class="sec-title" id="cal-title">2026년 10월 행사 캘린더</h2>
       <button class="cal-nav-btn" id="cal-next" onclick="calMove(1)" aria-label="다음 달">▶</button>
     </div>
     <p style="font-size:13px; color:var(--gray-400); margin-top:4px;">🏟 울산 HD FC K리그 홈경기 포함 · ⚽ 표시 참조</p>
@@ -1144,94 +1144,52 @@ function showTab(idx) {
   </div>
 </section>
 <script>
-// ── 캘린더 월 목록 ──
-const CAL_MONTHS = ['2026-05','2026-06','2026-07'];
-let calIdx = 2; // 기본: 6월
+// ── 캘린더 월 목록 ── (scripts/update.mjs 가 매주 새로 씀)
+const CAL_MONTHS = ["2026-09","2026-10","2026-11"];
+let calIdx = 1;
 
-// ── 행사 데이터 (날짜별, 출처 확인된 항목만) ──
+// ── 행사 데이터 (날짜별, 울주문화재단 공연·전시 목록 기준) ──
 const CAL_DATA = {
-  '2026-07': {
-    label: '2026년 7월',
+  '2026-09': {
+    label: '2026년 9월',
     events: {
-      5:  [{t:'뮤지컬 어차피 패밀리 (아트홀 마당)', c:'blue', u:'https://www.ulsanculture.kr/webuser/exhibit/%EB%AE%A4%EC%A7%80%EC%BB%AC-%EC%96%B4%EC%B0%A8%ED%94%BC-%ED%8C%A8%EB%B0%80%EB%A6%AC-3082'}],
-      8:  [{t:'찾아가는 장터누리소 (달동주공3차)', c:'green', u:'https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4'}],
-      11: [{t:'재잘재잘울산 마무리 (장생포)', c:'coral', u:'https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4'}],
-      15: [{t:'지속가능한 마이스·관광 울산포럼 (유에코)', c:'blue', u:'https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4'}],
-      17: [{t:'제헌절 🌟', c:'blue', u:''}]
+      3: [{t:"활력톡톡 신나는 가요무대 3학기 (온양문화복지센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1621"}],
+      30: [{t:"문화가 있는 날: 뮤지컬로 보는 동화 9 (온양문화복지센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1619"},
+           {t:"색소포니스트 윤여민과 친구들의「The S (울주문화예술회관)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1669"}]
     }
   },
-  '2026-04': {
-    label: '2026년 4월',
+  '2026-10': {
+    label: '2026년 10월',
     events: {
-      25: [{t:'야화展 개막', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      26: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      27: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      28: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      29: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      30: [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}]
+      2: [{t:"신명나는 울주 어울림 한마당 (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1687"}],
+      3: [{t:"2026 울주오디세이 (신불산 간월재)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1676"},
+           {t:"개천절 🌟", c:'blue', u:""}],
+      6: [{t:"송은지 초대전 (울주문화예술회관)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1657"}],
+      7: [{t:"울주 SingSing 가요무대(3학기) 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1650"}],
+      9: [{t:"한글날 🌟", c:'blue', u:""}],
+      13: [{t:"해설이 있는 음악회 서.클.스 (10월) (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1688"}],
+      16: [{t:"Groovy Flow 1st Solo C (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1692"},
+           {t:"제10회 돌샘전 (서울주문화센터)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1678"}],
+      17: [{t:"송은지 초대전 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1657"},
+           {t:"발원지의 제왕: 세계유산 원정대 (울주군 문화유산 일)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1681"},
+           {t:"10월 토요어린이시네마 ＜프렌즈:몬스터  (울주문화예술회관)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1689"}],
+      20: [{t:"박모루 초대전 (울주문화예술회관)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1658"}],
+      22: [{t:"활력톡톡 신나는 가요무대 3학기 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1621"}],
+      23: [{t:"태화강의 전설 선바위 축제: 백룡 탐험대 (선바위 공원)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1693"}],
+      24: [{t:"제10회 돌샘전 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1678"},
+           {t:"춤이 말하다:문소리x리아킴 (울주문화예술회관)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1664"},
+           {t:"태화강의 전설 선바위 축제: 백룡 탐험대 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1693"}],
+      27: [{t:"피안회원전 (서울주문화센터)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1679"}],
+      28: [{t:"울주 SingSing 가요무대(4학기) (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1651"}],
+      31: [{t:"피안회원전 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1679"},
+           {t:"박모루 초대전 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1658"}]
     }
   },
-  '2026-05': {
-    label: '2026년 5월',
+  '2026-11': {
+    label: '2026년 11월',
     events: {
-      1:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
-           {t:'⚽ 울산vs포항 14:00', c:'purple', u:'https://www.uhdfc.com/match/match_schedule.php'},
-           {t:'SingSing 가요무대', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
-      2:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
-           {t:'활력톡톡 가요무대', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
-      3:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
-           {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
-      4:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'},
-           {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
-      5:  [{t:'어린이날 공연 🌟', c:'blue', u:'https://ticket.ulju.ulsan.kr/rsvc/rsv_pm_detail.html?pfmIng=1&p_idx=132'},
-           {t:'옹기思索', c:'coral', u:'https://www.onggi.or.kr/'}],
-      6:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      7:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      8:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      9:  [{t:'야화展', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      10: [{t:'야화展 마지막', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062079'}],
-      16: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
-           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
-      17: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
-           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
-      23: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
-           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
-      24: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
-           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
-      27: [{t:'서은혜展 마지막', c:'green', u:'https://www.ucf.or.kr/uljuart/index.html'}],
-      30: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
-           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}],
-      31: [{t:'최정윤 특별전', c:'blue', u:'https://www.ucf.or.kr/culturearts/schedule.html'},
-           {t:'삼색유운展', c:'green', u:'https://www.ucf.or.kr/culturearts/schedule.html'}]
-    }
-  },
-  '2026-06': {
-    label: '2026년 6월',
-    events: {
-      2:  [{t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      3:  [{t:'🗳 지방선거 🌟', c:'blue', u:'https://www.nec.go.kr/'},
-           {t:'SingSing 가요무대 15:00', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'},
-           {t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      4:  [{t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      5:  [{t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      6:  [{t:'현충일 🌟', c:'blue', u:''},
-           {t:'야외마당 콘서트 19:30', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      9:  [{t:'잔디마당 콘서트 19:30', c:'coral', u:'https://www.iusm.co.kr/news/articleView.html?idxno=1062521'},
-           {t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'},
-           {t:'음악회 서.클.스 19:30', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      10: [{t:'SingSing 가요무대 15:00', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'},
-           {t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      11: [{t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      12: [{t:'그룹전 시선머물다', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      13: [{t:'야외마당 콘서트 19:30', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'},
-           {t:'그룹전 마지막', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      14: [{t:'울산뮤직페스티벌', c:'green', u:'https://www.timespread.co.kr/community/jayuu/130590646'}],
-      15: [{t:'울산뮤직페스티벌 (쇼!음악중심)', c:'green', u:'https://www.timespread.co.kr/community/jayuu/130590646'}],
-      17: [{t:'SingSing 가요무대 15:00', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      20: [{t:'야외마당 콘서트·뮤지컬갈라 19:30', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      24: [{t:'SingSing 가요무대 15:00', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      25: [{t:'서울주 영화상영 짱구 13:00', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}],
-      27: [{t:'야외마당 콘서트 19:30', c:'teal', u:'https://www.ucf.or.kr:478/culturearts/pe_list.html'}]
+      4: [{t:"서예전시회 (서울주문화센터)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1694"}],
+      14: [{t:"서예전시회 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1694"}]
     }
   }
 };
@@ -1387,7 +1345,7 @@ renderCal(CAL_MONTHS[calIdx]);
       <div>
         <div class="sec-label" style="background:#2196a8;color:#fff;">🏢 서울주문화센터</div>
         <h2 class="sec-title" style="color:#1a6b7a;">서울주문화센터 이달의 공연·전시</h2>
-        <p style="font-size:12px;color:var(--gray-400);margin-top:2px;">자동 업데이트 · 2026년 09월 27일 기준</p>
+        <p style="font-size:12px;color:var(--gray-400);margin-top:2px;">자동 업데이트 · 2026년 09월 28일 기준</p>
       </div>
       <a class="sec-more" href="https://www.ucf.or.kr:478/wucc/index.html" target="_blank" rel="noopener">전체보기 →</a>
     </div>
@@ -1399,7 +1357,77 @@ renderCal(CAL_MONTHS[calIdx]);
         <span class="org-name">서울주문화센터</span>
         <a class="org-site-link" href="https://www.ucf.or.kr:478/wucc/index.html" target="_blank" rel="noopener">사이트 →</a>
       </div>
-      <div class="org-events"><p style="color:var(--gray-400);text-align:center;padding:20px 0;">현재 등록된 행사가 없습니다.</p>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1650" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">기타</div>
+            <div class="org-ev-date">8/12~<br>10/7</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">울주 SingSing 가요무대(3학기)</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1687" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">콘서트</div>
+            <div class="org-ev-date">10/2<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">신명나는 울주 어울림 한마당</div>
+            <div class="org-ev-meta">📍 서울주문화센터 · 유료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1688" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">공연</div>
+            <div class="org-ev-date">10/13<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">해설이 있는 음악회 서.클.스 (10월) -「하모니카로 쓴 편지」</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1692" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">공연</div>
+            <div class="org-ev-date">10/16<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">Groovy Flow 1st Solo Concert</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1678" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">10/16~<br>10/24</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">제10회 돌샘전</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [전시관]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1679" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">10/27~<br>10/31</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">피안회원전</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [전시관]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1651" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">공연</div>
+            <div class="org-ev-date">10/28~<br>12/9</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">울주 SingSing 가요무대(4학기)</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -1414,22 +1442,22 @@ renderCal(CAL_MONTHS[calIdx]);
       <a class="sec-more" href="https://www.ucf.or.kr/culturearts/schedule.html?vwYm=202607" target="_blank" rel="noopener">전체 일정 →</a>
     </div>
 <!-- EVENTS_HEADING_START -->
-    <h2 class="sec-title">6월 29일(월) ~ 7월 5일(일) — 기관별 행사</h2>
+    <h2 class="sec-title">9월 28일(월) ~ 10월 4일(일) — 기관별 행사</h2>
 <!-- EVENTS_HEADING_END -->
     <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">📌 출처: 울주문화재단(ucf.or.kr) 월간일정 직접 확인</div>
   </div>
 
 <!-- FEATURED_START -->
-  <!-- Featured: 문화가 있는 날 재잘재잘울산 -->
-  <a class="ev-feat" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AC%B8%ED%99%94%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%9E%AC%EC%9E%98%EC%9E%98%EC%9A%B8%EC%82%B0-3162" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#071624 0%,#0d2a40 45%,#0a1e14 100%);">
+  <!-- Featured: 2026 울주오디세이 -->
+  <a class="ev-feat" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1676" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#071624 0%,#0d2a40 45%,#0a1e14 100%);">
     <div class="ev-feat-overlay"></div>
     <div class="ev-feat-body">
       <span class="ev-badge b-coral">⭐ 이번 주 주목 행사</span>
-      <div class="ev-feat-title">🎡 문화가 있는 날 &lt;재잘재잘울산&gt;</div>
+      <div class="ev-feat-title">2026 울주오디세이</div>
       <div class="ev-feat-meta">
-        <span>📅 6/29(월) ~ 7/11(토)</span>
-        <span>📍 장생포 고래문화마을</span>
-        <span>🆓 가족·아이 참여 프로그램 · ☎ 052-257-8094</span>
+        <span>📅 10/3(토)</span>
+        <span>📍 신불산 간월재</span>
+        <span>🆓 무료</span>
       </div>
     </div>
   </a>
@@ -1437,72 +1465,7 @@ renderCal(CAL_MONTHS[calIdx]);
 
   <!-- 기관별 목록 -->
 <!-- ORG_LIST_START -->
-
   <div class="org-list">
-
-
-    <!-- 아트홀 마당 -->
-    <div class="org-block">
-      <div class="org-header">
-        <span class="org-icon">🎤</span>
-        <span class="org-name">아트홀 마당</span>
-        <a class="org-site-link" href="https://www.arthallmadang.co.kr/" target="_blank" rel="noopener">사이트 →</a>
-      </div>
-      <div class="org-events">
-        <a class="org-ev" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AE%A4%EC%A7%80%EC%BB%AC-%EC%96%B4%EC%B0%A8%ED%94%BC-%ED%8C%A8%EB%B0%80%EB%A6%AC-3082" target="_blank" rel="noopener">
-          <div class="org-ev-left">
-            <div class="org-ev-badge blue">뮤지컬</div>
-            <div class="org-ev-date">~7/5<br>일 마감</div>
-          </div>
-          <div class="org-ev-right">
-            <div class="org-ev-title">뮤지컬 「어차피 패밀리」 — 온 가족 관람작</div>
-            <div class="org-ev-meta">아트홀 마당 · 6/28~7/5 · ☎ 052-269-8034</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- 고래문화마을 -->
-    <div class="org-block">
-      <div class="org-header">
-        <span class="org-icon">🐋</span>
-        <span class="org-name">장생포 고래문화마을</span>
-        <a class="org-site-link" href="https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4" target="_blank" rel="noopener">전체 →</a>
-      </div>
-      <div class="org-events">
-        <a class="org-ev" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AC%B8%ED%99%94%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%9E%AC%EC%9E%98%EC%9E%98%EC%9A%B8%EC%82%B0-3162" target="_blank" rel="noopener">
-          <div class="org-ev-left">
-            <div class="org-ev-badge green">문화·체험</div>
-            <div class="org-ev-date">6/29~<br>7/11</div>
-          </div>
-          <div class="org-ev-right">
-            <div class="org-ev-title">문화가 있는 날 &lt;재잘재잘울산&gt; — 가족 참여 프로그램</div>
-            <div class="org-ev-meta">장생포 고래문화마을 · 6/29~7/11 · ☎ 052-257-8094</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- 온양문화복지센터 -->
-    <div class="org-block">
-      <div class="org-header">
-        <span class="org-icon">🎶</span>
-        <span class="org-name">온양문화복지센터</span>
-        <a class="org-site-link" href="https://www.ucf.or.kr/onyang/" target="_blank" rel="noopener">사이트 →</a>
-      </div>
-      <div class="org-events">
-        <a class="org-ev" href="https://www.ucf.or.kr/onyang/" target="_blank" rel="noopener">
-          <div class="org-ev-left">
-            <div class="org-ev-badge coral">노래교실</div>
-            <div class="org-ev-date">여름학기<br>안내</div>
-          </div>
-          <div class="org-ev-right">
-            <div class="org-ev-title">활력톡톡 신나는 가요무대 — 여름·하반기 학기 운영 안내</div>
-            <div class="org-ev-meta">📍 온양문화복지센터 3층 공연장 · 무료 · ☎ 052-980-2290 · 회차는 사이트 확인</div>
-          </div>
-        </a>
-      </div>
-    </div>
 
     <!-- 울주문화예술회관 -->
     <div class="org-block">
@@ -1512,14 +1475,114 @@ renderCal(CAL_MONTHS[calIdx]);
         <a class="org-site-link" href="https://www.ucf.or.kr/uljuart/" target="_blank" rel="noopener">사이트 →</a>
       </div>
       <div class="org-events">
-        <a class="org-ev" href="https://www.ucf.or.kr/uljuart/" target="_blank" rel="noopener">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1669" target="_blank" rel="noopener">
           <div class="org-ev-left">
-            <div class="org-ev-badge green">상시</div>
-            <div class="org-ev-date">7월<br>안내</div>
+            <div class="org-ev-badge blue">클래식</div>
+            <div class="org-ev-date">9/30</div>
           </div>
           <div class="org-ev-right">
-            <div class="org-ev-title">7월 기획공연·전시 안내 — 회관 누리집 공지 확인</div>
-            <div class="org-ev-meta">울주문화예술회관 · ☎ 052-980-2270</div>
+            <div class="org-ev-title">색소포니스트 윤여민과 친구들의「The Song of Ulju」</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1566" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">클래식</div>
+            <div class="org-ev-date">3/25~<br>10/28</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">2026년 ＜8시 클래식 울주＞ 시즌권</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1592" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">7/7~<br>12/26</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">2026 울주아트 지역작가 초대전</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [전시실] · 무료</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- 서울주문화센터 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🎭</span>
+        <span class="org-name">서울주문화센터</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr/wucc/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1687" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">콘서트</div>
+            <div class="org-ev-date">10/2<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">신명나는 울주 어울림 한마당</div>
+            <div class="org-ev-meta">📍 서울주문화센터 · 유료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1650" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">기타</div>
+            <div class="org-ev-date">8/12~<br>10/7</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">울주 SingSing 가요무대(3학기)</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- 온양문화복지센터 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🎶</span>
+        <span class="org-name">온양문화복지센터</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr/onyang/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1619" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">뮤지컬</div>
+            <div class="org-ev-date">9/30<br>19:00</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">문화가 있는 날: 뮤지컬로 보는 동화 9월＜흥부와놀부＞</div>
+            <div class="org-ev-meta">📍 온양문화복지센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1621" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">콘서트</div>
+            <div class="org-ev-date">9/3~<br>10/22</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">활력톡톡 신나는 가요무대 3학기</div>
+            <div class="org-ev-meta">📍 온양문화복지센터 [공연장]</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- 그 밖의 울주 행사 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🎪</span>
+        <span class="org-name">그 밖의 울주 행사</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr/culturearts/pe_list.html" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1676" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">콘서트</div>
+            <div class="org-ev-date">10/3<br>13:00</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">2026 울주오디세이</div>
+            <div class="org-ev-meta">📍 신불산 간월재 · 무료</div>
           </div>
         </a>
       </div>
@@ -1566,9 +1629,7 @@ renderCal(CAL_MONTHS[calIdx]);
         </a>
       </div>
     </div>
-
   </div>
-
 <!-- ORG_LIST_END -->
 </section>
 
@@ -1579,35 +1640,17 @@ renderCal(CAL_MONTHS[calIdx]);
       <div class="sec-kicker" style="background:var(--gray-200); color:var(--gray-600);">다음 주 예고</div>
     </div>
 <!-- NEXTWEEK_HEADING_START -->
-    <h2 class="sec-title" style="color:var(--gray-700);">7월 6일 ~ 7월 12일 주요 일정</h2>
+    <h2 class="sec-title" style="color:var(--gray-700);">10월 5일 ~ 10월 11일 주요 일정</h2>
 <!-- NEXTWEEK_HEADING_END -->
     <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">📌 출처: ucf.or.kr 직접 확인</div>
   </div>
 <!-- NEXTWEEK_CARDS_START -->
   <div class="nw-grid">
-    <a class="nw-card" href="https://www.ulsanculture.kr/webuser/exhibit/%EB%AC%B8%ED%99%94%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%9E%AC%EC%9E%98%EC%9E%98%EC%9A%B8%EC%82%B0-3162" target="_blank" rel="noopener">
-      <div class="nw-badge b-coral-o">문화·가족</div>
-      <div class="nw-date">~7월 11일(토)</div>
-      <div class="nw-title">문화가 있는 날 &lt;재잘재잘울산&gt;</div>
-      <div class="nw-desc">📍 장생포 고래문화마을 · 가족·아이 참여 프로그램 · ☎ 052-257-8094</div>
-    </a>
-    <a class="nw-card" href="https://www.ulsanculture.kr/webuser/exhibit/all_list.html?sch_so_show_kind=4" target="_blank" rel="noopener">
-      <div class="nw-badge b-green-o">장터·나눔</div>
-      <div class="nw-date">7월 8일(수)</div>
-      <div class="nw-title">찾아가는 장터누리소 — 달동주공 3차 아파트</div>
-      <div class="nw-desc">📍 달동주공 3차 아파트 · 알뜰 나눔장터 · ☎ 052-255-1933</div>
-    </a>
-    <a class="nw-card" href="https://www.ulsan.go.kr/s/bangudae/main.ulsan" target="_blank" rel="noopener">
-      <div class="nw-badge b-blue-o">전시·문화</div>
-      <div class="nw-date">연중 관람</div>
-      <div class="nw-title">반구천 암각화박물관 — 상설·기획전 (세계유산 등재 1주년)</div>
-      <div class="nw-desc">📍 울주군 두동면 · 09:00~18:00 · 디지털 망원경 체험 · 무료 · ☎ 052-229-6678</div>
-    </a>
-    <a class="nw-card" href="https://www.uljusiseol.or.kr/" target="_blank" rel="noopener">
-      <div class="nw-badge b-green-o">체육·강좌</div>
-      <div class="nw-date">7월 강좌 등록 안내</div>
-      <div class="nw-title">울주군국민체육센터 — 7월 프로그램 등록</div>
-      <div class="nw-desc">📍 울주군 각 체육센터 · uljusiseol.or.kr · ☎ 052-229-8700</div>
+    <a class="nw-card" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1657" target="_blank" rel="noopener">
+      <div class="nw-badge b-green-o">전시</div>
+      <div class="nw-date">10/6(화)~10/17(토)</div>
+      <div class="nw-title">송은지 초대전</div>
+      <div class="nw-desc">📍 울주문화예술회관 [전시실] · 무료</div>
     </a>
   </div>
 <!-- NEXTWEEK_CARDS_END -->
@@ -1839,7 +1882,7 @@ renderCal(CAL_MONTHS[calIdx]);
       </div>
       <div class="sf-body">
         <div class="sf-desc">언양·범서 주민 접근이 가장 편리한 종합 체육시설. 50m 수영장, 스쿼시장, 다목적실 보유. <strong>지역 주민 할인 적용.</strong></div>
-        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 6월 강습 안내 (준비중 — 접수 예정)</div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 9월 강습 — CRS에서 모집·운영 일정 확인</div>
         <div class="sf-course-row">
           <span class="sf-tag sf-tag-swim">🏊 수영 교정Ⅰ·Ⅱ·Ⅲ</span>
           <span class="sf-tag sf-tag-swim">🏊 수영 연수·종합</span>
@@ -1868,7 +1911,7 @@ renderCal(CAL_MONTHS[calIdx]);
       </div>
       <div class="sf-body">
         <div class="sf-desc">2024년 신규 개관. 50m 수영장 · 볼링장(12레인) · 스쿼시장 · 체육관 · 헬스장을 갖춘 울주 최대 복합체육시설. 총 <strong>237개 강좌</strong> 운영 중.</div>
-        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 6월 강습 운영 중</div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 9월 강습 — CRS에서 모집·운영 일정 확인</div>
         <div class="sf-course-row">
           <span class="sf-tag sf-tag-swim">🏊 수영 강습 (전 레벨 · 06~20시)</span>
           <span class="sf-tag sf-tag-swim">💦 아쿠아로빅</span>
@@ -1901,7 +1944,7 @@ renderCal(CAL_MONTHS[calIdx]);
       </div>
       <div class="sf-body">
         <div class="sf-desc">수영장·골프연습장·체육관·헬스장 보유. 특히 <strong>실내 골프강습</strong>이 다양하게 운영되며, 어린이 대상 키즈 전문 프로그램이 풍부합니다. 총 <strong>128개 강좌</strong> 운영 중.</div>
-        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 6월 강습 운영 중</div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 9월 강습 — CRS에서 모집·운영 일정 확인</div>
         <div class="sf-course-row">
           <span class="sf-tag sf-tag-swim">🏊 수영 강습 (전 레벨)</span>
           <span class="sf-tag sf-tag-swim">💦 아쿠아로빅 · 아쿠아피트니스</span>
@@ -2055,12 +2098,28 @@ renderCal(CAL_MONTHS[calIdx]);
 <!-- ARCHIVE_START -->
   <div class="archive-list">
     <a class="archive-item" href="#" style="pointer-events:none; opacity:.55;">
-      <span class="archive-badge current">제9호</span>
+      <span class="archive-badge current">제11호</span>
       <div class="archive-info">
-        <div class="archive-info-date">2026년 6월 22일 (제9호)</div>
-        <div class="archive-info-title">슬도아트 3인전 마지막 주 · 심현섭쇼 마감 · 울주이바구 공모(~6/26) · 서부울주 「싱그러운 유월향기」 — 현재 보고 계신 페이지</div>
+        <div class="archive-info-date">2026년 9월 28일 (제11호)</div>
+        <div class="archive-info-title">문화가 있는 날: 뮤지컬로 보는 동화 9월＜흥부와놀부＞ · 색소포니스트 윤여민과 친구들의「The Song of Ulju」 · 신명나는 울주 어울림 한마당 — 현재 보고 계신 페이지</div>
       </div>
       <span class="archive-arrow">◀ 현재호</span>
+    </a>
+    <a class="archive-item" href="#" style="opacity:.6;pointer-events:none;">
+      <span class="archive-badge" style="background:#e0e0e0;color:#555;">제10호</span>
+      <div class="archive-info">
+        <div class="archive-info-date">2026년 6월 29일 (제10호)</div>
+        <div class="archive-info-title">뮤지컬 「어차피 패밀리」 「이번 주 일요일(7/5)까지 — 온 가족 관람 추천」</div>
+      </div>
+      <span class="archive-arrow">발행 종료</span>
+    </a>
+    <a class="archive-item" href="#" style="opacity:.6;pointer-events:none;">
+      <span class="archive-badge" style="background:#e0e0e0;color:#555;">제9호</span>
+      <div class="archive-info">
+        <div class="archive-info-date">2026년 6월 22일 (제9호)</div>
+        <div class="archive-info-title">슬도아트 3인전 마지막 주 · 심현섭쇼 마감 · 울주이바구 공모(~6/26) · 서부울주 「싱그러운 유월향기」</div>
+      </div>
+      <span class="archive-arrow">발행 종료</span>
     </a>
     <a class="archive-item" href="#" style="opacity:.6;pointer-events:none;">
       <span class="archive-badge" style="background:#e0e0e0;color:#555;">제8호</span>
@@ -2259,7 +2318,7 @@ function showTab(idx) {
   </div>
   <div class="footer-copy">
     울산광역시 울주군 언양읍 주민·학생·학부모를 위한 주간 문화 뉴스레터 · 매주 월요일 오전 9시 발행 · 무료 배포<br>
-    창간 2026년 4월 27일 · 현재 제9호 (2026년 6월 22일) · 이미지 출처: Wikimedia Commons(CC 라이선스) / 국가유산포털<br>
+    창간 2026년 4월 27일 · 현재 제11호 (2026년 9월 28일) · 이미지 출처: Wikimedia Commons(CC 라이선스) / 국가유산포털<br>
     <span style="margin-top:6px; display:inline-block; color:rgba(255,255,255,.6); font-size:12px;">🏫 제작 · 운영 — 신언중학교 · <a href="https://sineon.github.io/eonyang-news/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75); text-decoration:underline;">sineon.github.io/eonyang-news</a></span>
   </div>
 </footer>

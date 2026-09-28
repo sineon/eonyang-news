@@ -1,8 +1,8 @@
 name: 서울주문화센터 자동 업데이트
 
+# 서울주문화센터 칸은 이제 scripts/update.mjs(학교 PC에서 매주 실행)가 함께 채운다.
+# GitHub 서버에서는 ucf.or.kr 가 열리지 않아, 예약 실행 때마다 칸을 "등록된 행사 없음"으로 비워 왔다 → 예약은 끄고 수동만 남김.
 on:
-  schedule:
-    - cron: "0 21 * * 0"   # 매주 일요일 21:00 UTC = 월요일 06:00 KST
   workflow_dispatch:         # 수동 실행 가능
 
 jobs:
