@@ -3,7 +3,7 @@
 //
 // 울주문화재단(ucf.or.kr) 공연·전시 목록을 읽어 index.html 의 표시 구간
 //   ISSUE · TICKER · HERO · EVENTS_HEADING · FEATURED · ORG_LIST · NEXTWEEK_HEADING · NEXTWEEK_CARDS · ARCHIVE · WUCC
-// 와 월별 캘린더, <title>, 꼬리말 호수를 새로 채운다. 손으로 쓰는 구간(울주문화재단 NOW·인물·문화유산 등)은 건드리지 않는다.
+// 와 월별 캘린더, <title>, 꼬리말 호수를 새로 채운다. 울주문화재단 NOW도 공연·전시 목록으로 갱신한다. 인물·문화유산 등 손으로 쓰는 구간은 건드리지 않는다.
 //
 // ※ ucf.or.kr 는 해외(GitHub Actions 서버)에서 열리지 않아(2026. 6. 28.부터 서울주문화센터 칸이 비어 온 원인)
 //    국내 PC에서 돌린다. 행사를 하나도 못 읽으면 index.html 을 건드리지 않고 끝낸다.
@@ -66,49 +66,6 @@ function fetchText(url, redirects = 3) {
 const decode = s => s.replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
 const text = s => decode(s.replace(/<!--[\s\S]*?-->/g, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-function parseNotices(html) {
-  const notices = [];
-  for (const match of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
-    const row = match[1];
-    const titleCell = /<td\b[^>]*class=["'][^"']*\btit\b[^"']*["'][^>]*>([\s\S]*?)<\/td>/i.exec(row);
-    const anchor = titleCell && /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/i.exec(titleCell[1]);
-    const dateCell = /<td\b[^>]*class=["'][^"']*\bdate\b[^"']*["'][^>]*>([\s\S]*?)<\/td>/i.exec(row);
-    const categoryCell = /<td\b[^>]*class=["'][^"']*\bcategory\b[^"']*["'][^>]*>([\s\S]*?)<\/td>/i.exec(row);
-    if (!anchor || !dateCell) continue;
-    const title = text(anchor[2]);
-    const published = text(dateCell[1]);
-    let url;
-    try {
-      url = new URL(decode(anchor[1]), 'https://www.ucf.or.kr/bd/list.html?b_code=notice');
-      if (url.protocol !== 'https:' || url.hostname !== 'www.ucf.or.kr' || url.pathname !== '/bd/view.html' || url.searchParams.get('b_code') !== 'notice' || !/^\d+$/.test(url.searchParams.get('b_idx') || '')) continue;
-    } catch { continue; }
-    if (!title || !/^\d{4}-\d{2}-\d{2}$/.test(published)) continue;
-    const category = categoryCell ? text(categoryCell[1]) : '';
-    notices.push({ title, published, category, url: url.href });
-  }
-  return notices.sort((a, b) => b.published.localeCompare(a.published)).slice(0, 5);
-}
-
-function noticeSpotlight(notices, checkedDate) {
-  const listUrl = 'https://www.ucf.or.kr/bd/list.html?b_code=notice';
-  const cards = notices.length ? notices.map(n => `
-    <a class="org-ev" href="${esc(n.url)}" target="_blank" rel="noopener">
-      <div class="org-ev-left"><div class="org-ev-badge coral">공지</div><div class="org-ev-date">${esc(n.published)}</div></div>
-      <div class="org-ev-right"><div class="org-ev-title">${esc(n.title)}</div><div class="org-ev-meta">${esc(n.category || '울주문화재단')} · 게시일 ${esc(n.published)}</div></div>
-    </a>`).join('') : `
-    <p style="padding:18px;color:var(--gray-500);">공지 목록을 불러오지 못했습니다. 아래 원문에서 최신 내용을 확인해 주세요.</p>`;
-  const stamp = notices.length ? `목록 확인일 ${esc(checkedDate)}` : '목록 확인 실패';
-  return `<section class="sec" style="background:linear-gradient(135deg,#fff7ed 0%,#fef3c7 100%);border-top:3px solid #ea580c;">
-  <div class="sec-head"><div class="sec-row"><div>
-    <div class="sec-label" style="background:#ea580c;color:#fff;">🎨 울주문화재단 NOW</div>
-    <h2 class="sec-title" style="color:#9a3412;">울주문화재단 최신 공지</h2>
-    <p style="font-size:12px;color:var(--gray-500);margin-top:2px;">출처: 울주문화재단 공지사항 · ${stamp}</p>
-  </div><a class="sec-more" href="${listUrl}" target="_blank" rel="noopener" style="color:#ea580c;">전체 공지 →</a></div></div>
-  <div class="org-list"><div class="org-block" style="border-left:4px solid #ea580c;background:#fff;"><div class="org-events">${cards}</div></div></div>
-  <p style="font-size:12px;color:#9a3412;margin:12px 0 0;padding:10px 14px;background:#fef3c7;border-radius:8px;">게시일 순으로 표시합니다. 모집 여부와 마감일은 원문에서 확인해 주세요.</p>
-</section>`;
-}
 
 function parseList(html) {
   const out = [];
@@ -186,6 +143,20 @@ function orgEventHtml(ev) {
           </div>
         </a>`;
 }
+function performanceSpotlight(items, checkedDate) {
+  const cards = items.length ? items.map(orgEventHtml).join('') :
+    '<p style="padding:18px;color:var(--gray-500);">현재 목록에 진행 중이거나 예정된 공연·전시가 없습니다. 재단 홈페이지에서 다시 확인해 주세요.</p>';
+  return `<section class="sec" style="background:linear-gradient(135deg,#fff7ed 0%,#fef3c7 100%);border-top:3px solid #ea580c;">
+  <div class="sec-head"><div class="sec-row"><div>
+    <div class="sec-label" style="background:#ea580c;color:#fff;">🎨 울주문화재단 NOW</div>
+    <h2 class="sec-title" style="color:#9a3412;">울주문화재단 공연·전시·행사</h2>
+    <p style="font-size:12px;color:var(--gray-500);margin-top:2px;">출처: 울주문화재단 공연·전시 목록 · 확인일 ${esc(checkedDate)}</p>
+  </div><a class="sec-more" href="https://www.ucf.or.kr/culturearts/pe_list.html" target="_blank" rel="noopener" style="color:#ea580c;">전체 공연·전시 →</a></div></div>
+  <div class="org-list"><div class="org-block" style="border-left:4px solid #ea580c;background:#fff;"><div class="org-events">${cards}</div></div></div>
+  <p style="font-size:12px;color:#9a3412;margin:12px 0 0;padding:10px 14px;background:#fef3c7;border-radius:8px;">진행 중이거나 예정된 행사입니다. 일정과 신청 방법은 원문에서 확인해 주세요.</p>
+</section>`;
+}
+
 function orgBlock(icon, name, url, evs) {
   return `
     <!-- ${name} -->
@@ -268,21 +239,11 @@ for (const ev of [...thisWeek, ...nextWeek]) await addDetail(ev);
 console.log(`이번 주 ${thisWeek.length}건, 다음 주 새 행사 ${nextWeek.length}건`);
 
 let html = fs.readFileSync(INDEX, 'utf8');
-const noticeHtml = await fetchText(`${UCF}/bd/list.html?b_code=notice`);
-const notices = parseNotices(noticeHtml);
-console.log(`울주문화재단 공지 ${notices.length}건 읽음`);
-const oldSpotlight = section(html, 'UCF_SPOTLIGHT') || '';
-if (notices.length) {
-  html = replaceSection(html, 'UCF_SPOTLIGHT', noticeSpotlight(notices, ymd(today)));
-} else {
-  console.error(noticeHtml ? '[공지사항] 응답은 받았으나 게시글을 읽지 못했습니다.' : '[공지사항] 공지 목록에 접속하지 못했습니다.');
-  const datePattern = /(?:목록 확인 실패 · )?(?:목록 확인일|마지막 확인일) (\d{4}-\d{2}-\d{2})/;
-  const saved = datePattern.exec(oldSpotlight);
-  const fallback = saved
-    ? oldSpotlight.replace(datePattern, '목록 확인 실패 · 마지막 확인일 $1')
-    : noticeSpotlight([], ymd(today));
-  html = replaceSection(html, 'UCF_SPOTLIGHT', fallback);
-}
+const featuredEvents = events.filter(e => e.end >= today)
+  .sort((a, b) => Math.max(+a.start, +today) - Math.max(+b.start, +today)
+    || (a.end - a.start) - (b.end - b.start)
+    || a.start - b.start).slice(0, 6);
+html = replaceSection(html, 'UCF_SPOTLIGHT', performanceSpotlight(featuredEvents, ymd(today)));
 const oldIssue = section(html, 'ISSUE') || '';
 const oldNum = +((/제(\d+)호/.exec(oldIssue) || [])[1] || 0);
 const od = /(\d{4})년 (\d{1,2})월 (\d{1,2})일/.exec(oldIssue);
