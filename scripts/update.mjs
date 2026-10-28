@@ -67,6 +67,49 @@ const decode = s => s.replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt
 const text = s => decode(s.replace(/<!--[\s\S]*?-->/g, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+function parseNotices(html) {
+  const notices = [];
+  for (const match of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const row = match[1];
+    const titleCell = /<td\b[^>]*class=["'][^"']*\btit\b[^"']*["'][^>]*>([\s\S]*?)<\/td>/i.exec(row);
+    const anchor = titleCell && /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/i.exec(titleCell[1]);
+    const dateCell = /<td\b[^>]*class=["'][^"']*\bdate\b[^"']*["'][^>]*>([\s\S]*?)<\/td>/i.exec(row);
+    const categoryCell = /<td\b[^>]*class=["'][^"']*\bcategory\b[^"']*["'][^>]*>([\s\S]*?)<\/td>/i.exec(row);
+    if (!anchor || !dateCell) continue;
+    const title = text(anchor[2]);
+    const published = text(dateCell[1]);
+    let url;
+    try {
+      url = new URL(decode(anchor[1]), 'https://www.ucf.or.kr');
+      if (url.protocol !== 'https:' || url.hostname !== 'www.ucf.or.kr' || url.pathname !== '/bd/view.html' || url.searchParams.get('b_code') !== 'notice' || !/^\d+$/.test(url.searchParams.get('b_idx') || '')) continue;
+    } catch { continue; }
+    if (!title || !/^\d{4}-\d{2}-\d{2}$/.test(published)) continue;
+    const category = categoryCell ? text(categoryCell[1]) : '';
+    notices.push({ title, published, category, url: url.href });
+  }
+  return notices.sort((a, b) => b.published.localeCompare(a.published)).slice(0, 5);
+}
+
+function noticeSpotlight(notices, checkedDate) {
+  const listUrl = 'https://www.ucf.or.kr/bd/list.html?b_code=notice';
+  const cards = notices.length ? notices.map(n => `
+    <a class="org-ev" href="${esc(n.url)}" target="_blank" rel="noopener">
+      <div class="org-ev-left"><div class="org-ev-badge coral">공지</div><div class="org-ev-date">${esc(n.published)}</div></div>
+      <div class="org-ev-right"><div class="org-ev-title">${esc(n.title)}</div><div class="org-ev-meta">${esc(n.category || '울주문화재단')} · 게시일 ${esc(n.published)}</div></div>
+    </a>`).join('') : `
+    <p style="padding:18px;color:var(--gray-500);">공지 목록을 불러오지 못했습니다. 아래 원문에서 최신 내용을 확인해 주세요.</p>`;
+  const stamp = notices.length ? `목록 확인일 ${esc(checkedDate)}` : '목록 확인 실패';
+  return `<section class="sec" style="background:linear-gradient(135deg,#fff7ed 0%,#fef3c7 100%);border-top:3px solid #ea580c;">
+  <div class="sec-head"><div class="sec-row"><div>
+    <div class="sec-label" style="background:#ea580c;color:#fff;">🎨 울주문화재단 NOW</div>
+    <h2 class="sec-title" style="color:#9a3412;">울주문화재단 최신 공지</h2>
+    <p style="font-size:12px;color:var(--gray-500);margin-top:2px;">출처: 울주문화재단 공지사항 · ${stamp}</p>
+  </div><a class="sec-more" href="${listUrl}" target="_blank" rel="noopener" style="color:#ea580c;">전체 공지 →</a></div></div>
+  <div class="org-list"><div class="org-block" style="border-left:4px solid #ea580c;background:#fff;"><div class="org-events">${cards}</div></div></div>
+  <p style="font-size:12px;color:#9a3412;margin:12px 0 0;padding:10px 14px;background:#fef3c7;border-radius:8px;">게시일 순으로 표시합니다. 모집 여부와 마감일은 원문에서 확인해 주세요.</p>
+</section>`;
+}
+
 function parseList(html) {
   const out = [];
   const seen = new Set();
@@ -225,6 +268,9 @@ for (const ev of [...thisWeek, ...nextWeek]) await addDetail(ev);
 console.log(`이번 주 ${thisWeek.length}건, 다음 주 새 행사 ${nextWeek.length}건`);
 
 let html = fs.readFileSync(INDEX, 'utf8');
+const notices = parseNotices(await fetchText(`${UCF}/bd/list.html?b_code=notice`));
+console.log(`울주문화재단 공지 ${notices.length}건 읽음`);
+html = replaceSection(html, 'UCF_SPOTLIGHT', noticeSpotlight(notices, ymd(today)));
 const oldIssue = section(html, 'ISSUE') || '';
 const oldNum = +((/제(\d+)호/.exec(oldIssue) || [])[1] || 0);
 const od = /(\d{4})년 (\d{1,2})월 (\d{1,2})일/.exec(oldIssue);
