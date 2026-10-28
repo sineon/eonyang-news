@@ -80,7 +80,7 @@ function parseNotices(html) {
     const published = text(dateCell[1]);
     let url;
     try {
-      url = new URL(decode(anchor[1]), 'https://www.ucf.or.kr');
+      url = new URL(decode(anchor[1]), 'https://www.ucf.or.kr/bd/list.html?b_code=notice');
       if (url.protocol !== 'https:' || url.hostname !== 'www.ucf.or.kr' || url.pathname !== '/bd/view.html' || url.searchParams.get('b_code') !== 'notice' || !/^\d+$/.test(url.searchParams.get('b_idx') || '')) continue;
     } catch { continue; }
     if (!title || !/^\d{4}-\d{2}-\d{2}$/.test(published)) continue;
@@ -268,9 +268,21 @@ for (const ev of [...thisWeek, ...nextWeek]) await addDetail(ev);
 console.log(`이번 주 ${thisWeek.length}건, 다음 주 새 행사 ${nextWeek.length}건`);
 
 let html = fs.readFileSync(INDEX, 'utf8');
-const notices = parseNotices(await fetchText(`${UCF}/bd/list.html?b_code=notice`));
+const noticeHtml = await fetchText(`${UCF}/bd/list.html?b_code=notice`);
+const notices = parseNotices(noticeHtml);
 console.log(`울주문화재단 공지 ${notices.length}건 읽음`);
-html = replaceSection(html, 'UCF_SPOTLIGHT', noticeSpotlight(notices, ymd(today)));
+const oldSpotlight = section(html, 'UCF_SPOTLIGHT') || '';
+if (notices.length) {
+  html = replaceSection(html, 'UCF_SPOTLIGHT', noticeSpotlight(notices, ymd(today)));
+} else {
+  console.error(noticeHtml ? '[공지사항] 응답은 받았으나 게시글을 읽지 못했습니다.' : '[공지사항] 공지 목록에 접속하지 못했습니다.');
+  const datePattern = /(?:목록 확인 실패 · )?(?:목록 확인일|마지막 확인일) (\d{4}-\d{2}-\d{2})/;
+  const saved = datePattern.exec(oldSpotlight);
+  const fallback = saved
+    ? oldSpotlight.replace(datePattern, '목록 확인 실패 · 마지막 확인일 $1')
+    : noticeSpotlight([], ymd(today));
+  html = replaceSection(html, 'UCF_SPOTLIGHT', fallback);
+}
 const oldIssue = section(html, 'ISSUE') || '';
 const oldNum = +((/제(\d+)호/.exec(oldIssue) || [])[1] || 0);
 const od = /(\d{4})년 (\d{1,2})월 (\d{1,2})일/.exec(oldIssue);
