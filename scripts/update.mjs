@@ -88,7 +88,7 @@ function parseList(html) {
     const img = /<img[^>]+src="([^"]+)"/.exec(it);
     const time = dd(`${kind}시간`);
     out.push({
-      idx: idx[1], title, start: dates[0], end: dates[dates.length - 1], time: /^\d{1,2}:\d{2}/.test(time) ? time.slice(0, 11) : '', venue, exhibit: kind === '전시', kind,
+      idx: idx[1], title, start: dates[0], end: dates[dates.length - 1], time: (/^\d{1,2}:\d{2}(?:\s*[,~\-]\s*\d{1,2}:\d{2})*/.exec(time) || [''])[0], venue, exhibit: kind === '전시', kind,
       org: org ? org.name : '', url: `${UCF}/culturearts/pe_detail.html?pfmIng=1&p_idx=${idx[1]}`, img: img ? img[1] : '',
     });
   }
@@ -227,6 +227,8 @@ console.log(`이번 주 ${ymd(monday)} ~ ${ymd(sunday)} / 다음 주 ${ymd(nxtMo
 const listHtml = await fetchText(LIST_URL);
 const events = parseList(listHtml);
 console.log(`울주문화재단 공연·전시 ${events.length}건 읽음`);
+const totalPosts = +((/총 게시물[^0-9]{0,80}(\d+)/.exec(listHtml.replace(/<[^>]+>/g, '|').replace(/\s+/g, ' ')) || [])[1] || 0);
+if (totalPosts > events.length) console.warn(`  [경고] 목록 총 ${totalPosts}건 중 ${events.length}건만 읽음 — 쪽 나눔이 생겼는지 확인하세요`);
 if (!events.length) {
   console.error('행사를 하나도 읽지 못했습니다(누리집 접속 차단·구조 변경?) — index.html 을 바꾸지 않고 끝냅니다.');
   process.exit(2);
@@ -301,7 +303,7 @@ html = replaceSection(html, 'ORG_LIST', `  <div class="org-list">\n${blocks}\n  
 
 // 5. 다음 주 예고
 html = replaceSection(html, 'NEXTWEEK_HEADING', `    <h2 class="sec-title" style="color:var(--gray-700);">${nxtMon.getUTCMonth() + 1}월 ${nxtMon.getUTCDate()}일 ~ ${nxtSun.getUTCMonth() + 1}월 ${nxtSun.getUTCDate()}일 주요 일정</h2>`);
-const nw = nextWeek.slice(0, 4).map(nwCard).join('\n') || '    <p style="color:var(--gray-400); padding:12px;">다음 주 일정은 울주문화재단 누리집(ucf.or.kr)에서 확인하세요.</p>';
+const nw = nextWeek.slice(0, 6).map(nwCard).join('\n') || '    <p style="color:var(--gray-400); padding:12px;">다음 주 일정은 울주문화재단 누리집(ucf.or.kr)에서 확인하세요.</p>';
 html = replaceSection(html, 'NEXTWEEK_CARDS', `  <div class="nw-grid">\n${nw}\n  </div>`);
 
 // 6. 지난 호 목록: 이번 호를 맨 위에 두고, 원래 '현재호'였던 줄은 지난 호로 바꾼다
