@@ -15,6 +15,7 @@ import path from 'node:path';
 import https from 'node:https';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { heritageSections } from './heritage-features.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const INDEX = path.join(ROOT, 'index.html');
@@ -270,6 +271,9 @@ const featuredEvents = events.filter(e => e.end >= today)
     || a.start - b.start).slice(0, 6);
 html = replaceSection(html, 'UCF_SPOTLIGHT', performanceSpotlight(featuredEvents, ymd(today)));
 html = replaceSection(html, 'ART_NEWS', artsSpotlight(thisWeek, nextWeek, monday, sunday, today));
+for (const [key, body] of Object.entries(heritageSections(today))) {
+  html = replaceSection(html, key, body);
+}
 const oldIssue = section(html, 'ISSUE') || '';
 const oldNum = +((/제(\d+)호/.exec(oldIssue) || [])[1] || 0);
 const od = /(\d{4})년 (\d{1,2})월 (\d{1,2})일/.exec(oldIssue);
