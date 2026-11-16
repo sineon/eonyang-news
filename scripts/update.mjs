@@ -188,22 +188,45 @@ function nwCard(ev) {
       <div class="nw-desc">📍 ${esc(ev.venue || ev.org)}${ev.price ? ' · ' + ev.price : ''}</div>
     </a>`;
 }
+function artsSpotlight(current, upcoming, monday, sunday, today) {
+  const active = current.filter(e => e.end >= today).slice(0, 6);
+  const list = active.length ? active.map(orgEventHtml).join('') :
+    '<p class="arts-source">이번 주에 남은 공연·전시가 없습니다.</p>';
+  const next = upcoming.slice(0, 3).map(nwCard).join('') ||
+    '<p class="arts-source">다음 주 일정은 재단 공식 목록에서 확인하세요.</p>';
+  return `<section class="sec arts-week">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div class="sec-kicker">문화·예술</div>
+      <a class="sec-more" href="${LIST_URL}" target="_blank" rel="noopener">재단 전체 일정 ↗</a>
+    </div>
+    <h2 class="sec-title">이번 주 공연·전시</h2>
+    <p class="arts-source">${koDate(monday)} ~ ${koDate(sunday)} · 울주문화재단 일정 기준</p>
+  </div>
+  <div class="arts-list">${list}</div>
+  <h3 class="arts-next">다음 주 미리 보기</h3>
+  <div class="nw-grid">${next}</div>
+</section>`;
+}
+
 function calendarJs(events, months, defIdx, oldData) {
+  const jsText = value => JSON.stringify(value).replace(/</g, '\\u003c');
   const blocks = months.map(key => {
     const [y, m] = key.split('-').map(Number);
     const days = {};
     const add = (d, item) => { (days[d] = days[d] || []).push(item); };
     for (const ev of events) {
       const k = kindOf(ev);
-      const t = cleanTitle(ev.title).slice(0, 22);
+      const full = cleanTitle(ev.title);
+      const t = full.slice(0, 22);
       const inMonth = d => d.getUTCFullYear() === y && d.getUTCMonth() + 1 === m;
-      if (inMonth(ev.start)) add(ev.start.getUTCDate(), { t: t + (ev.venue ? ` (${ev.venue.replace(/\s*\[.*$/, '').slice(0, 10)})` : ''), c: k.cal, u: ev.url });
+      if (inMonth(ev.start)) add(ev.start.getUTCDate(), { t: t + (ev.venue ? ` (${ev.venue.replace(/\s*\[.*$/, '').slice(0, 10)})` : ''), full, c: k.cal, u: ev.url });
       const span = (ev.end - ev.start) / 86400000;
-      if (span >= 1 && span <= 60 && inMonth(ev.end)) add(ev.end.getUTCDate(), { t: `${t} 마지막`, c: 'green', u: ev.url });
+      if (span >= 1 && span <= 60 && inMonth(ev.end)) add(ev.end.getUTCDate(), { t: `${t} 마지막`, full: `${full} 마지막`, c: 'green', u: ev.url });
     }
     for (const [mmdd, name] of Object.entries(HOLIDAYS)) if (+mmdd.slice(0, 2) === m) add(+mmdd.slice(3), { t: `${name} 🌟`, c: 'blue', u: '' });
     const body = Object.keys(days).map(Number).sort((a, b) => a - b)
-      .map(d => `      ${d}: [${days[d].map(e => `{t:${JSON.stringify(e.t)}, c:'${e.c}', u:${JSON.stringify(e.u)}}`).join(',\n           ')}]`).join(',\n');
+      .map(d => `      ${d}: [${days[d].map(e => `{t:${jsText(e.t)}, c:'${e.c}', u:${jsText(e.u)}${e.full ? `, full:${jsText(e.full)}` : ''}}`).join(',\n           ')}]`).join(',\n');
     return `  '${key}': {\n    label: '${y}년 ${m}월',\n    events: {\n${body}\n    }\n  }`;
   });
   return `// ── 캘린더 월 목록 ── (scripts/update.mjs 가 매주 새로 씀)
@@ -246,6 +269,7 @@ const featuredEvents = events.filter(e => e.end >= today)
     || (a.end - a.start) - (b.end - b.start)
     || a.start - b.start).slice(0, 6);
 html = replaceSection(html, 'UCF_SPOTLIGHT', performanceSpotlight(featuredEvents, ymd(today)));
+html = replaceSection(html, 'ART_NEWS', artsSpotlight(thisWeek, nextWeek, monday, sunday, today));
 const oldIssue = section(html, 'ISSUE') || '';
 const oldNum = +((/제(\d+)호/.exec(oldIssue) || [])[1] || 0);
 const od = /(\d{4})년 (\d{1,2})월 (\d{1,2})일/.exec(oldIssue);
@@ -274,7 +298,8 @@ if (hero) {
       <span>📅 ${esc(dateRange(hero))}${hero.time && ymd(hero.start) === ymd(hero.end) ? ' ' + esc(hero.time) : ''}</span>
       <span>📍 ${place}</span>
       <span>🎟 ${hero.price || '예매·문의는 울주문화재단'}</span>
-    </div>`);
+    </div>
+    <a class="hero-event-link" href="${esc(hero.url)}" target="_blank" rel="noopener">대표 행사 자세히 보기 ↗</a>`);
   html = replaceSection(html, 'FEATURED', `  <!-- Featured: ${esc(cleanTitle(hero.title))} -->
   <a class="ev-feat" href="${hero.url}" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#071624 0%,#0d2a40 45%,#0a1e14 100%);">
     <div class="ev-feat-overlay"></div>
