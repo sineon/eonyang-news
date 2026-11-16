@@ -1,91 +1,69 @@
-// 2026년 11월부터 아래 순서대로 한 달에 한 편씩 소개한다.
-// 새 소재는 목록 끝에 추가하고, 설명과 방문 안내의 출처를 함께 남긴다.
-const firstMonth = 2026 * 12 + 10;
-const encyclopedia = 'https://encykorea.aks.ac.kr/Article/';
-const eonyangFortress = 'https://digital.khs.go.kr/heri/heriDetail.do?ctptNo=1332601530000&ctptUid=13898859674910300774';
-const chisanAcademy = `${encyclopedia}E0077094`;
-const seosaengFortress = 'https://www.heritage.go.kr/heri/cul/culSelectDetail.do?VdkVgwKey=31%2C00080000%2C26&pageNo=1_1_1_1';
+import fs from 'node:fs';
 
-const features = [
-  {
-    place: '언양읍',
-    title: '울주 언양읍성 — 평지에 세운 네모난 성',
-    cards: [
-      {
-        icon: '🏯', tag: '조선의 읍성', title: '흙으로 쌓은 성을 돌로 고쳐 쌓다',
-        intro: '경주·울산·밀양·양산을 잇는 길목에 있던 언양의 옛 성입니다. 처음에는 흙으로 둘렀지만, 1500년에 현감 이담룡이 성을 넓혀 돌로 다시 쌓았습니다.',
-        url: eonyangFortress, source: '국가유산청 · 울주 언양읍성',
-      },
-      {
-        icon: '🔎', tag: '현장에서 볼 것', title: '큰 돌 사이의 작은 돌 찾기',
-        intro: '산등성이를 따라가는 산성과 달리 언양읍성은 평지에 네모꼴로 놓였습니다. 남은 성벽을 보며 큰 돌 사이의 빈틈을 잔돌로 채운 자리를 찾아보세요.',
-        url: eonyangFortress, source: '국가유산청 · 성벽과 축성 방식',
-      },
-    ],
-    person: {
-      icon: '✍️', name: '오영수 (吳永壽)', title: '언양에서 태어난 단편소설가 — 오영수', era: '1909–1979 · 호 난계',
-      tags: ['단편소설가', '「갯마을」', '언양 출생'],
-      intro: '지금의 울주군 언양읍에서 태어난 오영수는 「갯마을」과 「메아리」 같은 단편에 마을 사람들의 삶과 정을 담았습니다. 1955년에는 문예지 『현대문학』 창간에도 참여했습니다.',
-      tip: '오영수문학관은 언양읍 헌양길 280-12에 있습니다.',
-      url: `${encyclopedia}E0038421`, source: '한국민족문화대백과사전 · 오영수',
-      visit: 'https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=1891225', visitLabel: '울주군 오영수문학관 조례 · 위치',
-    },
-  },
-  {
-    place: '두동면',
-    title: '치산서원 — 신라 사람을 기린 조선의 서원',
-    cards: [
-      {
-        icon: '🏛️', tag: '울주군 두동면', title: '만화리에 남은 박제상 이야기',
-        intro: '치산서원은 울주군 두동면 만화리에 있습니다. 조선 후기에 세워진 이 서원은 신라의 관리 박제상과 그의 가족을 기리는 공간이었습니다.',
-        url: chisanAcademy, source: '한국민족문화대백과사전 · 치산서원',
-      },
-      {
-        icon: '🪨', tag: '기록과 전설', title: '망부석에 얽힌 기다림',
-        intro: '박제상 유적에는 치산서원과 함께 망부석도 포함됩니다. 박제상을 기다리던 아내가 돌이 되었다는 이야기는 지역에 전해 오는 전설입니다.',
-        url: 'https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d9fb4f36-3bab-4b82-8627-6c9cbcc38875', source: '한국관광공사 · 박제상유적지',
-      },
-    ],
-    person: {
-      icon: '📜', name: '박제상 (朴堤上)', title: '두 왕자의 귀환을 도운 신라 관리 — 박제상', era: '5세기 · 신라 눌지왕 때 활동',
-      tags: ['신라 관리', '고구려·왜', '울주 두동면 유적'],
-      intro: '『삼국사기』에 따르면 박제상은 눌지왕의 부탁을 받고 고구려에 가서 복호를 데려왔습니다. 뒤이어 왜에 건너가 미사흔의 탈출을 도왔지만, 자신은 붙잡혀 돌아오지 못했습니다.',
-      tip: '박제상의 이야기가 조선 시대 서원과 지역 전설에 각각 어떻게 남았는지 비교해 보세요.',
-      url: `${encyclopedia}E0021143`, source: '한국민족문화대백과사전 · 박제상',
-    },
-  },
-  {
-    place: '서생면',
-    title: '서생포왜성 — 포구를 내려다보는 성',
-    cards: [
-      {
-        icon: '🏯', tag: '울주군 서생면', title: '왜 포구 가까이에 성을 쌓았을까?',
-        intro: '임진왜란 때 일본 장수 가토 기요마사가 서생리에 쌓은 성입니다. 회야강과 포구가 가까워 사람과 물자를 옮기기 쉬웠고, 전쟁 중 일본군의 거점으로 쓰였습니다.',
-        url: `${encyclopedia}E0027861`, source: '한국민족문화대백과사전 · 서생포왜성',
-      },
-      {
-        icon: '🔎', tag: '현장에서 볼 것', title: '언덕의 성벽과 포구 쪽 지형',
-        intro: '서생포왜성은 울산광역시 문화유산자료입니다. 성벽이 놓인 언덕과 회야강 쪽의 높이 차를 보며, 성이 통행과 물자 운송을 살피기에 어떤 자리였는지 생각해 보세요.',
-        url: seosaengFortress, source: '국가유산청 · 서생포왜성',
-      },
-    ],
-    person: {
-      icon: '📜', name: '유정 (惟政)', title: '서생포에서 교섭에 나선 승려 — 사명대사', era: '1544–1610 · 법명 유정',
-      tags: ['사명대사', '임진왜란', '서생포 교섭'],
-      intro: '임진왜란 때 의승군을 이끈 유정은 조정의 뜻을 전하러 서생포에 가서 가토 기요마사와 회담했습니다. 전쟁이 끝난 뒤에는 일본에 건너가 조선인 포로가 돌아오는 데 힘썼습니다.',
-      tip: '서생포왜성은 전쟁의 거점이자 대화가 오간 장소이기도 했습니다.',
-      url: 'https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n307900', source: '국사편찬위원회 우리역사넷 · 사명대사',
-    },
-  },
-];
+const dataFile = new URL('./heritage-issues.json', import.meta.url);
+const validMonth = /^\d{4}-(0[1-9]|1[0-2])$/;
 
 const esc = value => value.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-// update.mjs가 넘기는 날짜는 한국 달력 날짜를 UTC 자정으로 표기한다.
-export function heritageSections(issueDate) {
-  const month = issueDate.getUTCMonth();
-  const offset = Math.max(0, issueDate.getUTCFullYear() * 12 + month - firstMonth);
-  const { place, title, cards, person } = features[offset % features.length];
+const monthKey = date => date.toISOString().slice(0, 7);
+const monthLabel = key => `${key.slice(0, 4)}년 ${Number(key.slice(5, 7))}월`;
+const link = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>`;
+
+function readFeatures() {
+  const { previous, issues } = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+  const dated = Object.entries(issues);
+  for (const [month] of dated) {
+    if (!validMonth.test(month)) throw new Error(`잘못된 문화유산 발행월: ${month}`);
+  }
+  const check = (entries, kind) => {
+    const seen = new Set();
+    for (const id of entries) {
+      if (!id || seen.has(id)) throw new Error(`${kind} 식별자가 없거나 중복됨: ${id}`);
+      seen.add(id);
+    }
+  };
+  check([...previous.heritage.map(x => x.id), ...dated.map(([,x]) => x.heritageId)], '문화유산');
+  check([...previous.people.map(x => x.id), ...dated.map(([,x]) => x.personId)], '인물');
+  return { previous, dated };
+}
+
+function renderArchive(previous, older) {
+  const heritage = [...previous.heritage, ...older.map(([date, {title, cards}]) => ({date, title, cards}))];
+  const people = [...previous.people, ...older.map(([date, {person}]) => ({date, ...person}))];
+  const renderList = (entries, renderBody) => entries.sort((a,b) => b.date.localeCompare(a.date)).map(entry =>
+    `      <details class="history-entry">
+        <summary><span>${esc(entry.title)}</span><small>${esc(entry.label ?? monthLabel(entry.date))}</small></summary>
+        <div class="history-entry-body">${renderBody(entry)}</div>
+      </details>`).join('\n');
+  const heritageBody = entry => entry.cards.map(card =>
+    `<p><strong>${esc(card.title)}</strong><br>${esc(card.intro)}<br>${link(card.url, card.source)}</p>`).join('\n');
+  const personBody = p => `<p><strong>${esc(p.era)}</strong><br>${esc(p.intro)} ${esc(p.tip)}<br>${link(p.url, p.source)}${p.visit ? `<br>${link(p.visit, p.visitLabel)}` : ''}</p>`;
+  return `<section class="sec" id="heritage-archive" aria-labelledby="heritage-archive-title">
+  <div class="sec-head">
+    <div class="sec-kicker">지난 이야기</div>
+    <h2 class="sec-title" id="heritage-archive-title">문화유산과 인물 다시 읽기</h2>
+    <p class="arts-source">제목을 누르면 이 화면에서 지난 글을 읽을 수 있습니다.</p>
+  </div>
+  <div class="history-catalog">
+    <div>
+      <h3>지난 문화유산</h3>
+${renderList(heritage, heritageBody)}
+    </div>
+    <div>
+      <h3>지난 인물</h3>
+${renderList(people, personBody)}
+    </div>
+  </div>
+</section>`;
+}
+
+function heritageSections(issueDate) {
+  const key = monthKey(issueDate);
+  const { previous, dated } = readFeatures();
+  const record = dated.find(([date]) => date === key);
+  if (!record) return null;
+  const [, { place, title, cards, person }] = record;
+  const archive = renderArchive(previous, dated.filter(([date]) => date < key));
   const cardMarkup = cards.map((card, i) => `    <a class="hc${i % 2 ? ' rev' : ''}" href="${esc(card.url)}" target="_blank" rel="noopener">
       <div class="hc-img">
         <div class="hc-icon" aria-hidden="true">${esc(card.icon)}</div>
@@ -100,8 +78,9 @@ export function heritageSections(issueDate) {
     </a>`).join('\n\n');
   const tagStyles = ['b-teal', 'b-blue-o', 'b-coral-o'];
   return {
+    HERITAGE_ARCHIVE: archive,
     HERITAGE_TITLE: `    <h2 class="sec-title">${esc(title)}</h2>
-    <p style="font-size:12px;color:var(--text-secondary, #526169);margin-top:4px;">${month + 1}월 울주 이야기 · ${esc(place)}</p>`,
+    <p style="font-size:12px;color:var(--text-secondary, #526169);margin-top:4px;">${monthLabel(key)} 울주 이야기 · ${esc(place)}</p>`,
     HERITAGE_CARDS: `  <div class="hc-list">\n${cardMarkup}\n  </div>`,
     PERSON_TITLE: `      <h2 class="sec-title" style="font-size:19px;">${esc(person.title)}</h2>`,
     PERSON_CARD: `    <div class="person-card">
@@ -120,4 +99,16 @@ ${person.tags.map((tag, i) => `          <span class="p-tag ${tagStyles[i]}">${e
       </div>
     </div>`,
   };
+}
+
+// 원고가 없는 달에는 지난 글을 새 글처럼 다시 발행하지 않는다.
+export function refreshHeritage(html, issueDate) {
+  const sections = heritageSections(issueDate);
+  if (!sections) return null;
+  for (const [key, body] of Object.entries(sections)) {
+    const marker = new RegExp(`(<!-- ${key}_START -->)[\\s\\S]*?(<!-- ${key}_END -->)`, 'g');
+    if ([...html.matchAll(marker)].length !== 1) throw new Error(`문화유산 발행 구간을 하나만 남겨 주세요: ${key}`);
+    html = html.replace(marker, (_, begin, end) => `${begin}\n${body}\n${end}`);
+  }
+  return html;
 }

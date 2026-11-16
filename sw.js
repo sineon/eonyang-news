@@ -1,4 +1,4 @@
-const CACHE = 'eonyang-exhibition-v2';
+const CACHE = 'eonyang-exhibition-v3';
 const ROOT = new URL('./', self.location.href);
 const INDEX = new URL('index.html', ROOT).href;
 const STYLE = new URL('assets/css/newsletter-v2.css', ROOT).href;
