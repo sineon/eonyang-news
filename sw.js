@@ -1,8 +1,8 @@
-const CACHE = 'eonyang-exhibition-v1';
+const CACHE = 'eonyang-exhibition-v2';
 const ROOT = new URL('./', self.location.href);
 const INDEX = new URL('index.html', ROOT).href;
-const STYLE = new URL('assets/css/newsletter.css', ROOT).href;
-const CLIENT = new URL('assets/js/exhibition.js', ROOT).href;
+const STYLE = new URL('assets/css/newsletter-v2.css', ROOT).href;
+const CLIENT = new URL('assets/js/exhibition-v2.js', ROOT).href;
 const PHOTOS = [
   'https://upload.wikimedia.org/wikipedia/commons/5/53/View_of_downtown_Eonyang.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/%EC%9A%B8%EC%A3%BC_%EB%8C%80%EA%B3%A1%EB%A6%AC_%EB%B0%98%EA%B5%AC%EB%8C%80_%EC%95%94%EA%B0%81%ED%99%94.jpg/960px-%EC%9A%B8%EC%A3%BC_%EB%8C%80%EA%B3%A1%EB%A6%AC_%EB%B0%98%EA%B5%AC%EB%8C%80_%EC%95%94%EA%B0%81%ED%99%94.jpg'
