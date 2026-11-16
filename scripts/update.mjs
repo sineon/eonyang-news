@@ -16,6 +16,7 @@ import https from 'node:https';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { refreshHeritage } from './heritage-features.mjs';
+import { issueArchivePath, issueListItem, snapshotIssue } from './issue-archive.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const INDEX = path.join(ROOT, 'index.html');
@@ -264,7 +265,8 @@ const nextWeek = events.filter(e => overlaps(e, nxtMon, nxtSun) && !thisWeek.inc
 for (const ev of [...thisWeek, ...nextWeek]) await addDetail(ev);
 console.log(`이번 주 ${thisWeek.length}건, 다음 주 새 행사 ${nextWeek.length}건`);
 
-let html = fs.readFileSync(INDEX, 'utf8');
+const priorHtml = fs.readFileSync(INDEX, 'utf8');
+let html = priorHtml;
 const featuredEvents = events.filter(e => e.end >= today)
   .sort((a, b) => Math.max(+a.start, +today) - Math.max(+b.start, +today)
     || (a.end - a.start) - (b.end - b.start)
@@ -335,36 +337,21 @@ html = replaceSection(html, 'NEXTWEEK_HEADING', `    <h2 class="sec-title" style
 const nw = nextWeek.slice(0, 6).map(nwCard).join('\n') || '    <p style="color:var(--gray-400); padding:12px;">다음 주 일정은 울주문화재단 누리집(ucf.or.kr)에서 확인하세요.</p>';
 html = replaceSection(html, 'NEXTWEEK_CARDS', `  <div class="nw-grid">\n${nw}\n  </div>`);
 
-// 6. 지난 호 목록: 이번 호를 맨 위에 두고, 원래 '현재호'였던 줄은 지난 호로 바꾼다
+// 6. 새 호의 발행 직전에 직전 호를 읽기 전용 페이지로 보관한다.
+const archivePrevious = oldNum > 0 && oldMon && oldMon < ymd(monday);
+const archivedPath = archivePrevious ? issueArchivePath(oldMon) : null;
 {
   const old = section(html, 'ARCHIVE') || '';
-  const items = [...old.matchAll(/<a class="archive-item"[\s\S]*?<\/a>/g)].map(m => m[0]);
-  const past = items.map(it => it.includes('archive-badge current')
-    ? it.replace('href="#" style="pointer-events:none; opacity:.55;"', 'href="#" style="opacity:.6;pointer-events:none;"')
-      .replace('archive-badge current"', 'archive-badge" style="background:#e0e0e0;color:#555;"')
-      .replace(/ — 현재 보고 계신 페이지/, '').replace('◀ 현재호', '발행 종료')
-    : it);
-  if (oldNum && oldMon && oldMon !== ymd(monday) && !past.some(it => it.includes(`제${oldNum}호`))) {
-    const [y, m, d] = oldMon.split('-').map(Number);
-    const oldHero = text(section(fs.readFileSync(INDEX, 'utf8'), 'HERO') || '').replace(/^⭐ 이번 주 주목\s*/, '').split(' 📅')[0];
-    past.unshift(`<a class="archive-item" href="#" style="opacity:.6;pointer-events:none;">
-      <span class="archive-badge" style="background:#e0e0e0;color:#555;">제${oldNum}호</span>
-      <div class="archive-info">
-        <div class="archive-info-date">${y}년 ${m}월 ${d}일 (제${oldNum}호)</div>
-        <div class="archive-info-title">${esc(oldHero.slice(0, 60))}</div>
-      </div>
-      <span class="archive-arrow">발행 종료</span>
-    </a>`);
+  const past = [...old.matchAll(/<a class="archive-item" href="\.\/archive\/[^"]+"[\s\S]*?<\/a>/g)].map(m => m[0]);
+  if (archivedPath && !past.some(it => it.includes(`href="./${archivedPath}"`))) {
+    const oldHero = text(section(priorHtml, 'HERO') || '').replace(/^⭐ 이번 주 주목\s*/, '').split(' 📅')[0];
+    past.unshift(issueListItem({ num: oldNum, date: oldMon, title: oldHero || '언양 문화·예술·체육 소식지' }));
   }
-  const cur = `<a class="archive-item" href="#" style="pointer-events:none; opacity:.55;">
-      <span class="archive-badge current">제${num}호</span>
-      <div class="archive-info">
-        <div class="archive-info-date">${pubKo} (제${num}호)</div>
-        <div class="archive-info-title">${esc(thisWeek.slice(0, 3).map(e => cleanTitle(e.title)).join(' · ') || '이번 주 울주 문화·예술·체육 소식')} — 현재 보고 계신 페이지</div>
-      </div>
-      <span class="archive-arrow">◀ 현재호</span>
-    </a>`;
-  const list = oldMon === ymd(monday) ? [cur, ...past.filter(it => !it.includes(`제${num}호`))] : [cur, ...past];
+  const cur = issueListItem({
+    num, date: ymd(monday), current: true,
+    title: thisWeek.slice(0, 3).map(e => cleanTitle(e.title)).join(' · ') || '이번 주 울주 문화·예술·체육 소식',
+  });
+  const list = [cur, ...past];
   html = replaceSection(html, 'ARCHIVE', `  <div class="archive-list">\n    ${list.join('\n    ')}\n  </div>`);
 }
 
@@ -399,12 +386,20 @@ html = replaceSection(html, 'NEXTWEEK_CARDS', `  <div class="nw-grid">\n${nw}\n 
 html = html.replace(/🗓 \d{4}년 \d{1,2}월 강습[^<]*/g, `🗓 ${today.getUTCFullYear()}년 ${today.getUTCMonth() + 1}월 강습 — CRS에서 모집·운영 일정 확인`);
 
 if (opt('--dry')) { console.log('(--dry: 파일을 쓰지 않음)'); process.exit(0); }
+if (archivedPath) {
+  const archivedFile = path.join(ROOT, archivedPath);
+  if (!fs.existsSync(archivedFile)) {
+    const snapshot = snapshotIssue(priorHtml, oldMon, oldNum);
+    fs.mkdirSync(path.dirname(archivedFile), { recursive: true });
+    fs.writeFileSync(archivedFile, snapshot, { encoding: 'utf8', flag: 'wx' });
+  }
+}
 fs.writeFileSync(INDEX, html, 'utf8');
 console.log(`✅ index.html 발행 — 제${num}호 (${pubKo})`);
 
 if (opt('--push')) {
   const git = (...a) => execFileSync('git', a, { cwd: ROOT, stdio: 'inherit' });
-  git('add', 'index.html');
+  git('add', 'index.html', ...(archivedPath ? [archivedPath] : []));
   try { execFileSync('git', ['diff', '--staged', '--quiet'], { cwd: ROOT }); console.log('바뀐 것 없음'); process.exit(0); } catch { /* 바뀐 것 있음 */ }
   git('commit', '-m', `소식지 자동 발행 — ${pubKo} (제${num}호)`);
   git('pull', '--rebase');

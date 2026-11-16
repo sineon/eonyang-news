@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>언양 소식지 제14호 보관본 — 2026년 11월 9일</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap');
+
+/* ═══════════════════════════════════
+   RESET & ROOT
+═══════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+
+:root {
+  /* 브랜드 색상 */
+  --teal:      #0b7a70;   /* 메인 청록  */
+  --teal-dk:   #065c54;   /* 다크 청록  */
+  --teal-md:   #0d9688;   /* 미디엄 청록 */
+  --teal-lt:   #e4f4f2;   /* 라이트 청록 */
+  --coral:     #d44e16;   /* 메인 코랄  */
+  --coral-dk:  #a83c10;   /* 다크 코랄  */
+  --coral-lt:  #fef1eb;   /* 라이트 코랄 */
+  --blue:      #1e56a0;   /* 메인 블루  */
+  --blue-dk:   #163d78;   /* 다크 블루  */
+  --blue-lt:   #e8f0fb;   /* 라이트 블루 */
+  --green:     #1e6b30;   /* 메인 그린  */
+  --green-dk:  #144d22;   /* 다크 그린  */
+  --green-lt:  #e8f5ec;   /* 라이트 그린 */
+  --purple:    #5a2fa0;   /* 퍼플       */
+  --purple-lt: #f0eafb;   /* 라이트 퍼플 */
+
+  /* 그레이 스케일 */
+  --gray-50:  #f8f9fa;
+  --gray-100: #f0f1f3;
+  --gray-200: #e2e4e8;
+  --gray-300: #c8ccD2;
+  --gray-400: #8e96a2;
+  --gray-600: #4e5562;
+  --gray-700: #383e4a;
+  --gray-800: #22272e;
+  --white:    #ffffff;
+
+  /* 공통 */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.07);
+  --shadow:    0 3px 14px rgba(0,0,0,.09);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.13);
+  --radius:    10px;
+  --radius-sm: 6px;
+}
+
+body {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '맑은 고딕', sans-serif;
+  background: var(--gray-100);
+  color: var(--gray-800);
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ═══════════════════════════════════
+   PAGE WRAPPER
+═══════════════════════════════════ */
+.page-bg {
+  min-height: 100vh;
+  background: var(--gray-100);
+  padding: 0;
+}
+.wrap {
+  max-width: 840px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 0 40px rgba(0,0,0,.08);
+}
+
+/* ═══════════════════════════════════
+   TOP BAR
+═══════════════════════════════════ */
+.topbar {
+  background: var(--teal-dk);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 38px;
+  gap: 12px;
+}
+.topbar-logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+.topbar-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.topbar-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,.75);
+  transition: color .15s;
+  white-space: nowrap;
+}
+.topbar-links a:hover { color: #fff; }
+
+/* ═══════════════════════════════════
+   HEADER
+═══════════════════════════════════ */
+.header {
+  background: var(--white);
+  border-bottom: 3px solid var(--teal);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.header-brand { display: flex; align-items: center; gap: 14px; }
+.header-icon {
+  width: 50px; height: 50px;
+  border-radius: 12px;
+  background: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.header-text h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--teal-dk);
+  letter-spacing: -.3px;
+}
+.header-text p { font-size: 13px; color: var(--gray-400); margin-top: 2px; }
+.header-info { text-align: right; flex-shrink: 0; }
+.header-date { font-size: 15.5px; font-weight: 700; color: var(--gray-700); }
+.header-issue {
+  display: inline-block;
+  margin-top: 5px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ═══════════════════════════════════
+   HERO
+═══════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+  background: var(--teal-dk);
+}
+.hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: .6;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(6,92,84,.92) 0%,
+    rgba(6,92,84,.65) 55%,
+    rgba(6,92,84,.25) 100%
+  );
+}
+.hero-body {
+  position: absolute; inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--coral);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+.hero-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 6px rgba(0,0,0,.3);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.hero-meta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.hero-meta span {
+  font-size: 15px;
+  color: rgba(255,255,255,.92);
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+
+/* ═══════════════════════════════════
+   TICKER
+═══════════════════════════════════ */
+.ticker {
+  background: var(--teal-lt);
+  border-bottom: 1px solid #b8ddd9;
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--teal-dk);   /* #065c54 on #e4f4f2 → 대비비 충분 */
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+.ticker-pill {
+  background: var(--teal);
+  color: #fff;              /* 흰 글씨 on #0b7a70 → 4.6:1 ✓ */
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════
+   BADGE SYSTEM  (WCAG AA 검증)
+   solid  : 흰 글씨 on 진한 배경
+   outline: 진한 글씨 on 밝은 배경
+═══════════════════════════════════ */
+/* solid */
+.b-coral   { background: var(--coral);   color: #fff; }  /* 4.8:1 ✓ */
+.b-teal    { background: var(--teal);    color: #fff; }  /* 4.6:1 ✓ */
+.b-blue    { background: var(--blue);    color: #fff; }  /* 6.0:1 ✓ */
+.b-green   { background: var(--green);   color: #fff; }  /* 5.8:1 ✓ */
+.b-purple  { background: var(--purple);  color: #fff; }  /* 5.1:1 ✓ */
+.b-dark    { background: var(--gray-700);color: #fff; }  /* 7.4:1 ✓ */
+
+/* outline — 진한 색 텍스트 사용 */
+.b-coral-o  { background: var(--coral-lt);  color: var(--coral-dk);  border: 1px solid #f0b898; }  /* #a83c10 on #fef1eb → 6.2:1 ✓ */
+.b-teal-o   { background: var(--teal-lt);   color: var(--teal-dk);   border: 1px solid #9dcec8; }  /* #065c54 on #e4f4f2 → 5.9:1 ✓ */
+.b-blue-o   { background: var(--blue-lt);   color: var(--blue-dk);   border: 1px solid #a0bce8; }  /* #163d78 on #e8f0fb → 7.2:1 ✓ */
+.b-green-o  { background: var(--green-lt);  color: var(--green-dk);  border: 1px solid #98c8a4; }  /* #144d22 on #e8f5ec → 7.5:1 ✓ */
+.b-purple-o { background: var(--purple-lt); color: var(--purple);    border: 1px solid #c0a4e8; }  /* #5a2fa0 on #f0eafb → 5.4:1 ✓ */
+
+/* ═══════════════════════════════════
+   SECTION COMMON
+═══════════════════════════════════ */
+.sec {
+  padding: 40px 32px 36px;
+  border-bottom: 1px solid var(--gray-200);
+}
+.sec:last-of-type { border-bottom: none; }
+
+.sec-head { margin-bottom: 22px; }
+.sec-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+.sec-kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--teal);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.sec-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 14px; height: 3px;
+  background: var(--teal);
+  border-radius: 2px;
+}
+.sec-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray-800);
+  letter-spacing: -.3px;
+  line-height: 1.3;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.sec-more {
+  font-size: 14px;
+  color: var(--teal);         /* #0b7a70 on #fff → 4.6:1 ✓ */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sec-more:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════
+   EVENT CARDS
+═══════════════════════════════════ */
+/* — featured full-width — */
+.ev-feat {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s;
+}
+.ev-feat:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.ev-feat > img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.ev-feat:hover > img { transform: scale(1.04); }
+.ev-feat-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 15%, rgba(15,20,30,.9) 100%);
+}
+.ev-feat-body {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 20px 24px;
+}
+.ev-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ev-feat-title {
+  font-size: 20.5px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.ev-feat-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 14.5px;
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+
+/* — 2-column card grid — */
+.ev-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.ev-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, box-shadow .2s;
+}
+.ev-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.ev-thumb {
+  position: relative;
+  height: 130px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ev-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.ev-card:hover .ev-thumb img { transform: scale(1.06); }
+
+/* 이미지 없을 때 아이콘 플레이스홀더 */
+.ev-thumb-icon {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 44px;
+}
+
+/* 이미지 위 태그 — 진한 반투명 배경 + 흰 글씨로 가독성 보장 */
+.ev-type {
+  position: absolute; top: 10px; left: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  /* solid 배경으로 contrast 확보 */
+  background: rgba(6,92,84,.88);
+  color: #fff;             /* 흰 글씨 on 반투명 진청록 → 충분 ✓ */
+  backdrop-filter: blur(2px);
+}
+/* 카드 타입별 태그 색상 변형 */
+.ev-type.coral  { background: rgba(166,52,16,.88); }
+.ev-type.blue   { background: rgba(22,61,120,.88); }
+.ev-type.green  { background: rgba(20,77,34,.88);  }
+.ev-type.purple { background: rgba(74,35,140,.88); }
+
+.ev-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+.ev-body h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+.ev-info {
+  font-size: 15px;
+  color: var(--gray-600);   /* #4e5562 on #fff → 5.8:1 ✓ */
+  line-height: 1.85;
+  flex: 1;
+}
+.ev-info b { color: var(--gray-700); font-weight: 600; }
+.ev-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal-dk);    /* #065c54 on #e4f4f2 → 5.9:1 ✓ */
+  background: var(--teal-lt);
+  border: 1.5px solid #9dcec8;
+  padding: 6px 13px;
+  border-radius: var(--radius-sm);
+  transition: background .15s, color .15s;
+  min-height: 36px;         /* 터치 영역 확보 */
+}
+.ev-btn:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+.ev-btn::after { content: '→'; }
+
+/* ═══════════════════════════════════
+   HERITAGE CARDS
+═══════════════════════════════════ */
+.hc-list { display: flex; flex-direction: column; gap: 18px; }
+
+.hc {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s;
+  text-decoration: none;
+}
+.hc:hover { box-shadow: var(--shadow); }
+.hc.rev { grid-template-columns: 1fr 240px; }
+.hc.rev .hc-img { order: 2; }
+.hc.rev .hc-body { order: 1; }
+
+.hc-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  background: var(--gray-100);
+  flex-shrink: 0;
+}
+.hc-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s;
+}
+.hc:hover .hc-img img { transform: scale(1.04); }
+.hc-icon {
+  width: 100%; height: 100%; min-height: 190px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+  background: linear-gradient(135deg, #ddf0ee, #c0e4e0);
+}
+
+/* 사진 위 등급 배지 — 진한 배경 + 흰 글씨 */
+.hc-grade {
+  position: absolute; bottom: 10px; left: 10px;
+  font-size: 11px; font-weight: 700;
+  background: rgba(6,92,84,.92);  /* 진한 청록 배경 */
+  color: #fff;                     /* 흰 글씨 ✓ */
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  letter-spacing: .5px;
+  backdrop-filter: blur(3px);
+}
+
+.hc-body {
+  padding: 22px 24px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hc-num {
+  font-size: 36px; font-weight: 900;
+  color: var(--gray-200);
+  font-family: 'Noto Serif KR', serif;
+  line-height: 1; margin-bottom: 6px;
+}
+.hc-name {
+  font-size: 19px; font-weight: 700; color: var(--gray-800);
+  margin-bottom: 10px; line-height: 1.4;
+}
+.hc-desc { font-size: 15.5px; color: var(--gray-600); line-height: 1.85; }
+.hc-desc strong { color: var(--teal-dk); }
+.hc-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 12px; font-size: 14px; font-weight: 700;
+  color: var(--teal-dk);
+  align-self: flex-start;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .15s;
+  min-height: 36px;  /* 터치 영역 */
+}
+.hc-link:hover { border-color: var(--teal); }
+.hc-link::after { content: ' ↗'; font-size: 14.5px; }
+
+/* ═══════════════════════════════════
+   PERSON SPOTLIGHT
+═══════════════════════════════════ */
+.person-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid; grid-template-columns: 200px 1fr;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+.person-left {
+  background: linear-gradient(160deg, var(--teal-md) 0%, var(--teal-dk) 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 28px 20px; gap: 8px;
+}
+.person-emoji { font-size: 52px; }
+.person-name {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 21px; font-weight: 700;
+  color: #fff;              /* 흰 글씨 on 진청록 ✓ */
+  text-align: center; line-height: 1.3;
+}
+.person-era {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.82);  /* 82% 흰 on 진청록 → 충분 ✓ */
+  text-align: center; letter-spacing: .5px;
+}
+.person-right { padding: 26px 28px; background: var(--white); }
+.person-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 12px; }
+.p-tag {
+  font-size: 12.5px; font-weight: 700; letter-spacing: .5px;
+  padding: 3px 10px; border-radius: 20px;
+}
+.person-desc { font-size: 15.5px; color: var(--gray-600); line-height: 1.9; word-break: keep-all; overflow-wrap: break-word; }
+.person-desc strong { color: var(--teal-dk); }
+.person-more {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 14px; font-size: 14.5px; font-weight: 700;
+  color: var(--teal-dk);
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .15s;
+  min-height: 36px;
+}
+.person-more:hover { border-color: var(--teal); }
+
+/* ═══════════════════════════════════
+   NOTICE BOXES
+═══════════════════════════════════ */
+.notice {
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-size: 15.5px; line-height: 1.8;
+  margin-top: 18px;
+}
+.notice-coral {
+  background: var(--coral-lt);
+  border-left: 4px solid var(--coral);
+  color: #4a1e08;            /* 매우 진한 갈색 on 연코랄 → 10:1+ ✓ */
+}
+.notice-coral b { color: var(--coral-dk); }
+.notice-teal {
+  background: var(--teal-lt);
+  border-left: 4px solid var(--teal);
+  color: #08302c;            /* 매우 진한 청록 on 연청록 → 10:1+ ✓ */
+}
+.notice-teal b { color: var(--teal-dk); }
+.notice-blue {
+  background: var(--blue-lt);
+  border-left: 4px solid var(--blue);
+  color: #0d2a52;
+}
+.notice-blue b { color: var(--blue-dk); }
+
+/* ═══════════════════════════════════
+   ORG CARDS
+═══════════════════════════════════ */
+.org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.org-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, box-shadow .2s;
+  display: flex; flex-direction: column;
+}
+.org-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.org-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.org-icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 21px; flex-shrink: 0;
+}
+.oi-teal   { background: var(--teal-lt); }
+.oi-coral  { background: var(--coral-lt); }
+.oi-blue   { background: var(--blue-lt); }
+.oi-green  { background: var(--green-lt); }
+.org-name { font-size: 16px; font-weight: 700; color: var(--gray-800); }
+.org-type {
+  font-size: 12px; font-weight: 600; letter-spacing: .5px;
+  color: var(--gray-400);    /* #8e96a2 on #fff → 3.7:1 (대형 텍스트 기준 OK) */
+}
+.org-desc { font-size: 15px; color: var(--gray-600); line-height: 1.8; flex: 1; }
+.org-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 10px; font-size: 14px; font-weight: 700;
+  color: var(--teal-dk);
+  align-self: flex-start;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .15s;
+  min-height: 36px;
+}
+.org-link:hover { border-color: var(--teal); }
+.org-link::after { content: ' ↗'; }
+
+/* ═══════════════════════════════════
+   NEWS LIST
+═══════════════════════════════════ */
+.news-list { list-style: none; }
+.ni {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 0 15px; align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.ni:first-child { padding-top: 0; }
+.ni:last-child { border-bottom: none; padding-bottom: 0; }
+.ni-cat {
+  font-size: 11px; font-weight: 800; letter-spacing: 1px;
+  padding: 4px 10px; border-radius: 20px; text-transform: uppercase;
+  white-space: nowrap; margin-top: 4px;
+}
+.ni h4 { font-size: 17px; font-weight: 700; color: var(--gray-800); margin-bottom: 5px; word-break: keep-all; overflow-wrap: break-word; }
+.ni p { font-size: 15.5px; color: var(--gray-600); line-height: 1.8; word-break: keep-all; overflow-wrap: break-word; }
+.ni-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 8px; font-size: 14px; font-weight: 700;
+  color: var(--teal-dk);
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .15s;
+  min-height: 36px;
+}
+.ni-link:hover { border-color: var(--teal); }
+.ni-link::after { content: ' →'; }
+
+/* ═══════════════════════════════════
+   QUICK LINKS BOARD
+═══════════════════════════════════ */
+.board {
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-200);
+  padding: 36px 32px;
+}
+.board-title { font-size: 17px; font-weight: 700; color: var(--gray-800); margin-bottom: 16px; }
+.board-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.bc {
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, box-shadow .2s;
+  display: flex; flex-direction: column;
+}
+.bc:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.bc-icon { font-size: 22px; margin-bottom: 8px; }
+.bc strong { font-size: 15.5px; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 4px; }
+.bc p { font-size: 14.5px; color: var(--gray-600); line-height: 1.7; flex: 1; }
+.bc-link {
+  font-size: 14px; font-weight: 700; color: var(--teal-dk);
+  margin-top: 8px; display: inline-block;
+}
+.bc-link:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════
+   FOOTER
+═══════════════════════════════════ */
+.footer {
+  background: var(--gray-800);
+  padding: 28px 32px;
+}
+.footer-top {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,.1);
+  margin-bottom: 16px; flex-wrap: wrap;
+}
+.footer-brand {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 19px; font-weight: 700; color: #fff;
+}
+.footer-brand span { color: var(--teal-md); }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,.6);  /* 60% 흰 on 진회색 → 충분 ✓ */
+  transition: color .15s;
+  min-height: 36px; display: flex; align-items: center;
+}
+.footer-links a:hover { color: rgba(255,255,255,.95); }
+.footer-copy {
+  font-size: 14px;
+  color: rgba(255,255,255,.48);
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — TABLET 640px
+═══════════════════════════════════ */
+@media (max-width: 640px) {
+  /* topbar 우측 링크 숨기기 (좁은 화면에서 overflow 방지) */
+  .topbar-links { display: none; }
+  .topbar { justify-content: center; }
+
+  .header { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 20px; }
+  .header-info { text-align: left; }
+
+  .hero { min-height: 260px; height: auto; overflow: visible; }
+  .hero-body { position: relative; inset: auto; padding: 24px 20px 28px; }
+  .hero-title { font-size: 21px; }
+  .hero-meta { flex-direction: column; gap: 6px; }
+  .hero-meta span { font-size: 13.5px; display: block; }
+
+  .ticker { padding: 9px 20px; font-size: 14px; }
+
+  .sec { padding: 24px 12px 20px; }
+  .wrap { width: 100%; }
+  .cal-wrap { width: 100%; }
+  .cal-grid { gap: 1px; width: 100%; }
+  .cal-cell { min-height: 46px; padding: 3px 2px; min-width: 0; }
+  .cal-num { font-size: 12px; }
+  .cal-ev { font-size: 9.5px; padding: 1px 2px; }
+  .cal-nav-row { gap: 6px; }
+  .cal-nav-row .sec-title { font-size: 15px; }
+  .cal-nav-btn { width: 26px; height: 26px; font-size: 12px; }
+  .sec-head { margin-bottom: 14px; }
+  .sec-title { font-size: 20.5px; }
+
+  /* 이벤트 2열 → 1열 */
+  .ev-grid { grid-template-columns: 1fr; }
+
+  /* featured 카드 높이 조정 */
+  .ev-feat { height: 180px; }
+  .ev-feat-title { font-size: 16px; }
+
+  /* heritage 2열 → 1열 */
+  .hc, .hc.rev {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px auto;
+  }
+  .hc.rev .hc-img, .hc .hc-img { order: 0; }
+  .hc.rev .hc-body, .hc .hc-body { order: 0; }
+  .hc-img { min-height: 180px; }
+  .hc-icon { min-height: 180px; }
+
+  /* 인물 카드 세로 정렬 */
+  .person-card { grid-template-columns: 1fr; }
+  .person-left { flex-direction: row; gap: 16px; padding: 20px; }
+  .person-emoji { font-size: 40px; }
+  .person-right { padding: 20px; }
+
+  /* 단체 2열 → 1열 */
+  .org-grid { grid-template-columns: 1fr; }
+
+  /* 빠른링크 3열 → 2열 */
+  .board-grid { grid-template-columns: 1fr 1fr; }
+  .board { padding: 28px 20px; }
+
+  .footer { padding: 24px 20px; }
+  .footer-top { flex-direction: column; align-items: flex-start; }
+
+  .tab-btn { font-size: 11.5px; padding: 7px 8px; flex-shrink: 0; white-space: nowrap; }
+  .person-card { grid-template-columns: 1fr; }
+  .person-card img { width: 100%; height: 180px; object-fit: cover; }
+  .ni h4 { font-size: 15.5px; }
+  .ni p { font-size: 14px; }
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — MOBILE 400px
+═══════════════════════════════════ */
+@media (max-width: 400px) {
+  .board-grid { grid-template-columns: 1fr; }
+  .hero { height: auto; }
+  .hero-title { font-size: 19px; }
+  .header-text h1 { font-size: 20.5px; }
+  .ev-feat { height: 160px; }
+  .ev-feat-meta { display: none; } /* 극소형에서 숨김 */
+}
+
+/* ═══════════════════════════════════
+   PC 1200px+ 여백 처리
+   wrap이 840px 고정이므로 배경만 신경쓰면 됨
+═══════════════════════════════════ */
+@media (min-width: 841px) {
+  .page-bg { padding: 24px 0 40px; }
+  .wrap { border-radius: 12px; overflow: hidden; }
+}
+
+/* ═══════════════════════════════════
+   월별 캘린더
+═══════════════════════════════════ */
+.cal-nav-row { display:flex; align-items:center; gap:10px; margin-top:6px; }
+.cal-nav-row .sec-title { flex:1; text-align:center; }
+.cal-nav-btn { background:#0b7a70; color:#fff; border:none; border-radius:6px; width:32px; height:32px; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s; flex-shrink:0; padding:0; }
+.cal-nav-btn:hover:not(:disabled) { background:#065c54; }
+.cal-nav-btn:disabled { opacity:.3; cursor:default; }
+.cal-ev-link { cursor:pointer; transition:opacity .15s; text-decoration:none !important; }
+.cal-ev-link:hover { opacity:.75; filter:brightness(.9); }
+.cal-wrap { margin-top: 16px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; width: 100%; }
+.cal-dow { text-align: center; font-size: 13px; font-weight: 700; color: var(--gray-400); padding: 6px 0; letter-spacing: .04em; }
+.cal-dow.sun { color: #d44e16; }
+.cal-dow.sat { color: #1e56a0; }
+.cal-cell { min-height: 62px; background: var(--gray-50); border-radius: 6px; padding: 5px 4px; min-width: 0; overflow: hidden; }
+.cal-cell.cal-sun .cal-num { color: #c0391a; }
+.cal-cell.cal-sat .cal-num { color: #1e56a0; }
+.cal-cell.cal-holiday { background: #fff0eb; }
+.cal-cell.cal-today { background: var(--teal-lt); outline: 2px solid var(--teal); }
+.cal-num { font-size: 14.5px; font-weight: 700; color: var(--gray-700); display: block; margin-bottom: 3px; }
+.cal-ev { font-size: 11px; line-height: 1.35; padding: 1px 3px; border-radius: 3px; display: block; margin-bottom: 1px; overflow-wrap: anywhere; word-break: break-word; overflow-wrap: anywhere; word-break: break-word;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ce-coral { background: #fde8d8; color: #a83c10; }
+.ce-blue  { background: #dce8fb; color: #163d78; }
+.ce-green { background: #d8f0e0; color: #144d22; }
+.ce-teal  { background: var(--teal-lt); color: var(--teal-dk); }
+.ce-purple { background: #ede0f5; color: #5a2fa0; }
+.cal-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--gray-200); }
+.cl-item { display: flex; align-items: center; gap: 5px; font-size: 14px; color: var(--gray-600); }
+.cl-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .cal-cell { min-height: 52px; }
+  .cal-ev { display: block; font-size: 10px; padding: 1px 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cal-ev ~ .cal-ev { display: none; }
+  .cal-cell.has-ev::after { display: none; }
+}
+
+/* ═══════════════════════════════════
+   다음 주 예고
+═══════════════════════════════════ */
+.nw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.nw-card { background: var(--gray-50); border: 1.5px dashed var(--gray-300); border-radius: var(--radius); padding: 14px 16px; text-decoration: none; color: inherit; transition: border-color .2s, background .2s; }
+.nw-card:hover { background: var(--teal-lt); border-color: var(--teal); }
+.nw-date { font-size: 13px; font-weight: 700; color: var(--teal); letter-spacing: .04em; margin-bottom: 5px; }
+.nw-title { font-size: 16px; font-weight: 700; color: var(--gray-800); margin-bottom: 5px; line-height: 1.45; word-break: keep-all; overflow-wrap: break-word; }
+.nw-desc { font-size: 14.5px; color: var(--gray-600); line-height: 1.6; }
+.nw-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 10px; margin-bottom: 6px; }
+@media (max-width: 640px) { .nw-grid { grid-template-columns: 1fr; } }
+
+
+/* ═══════════════════════════════════
+   강좌 안내 섹션
+═══════════════════════════════════ */
+.class-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(155px,1fr)); gap:10px; margin-top:16px; }
+.class-cat { background:var(--gray-50); border-radius:9px; padding:13px 14px; border:1px solid var(--gray-200); }
+.class-cat-title { font-size:14px; font-weight:800; color:var(--gray-700); margin-bottom:9px; }
+.class-list { list-style:none; padding:0; }
+.class-list li { font-size:13px; color:var(--gray-600); padding:3px 0; border-bottom:1px solid var(--gray-200); line-height:1.5; }
+.class-list li:last-child { border-bottom:none; }
+.class-apply-btn { display:inline-block; margin-top:16px; padding:10px 22px; background:#1e56a0; color:#fff; font-size:14px; font-weight:700; border-radius:7px; text-decoration:none; }
+.class-apply-btn:hover { background:#163d78; }
+@media(max-width:640px){ .class-grid { grid-template-columns:repeat(2,1fr); } }
+
+/* ═══════════════════════════════════
+   체육시설 강좌 카드 (sf = sports facility)
+═══════════════════════════════════ */
+.sf-list { display:flex; flex-direction:column; gap:18px; margin-top:16px; }
+.sf-block { background:#fff; border:1.5px solid var(--blue-lt); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); }
+.sf-header { display:flex; align-items:center; gap:12px; padding:14px 18px; background:var(--blue-lt); }
+.sf-icon { font-size:22px; flex-shrink:0; }
+.sf-info { flex:1; min-width:0; }
+.sf-name { font-size:16px; font-weight:800; color:var(--blue-dk); line-height:1.3; }
+.sf-addr { font-size:13px; color:var(--blue); margin-top:2px; }
+.sf-site-link { flex-shrink:0; font-size:13px; font-weight:700; color:var(--blue-dk); background:#fff; border:1.5px solid var(--blue); border-radius:20px; padding:4px 12px; text-decoration:none; white-space:nowrap; transition:background .2s, color .2s; }
+.sf-site-link:hover { background:var(--blue); color:#fff; }
+.sf-body { padding:14px 18px 16px; }
+.sf-desc { font-size:14px; color:var(--gray-600); margin-bottom:10px; line-height:1.65; }
+.sf-course-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.sf-tag { display:inline-block; font-size:13px; font-weight:600; padding:4px 11px; border-radius:20px; }
+.sf-tag-swim  { background:#dce8fb; color:#163d78; }
+.sf-tag-fit   { background:#e8f5ec; color:#144d22; }
+.sf-tag-yoga  { background:#f0eafb; color:#4a1f8a; }
+.sf-tag-dance { background:#fef1eb; color:#a83c10; }
+.sf-tag-kids  { background:#fef9e0; color:#7a5500; }
+.sf-tag-sport { background:#e4f4f2; color:#065c54; }
+.sf-notice { font-size:13px; color:var(--gray-600); background:var(--gray-50); border-radius:var(--radius-sm); padding:9px 13px; margin-top:10px; border-left:3px solid var(--blue); line-height:1.7; word-break:keep-all; overflow-wrap:break-word; }
+.sf-crs-btn { display:inline-block; margin-top:12px; padding:8px 18px; background:var(--blue); color:#fff; font-size:14px; font-weight:700; border-radius:6px; text-decoration:none; transition:background .2s; }
+.sf-crs-btn:hover { background:var(--blue-dk); }
+@media(max-width:640px){ .sf-header { flex-wrap:wrap; gap:8px; } .sf-site-link { width:100%; text-align:center; } }
+
+/* ═══════════════════════════════════
+   이전 소식지 아카이브
+═══════════════════════════════════ */
+.archive-sec { padding: 24px 40px 30px; border-top: 2px solid var(--teal-lt); background: var(--gray-50); }
+.archive-head { font-size: 15.5px; font-weight: 700; color: var(--gray-600); letter-spacing: .05em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.archive-list { display: flex; flex-direction: column; gap: 8px; }
+.archive-item { display: flex; align-items: center; gap: 12px; padding: 11px 14px; background: #fff; border-radius: var(--radius-sm); text-decoration: none; color: var(--gray-700); border: 1px solid var(--gray-200); transition: border-color .2s, background .2s; }
+.archive-item:hover { background: var(--teal-lt); border-color: var(--teal); }
+.archive-badge { background: var(--teal); color: #fff; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 10px; flex-shrink: 0; white-space: nowrap; }
+.archive-badge.current { background: var(--coral); }
+.archive-info { flex: 1; min-width: 0; }
+.archive-info-date { font-size: 13px; color: var(--gray-400); }
+.archive-info-title { font-size: 16px; font-weight: 600; }
+.archive-arrow { color: var(--gray-400); font-size: 16px; }
+.archive-empty { font-size: 15.5px; color: var(--gray-400); padding: 12px 0; }
+@media (max-width: 640px) { .archive-sec { padding: 20px; } }
+
+/* ═══════════════════════════════════
+   탭 네비게이션 (Pill/Segment 스타일)
+═══════════════════════════════════ */
+.tab-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  padding: 10px 20px;
+  display: flex; justify-content: center;
+}
+.tab-nav-inner {
+  display: flex; gap: 5px;
+  background: var(--gray-100);
+  border-radius: 10px;
+  padding: 4px;
+  width: 100%;
+  max-width: 520px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-nav-inner::-webkit-scrollbar { display: none; }
+.tab-nav-inner::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1;
+  padding: 8px 6px;
+  font-size: 13px; font-weight: 400;
+  color: var(--gray-400);
+  border: none; background: none;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .18s;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.4; text-align: center;
+}
+.tab-btn.active {
+  background: #fff;
+  color: #0b7a70;
+  font-weight: 700;
+  box-shadow: 0 1px 5px rgba(0,0,0,.10);
+}
+.tab-btn:hover:not(.active) { color: var(--gray-700); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+@media(max-width:640px){
+  .tab-nav { padding: 8px 12px; }
+  .tab-btn { font-size: 12px; padding: 7px 2px; }
+}
+
+/* ═══════════════════════════════════
+   기관별 행사 레이아웃
+═══════════════════════════════════ */
+.org-list { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
+.org-block { border-top: 1px solid var(--gray-200); padding: 14px 0 10px; }
+.org-block:first-child { border-top: none; padding-top: 4px; }
+.org-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.org-icon { font-size: 17px; line-height: 1; }
+.org-name { font-size: 15px; font-weight: 700; color: var(--gray-800); flex: 1; }
+.org-site-link { font-size: 12px; color: var(--teal); font-weight: 600; }
+.org-site-link:hover { text-decoration: underline; }
+.org-events { display: flex; flex-direction: column; gap: 7px; padding-left: 25px; }
+.org-ev { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; background: var(--gray-50); border-radius: var(--radius-sm); border-left: 3px solid var(--gray-200); text-decoration: none; color: inherit; transition: background .18s, border-color .18s; }
+.org-ev:hover { background: var(--teal-lt); border-left-color: var(--teal); }
+.org-ev-left { min-width: 70px; text-align: center; }
+.org-ev-badge { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 8px; display: inline-block; }
+.org-ev-badge.blue  { background: var(--blue-lt);   color: var(--blue-dk); }
+.org-ev-badge.green { background: var(--green-lt);  color: var(--green-dk); }
+.org-ev-badge.coral { background: var(--coral-lt);  color: var(--coral-dk); }
+.org-ev-date { font-size: 11px; color: var(--gray-400); margin-top: 4px; line-height: 1.3; }
+.org-ev-right { flex: 1; }
+.org-ev-title { font-size: 13.5px; font-weight: 600; color: var(--gray-800); line-height: 1.4; word-break: keep-all; overflow-wrap: break-word; }
+.org-ev-meta  { font-size: 12px; color: var(--gray-400); margin-top: 3px; }
+.org-empty { font-size: 13px; color: var(--gray-400); padding: 2px 0 4px 25px; font-style: italic; }
+@media(max-width:640px){
+  .org-ev { flex-direction: column; gap: 6px; }
+  .org-ev-left { min-width: auto; text-align: left; display: flex; align-items: center; gap: 6px; }
+  .org-ev-date { margin-top: 0; }
+}
+</style>
+<script>
+function showTab(idx) {
+  document.querySelectorAll('.tab-pane').forEach(function(p,i){ p.classList.toggle('active', i===idx); });
+  document.querySelectorAll('.tab-btn').forEach(function(b,i){ b.classList.toggle('active', i===idx); });
+  var nav = document.getElementById('main-tab-nav');
+  if (nav) nav.scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+</head>
+<body>
+<aside aria-label="발행본 보관 안내" style="background:#e4f4f2;color:#16483e;padding:12px 16px;text-align:center;line-height:1.6;overflow-wrap:anywhere">
+  <strong>보관본 · 2026년 11월 9일 제14호</strong> · 발행 당시의 글입니다. 행사나 접수는 끝났을 수 있습니다.<br>
+  <a href="../#issue-archive" style="color:inherit;font-weight:700;text-decoration:underline">← 이전 소식지 목록</a> &nbsp; <a href="../" style="color:inherit;font-weight:700;text-decoration:underline">최신 소식지</a>
+</aside>
+<div class="page-bg">
+<div class="wrap">
+
+<!-- ── TOP BAR ── -->
+<div class="topbar">
+  <span class="topbar-logo">🏛 언양 문화·예술·체육 소식지</span>
+  <div class="topbar-links">
+    <a href="https://www.ucf.or.kr:478/" target="_blank" rel="noopener">울주문화재단</a>
+    <a href="https://ulsan.go.kr/y/yes/main.do" target="_blank" rel="noopener">울산모아</a>
+    <a href="https://www.uljusiseol.or.kr" target="_blank" rel="noopener">울주군시설관리공단</a>
+    <a href="https://ulsan.grandculture.net" target="_blank" rel="noopener">울산역사문화대전</a>
+    <a href="https://heritage.go.kr" target="_blank" rel="noopener">국가유산포털</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header class="header">
+  <div class="header-brand">
+    <div class="header-icon">🎭</div>
+    <div class="header-text">
+      <h1>언양 문화·예술·체육 소식지</h1>
+      <p>체육 · 문화 · 예술 · 역사 — 울산광역시 울주군 언양읍 · 🏫 신언중학교 제작</p>
+    </div>
+  </div>
+  <div class="header-info">
+<!-- ISSUE_START -->
+    <div class="header-date">2026년 11월 9일 (월)</div>
+    <span class="header-issue">제14호</span>
+<!-- ISSUE_END -->
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/5/53/View_of_downtown_Eonyang.jpg" alt="언양 도심 전경">
+  <div class="hero-overlay"></div>
+  <div class="hero-body">
+<!-- HERO_START -->
+    <span class="hero-badge">⭐ 이번 주 주목</span>
+    <div class="hero-title">차인표 명사특강 : 우리 모두는 자신의 이야기를 쓰는 작가입니다.</div>
+    <div class="hero-meta">
+      <span>📅 11/11(수) 19:30</span>
+      <span>📍 울주문화예술회관 [공연장]</span>
+      <span>🎟 무료</span>
+    </div>
+<!-- HERO_END -->
+  </div>
+</div>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <span class="ticker-pill">NOW</span>
+<!-- TICKER_START -->
+  🎭 해설이 있는 음악회 서.클.스 (11월) -「티치아노 베첼리오」 11/10(화) 서울주문화센터 &nbsp;·&nbsp; 🎭 차인표 명사특강 : 우리 모두는 자신의 이야기를 쓰는 작가입니다. 11/11(수) 울주문화예술회관 &nbsp;·&nbsp; 🎭 보배인의 밤 11/13(금) 서울주문화센터 &nbsp;·&nbsp; 🎭 라온필하모닉 오케스트라 제16회 정기연주회 11/14(토) 서울주문화센터 &nbsp;·&nbsp; 🎭 반구대 오디세이, 아기장수의 귀환 11/14(토) 울주문화예술회관 &nbsp;·&nbsp; 🪨 반구천 암각화박물관 연중 관람 (무료) &nbsp;·&nbsp; 🏺 외고산 옹기마을 상시 체험
+<!-- TICKER_END -->
+</div>
+
+<!-- ════ 탭 네비게이션 ════ -->
+<nav class="tab-nav" id="main-tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="showTab(0)" id="tab-btn-0">📅 이번 주</button>
+    <button class="tab-btn" onclick="showTab(1)" id="tab-btn-1">🏛 문화·예술</button>
+    <button class="tab-btn" onclick="showTab(2)" id="tab-btn-2">⚽ 체육</button>
+    <button class="tab-btn" onclick="showTab(3)" id="tab-btn-3">🏘 지역 정보</button>
+    <button class="tab-btn" onclick="showTab(4)" id="tab-btn-4">🎓 청소년 참여</button>
+  </div>
+</nav>
+
+<div class="tab-pane active" id="tab-0">
+<!-- ════ 월별 행사 캘린더 ════ -->
+<!-- UCF_LECTURE_START -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div class="sec-kicker">월별 일정</div>
+      <a class="sec-more" href="https://korean.visitkorea.or.kr/kfes/list/festivalCalendar.do" target="_blank" rel="noopener">전체 일정 →</a>
+    </div>
+    <div class="cal-nav-row">
+      <button class="cal-nav-btn" id="cal-prev" onclick="calMove(-1)" aria-label="이전 달">◀</button>
+      <h2 class="sec-title" id="cal-title">2026년 11월 행사 캘린더</h2>
+      <button class="cal-nav-btn" id="cal-next" onclick="calMove(1)" aria-label="다음 달">▶</button>
+    </div>
+    <p style="font-size:13px; color:var(--gray-400); margin-top:4px;">🏟 울산 HD FC K리그 홈경기 포함 · ⚽ 표시 참조</p>
+  </div>
+  <div class="cal-wrap">
+    <div class="cal-grid" id="cal-grid"><!-- JS 렌더링 --></div>
+    <div class="cal-legend">
+      <span class="cl-item"><span class="cl-dot" style="background:#fde8d8;"></span>공공미술·전시</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#dce8fb;"></span>공연·행사</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#d8f0e0;"></span>전시·마지막</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#ede0f5;"></span>스포츠 경기</span>
+      <span class="cl-item">🌟 공휴일</span>
+    </div>
+  </div>
+</section>
+<script>
+// ── 캘린더 월 목록 ── (scripts/update.mjs 가 매주 새로 씀)
+const CAL_MONTHS = ["2026-11","2026-12"];
+let calIdx = 0;
+
+// ── 행사 데이터 (날짜별, 울주문화재단 공연·전시 목록 기준) ──
+const CAL_DATA = {
+  '2026-11': {
+    label: '2026년 11월',
+    events: {
+      3: [{t:"신귀술 초대전 (울주문화예술회관)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1659"},
+           {t:"서예/문인화 작품전 (서울주문화센터)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1694"}],
+      5: [{t:"활력톡톡 신나는 가요무대 4학기 (온양문화복지센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1690"}],
+      10: [{t:"해설이 있는 음악회 서.클.스 (11월) (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1707"}],
+      11: [{t:"차인표 명사특강 : 우리 모두는 자신의  (울주문화예술회관)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1706"}],
+      13: [{t:"보배인의 밤 (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1702"}],
+      14: [{t:"라온필하모닉 오케스트라 제16회 정기연주 (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1714"},
+           {t:"신귀술 초대전 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1659"},
+           {t:"반구대 오디세이, 아기장수의 귀환 (울주문화예술회관)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1691"},
+           {t:"서예/문인화 작품전 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1694"}],
+      17: [{t:"이명호 초대전 (울주문화예술회관)", c:'coral', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1660"}],
+      19: [{t:"환경사랑음악회 (울주문화예술회관)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1715"}],
+      20: [{t:"꿈의 오케스트라 ‘울주’ 제1회 정기연주 (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1709"}],
+      21: [{t:"토요시네마 11월 영화 ＜오케이 마담2＞ (온양문화복지센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1710"}],
+      24: [{t:"연극 3학년 10반 (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1708"}],
+      25: [{t:"문화가 있는 날: 뮤지컬로 보는 동화 1 (온양문화복지센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1620"}],
+      26: [{t:"서울주문화센터 11월 영화「오케이 마담2 (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1713"}],
+      28: [{t:"이명호 초대전 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1660"}]
+    }
+  },
+  '2026-12': {
+    label: '2026년 12월',
+    events: {
+      1: [{t:"해설이 있는 음악회 서.클.스 (12월) (서울주문화센터)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1716"}],
+      5: [{t:"겨울나그네 (울주문화예술회관)", c:'blue', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1683"}],
+      9: [{t:"울주 SingSing 가요무대(4학기) 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1651"}],
+      17: [{t:"활력톡톡 신나는 가요무대 4학기 마지막", c:'green', u:"https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1690"}],
+      25: [{t:"성탄절 🌟", c:'blue', u:""}]
+    }
+  }
+};
+
+function renderCal(key) {
+  const data = CAL_DATA[key];
+  const [y, m] = key.split('-').map(Number);
+  const fd = new Date(y, m-1, 1).getDay();
+  const days = new Date(y, m, 0).getDate();
+  const now = new Date();
+  const isThisMonth = now.getFullYear()===y && now.getMonth()===m-1;
+
+  document.getElementById('cal-title').textContent = data.label + ' 행사 캘린더';
+  const prevBtn = document.getElementById('cal-prev');
+  const nextBtn = document.getElementById('cal-next');
+  prevBtn.disabled = calIdx === 0;
+  nextBtn.disabled = calIdx === CAL_MONTHS.length - 1;
+
+  const dows = ['일','월','화','수','목','금','토'];
+  let html = dows.map((d,i) =>
+    `<div class="cal-dow${i===0?' sun':i===6?' sat':''}">${d}</div>`
+  ).join('');
+
+  for (let i = 0; i < fd; i++) html += '<div class="cal-cell"></div>';
+
+  for (let d = 1; d <= days; d++) {
+    const dow = (fd + d - 1) % 7;
+    const evs = data.events[d] || [];
+    let cls = 'cal-cell';
+    if (dow === 0) cls += ' cal-sun';
+    if (dow === 6) cls += ' cal-sat';
+    if (isThisMonth && now.getDate() === d) cls += ' cal-today';
+    if (evs.length) cls += ' has-ev';
+    html += `<div class="${cls}"><span class="cal-num">${d}</span>`;
+    evs.forEach(ev => {
+      if (ev.u) {
+        html += `<a class="cal-ev ce-${ev.c} cal-ev-link" href="${ev.u}" target="_blank" rel="noopener" title="${ev.t}">${ev.t}</a>`;
+      } else {
+        html += `<span class="cal-ev ce-${ev.c}">${ev.t}</span>`;
+      }
+    });
+    html += '</div>';
+  }
+
+  const used = (fd + days) % 7;
+  if (used) for (let i = used; i < 7; i++) html += '<div class="cal-cell"></div>';
+
+  document.getElementById('cal-grid').innerHTML = html;
+}
+
+function calMove(dir) {
+  const ni = calIdx + dir;
+  if (ni < 0 || ni >= CAL_MONTHS.length) return;
+  calIdx = ni;
+  renderCal(CAL_MONTHS[calIdx]);
+}
+
+renderCal(CAL_MONTHS[calIdx]);
+</script>
+
+
+
+<!-- UCF_SPOTLIGHT_START -->
+<section class="sec" style="background:linear-gradient(135deg,#fff7ed 0%,#fef3c7 100%);border-top:3px solid #ea580c;">
+  <div class="sec-head"><div class="sec-row"><div>
+    <div class="sec-label" style="background:#ea580c;color:#fff;">🎨 울주문화재단 NOW</div>
+    <h2 class="sec-title" style="color:#9a3412;">울주문화재단 공연·전시·행사</h2>
+    <p style="font-size:12px;color:var(--gray-500);margin-top:2px;">출처: 울주문화재단 공연·전시 목록 · 확인일 2026-11-09</p>
+  </div><a class="sec-more" href="https://www.ucf.or.kr/culturearts/pe_list.html" target="_blank" rel="noopener" style="color:#ea580c;">전체 공연·전시 →</a></div></div>
+  <div class="org-list"><div class="org-block" style="border-left:4px solid #ea580c;background:#fff;"><div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1659" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">11/3~<br>11/14</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">신귀술 초대전</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [전시실] · 무료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1694" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">11/3~<br>11/14</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">서예/문인화 작품전</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [전시관] · 무료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1651" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">기타</div>
+            <div class="org-ev-date">10/28~<br>12/9</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">울주 SingSing 가요무대(4학기)</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1690" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">콘서트</div>
+            <div class="org-ev-date">11/5~<br>12/17</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">활력톡톡 신나는 가요무대 4학기</div>
+            <div class="org-ev-meta">📍 온양문화복지센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1592" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">7/7~<br>12/26</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">2026 울주아트 지역작가 초대전</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [전시실] · 무료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1701" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">3/3~<br>12/31</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">오영수 묵향에 취하다</div>
+            <div class="org-ev-meta">📍 오영수문학관 · 무료</div>
+          </div>
+        </a></div></div></div>
+  <p style="font-size:12px;color:#9a3412;margin:12px 0 0;padding:10px 14px;background:#fef3c7;border-radius:8px;">진행 중이거나 예정된 행사입니다. 일정과 신청 방법은 원문에서 확인해 주세요.</p>
+</section>
+<!-- UCF_SPOTLIGHT_END -->
+
+<!-- WUCC_START -->
+<section class="sec" style="background:linear-gradient(135deg,#eaf6f8 0%,#f0fafa 100%);border-top:3px solid #2196a8;">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div>
+        <div class="sec-label" style="background:#2196a8;color:#fff;">🏢 서울주문화센터</div>
+        <h2 class="sec-title" style="color:#1a6b7a;">서울주문화센터 이달의 공연·전시</h2>
+        <p style="font-size:12px;color:var(--gray-400);margin-top:2px;">자동 업데이트 · 2026년 11월 09일 기준</p>
+      </div>
+      <a class="sec-more" href="https://www.ucf.or.kr:478/wucc/index.html" target="_blank" rel="noopener">전체보기 →</a>
+    </div>
+  </div>
+  <div class="org-list">
+    <div class="org-block" style="border-left:4px solid #2196a8;">
+      <div class="org-header">
+        <span class="org-icon">🎭</span>
+        <span class="org-name">서울주문화센터</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr:478/wucc/index.html" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1651" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">기타</div>
+            <div class="org-ev-date">10/28~<br>12/9</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">울주 SingSing 가요무대(4학기)</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1694" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">11/3~<br>11/14</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">서예/문인화 작품전</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [전시관] · 무료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1707" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">클래식</div>
+            <div class="org-ev-date">11/10<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">해설이 있는 음악회 서.클.스 (11월) -「티치아노 베첼리오」</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1702" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">어린이</div>
+            <div class="org-ev-date">11/13<br>19:00</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">보배인의 밤</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장] · 유료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1714" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">클래식</div>
+            <div class="org-ev-date">11/14<br>16:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">라온필하모닉 오케스트라 제16회 정기연주회</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장] · 유료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1709" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">클래식</div>
+            <div class="org-ev-date">11/20<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">꿈의 오케스트라 ‘울주’ 제1회 정기연주회</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장] · 유료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1708" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">공연</div>
+            <div class="org-ev-date">11/24<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">연극 3학년 10반</div>
+            <div class="org-ev-meta">📍 서울주문화센터</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- WUCC_END -->
+
+<!-- ════ 섹션 1: 이번 주 행사 ════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div class="sec-kicker">이번 주 행사</div>
+      <a class="sec-more" href="https://www.ucf.or.kr/culturearts/schedule.html?vwYm=202607" target="_blank" rel="noopener">전체 일정 →</a>
+    </div>
+<!-- EVENTS_HEADING_START -->
+    <h2 class="sec-title">11월 9일(월) ~ 11월 15일(일) — 기관별 행사</h2>
+<!-- EVENTS_HEADING_END -->
+    <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">📌 출처: 울주문화재단(ucf.or.kr) 월간일정 직접 확인</div>
+  </div>
+
+<!-- FEATURED_START -->
+  <!-- Featured: 차인표 명사특강 : 우리 모두는 자신의 이야기를 쓰는 작가입니다. -->
+  <a class="ev-feat" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1706" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#071624 0%,#0d2a40 45%,#0a1e14 100%);">
+    <div class="ev-feat-overlay"></div>
+    <div class="ev-feat-body">
+      <span class="ev-badge b-coral">⭐ 이번 주 주목 행사</span>
+      <div class="ev-feat-title">차인표 명사특강 : 우리 모두는 자신의 이야기를 쓰는 작가입니다.</div>
+      <div class="ev-feat-meta">
+        <span>📅 11/11(수)</span>
+        <span>📍 울주문화예술회관 [공연장]</span>
+        <span>🆓 무료</span>
+      </div>
+    </div>
+  </a>
+<!-- FEATURED_END -->
+
+  <!-- 기관별 목록 -->
+<!-- ORG_LIST_START -->
+  <div class="org-list">
+
+    <!-- 울주문화예술회관 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🏛</span>
+        <span class="org-name">울주문화예술회관</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr/uljuart/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1706" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge coral">기타</div>
+            <div class="org-ev-date">11/11<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">차인표 명사특강 : 우리 모두는 자신의 이야기를 쓰는 작가입니다.</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [공연장] · 무료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1691" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">전통</div>
+            <div class="org-ev-date">11/14<br>14:00, 17:00</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">반구대 오디세이, 아기장수의 귀환</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1592" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">7/7~<br>12/26</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">2026 울주아트 지역작가 초대전</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [전시실] · 무료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1659" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">11/3~<br>11/14</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">신귀술 초대전</div>
+            <div class="org-ev-meta">📍 울주문화예술회관 [전시실] · 무료</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- 서울주문화센터 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🎭</span>
+        <span class="org-name">서울주문화센터</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr/wucc/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1707" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">클래식</div>
+            <div class="org-ev-date">11/10<br>19:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">해설이 있는 음악회 서.클.스 (11월) -「티치아노 베첼리오」</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1702" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">어린이</div>
+            <div class="org-ev-date">11/13<br>19:00</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">보배인의 밤</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장] · 유료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1714" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">클래식</div>
+            <div class="org-ev-date">11/14<br>16:30</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">라온필하모닉 오케스트라 제16회 정기연주회</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장] · 유료</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1651" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">기타</div>
+            <div class="org-ev-date">10/28~<br>12/9</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">울주 SingSing 가요무대(4학기)</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [공연장]</div>
+          </div>
+        </a>
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1694" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">11/3~<br>11/14</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">서예/문인화 작품전</div>
+            <div class="org-ev-meta">📍 서울주문화센터 [전시관] · 무료</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- 온양문화복지센터 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🎶</span>
+        <span class="org-name">온양문화복지센터</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr/onyang/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1690" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge blue">콘서트</div>
+            <div class="org-ev-date">11/5~<br>12/17</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">활력톡톡 신나는 가요무대 4학기</div>
+            <div class="org-ev-meta">📍 온양문화복지센터 [공연장]</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- 오영수문학관 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">📚</span>
+        <span class="org-name">오영수문학관</span>
+        <a class="org-site-link" href="https://www.ucf.or.kr/oys/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1701" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">전시</div>
+            <div class="org-ev-date">3/3~<br>12/31</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">오영수 묵향에 취하다</div>
+            <div class="org-ev-meta">📍 오영수문학관 · 무료</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 울산암각화박물관 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🪨</span>
+        <span class="org-name">울산암각화박물관</span>
+        <a class="org-site-link" href="https://www.ulsan.go.kr/s/bangudae/main.ulsan" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.ulsan.go.kr/s/bangudae/main.ulsan" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge teal">전시·체험</div>
+            <div class="org-ev-date">연중<br>09~18시</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">반구천의 암각화 상설·기획전 — 세계유산 등재 1주년</div>
+            <div class="org-ev-meta">📍 울주군 두동면 · 디지털 망원경 체험 · 무료 · ☎ 052-229-6678</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 외고산 옹기마을 -->
+    <div class="org-block">
+      <div class="org-header">
+        <span class="org-icon">🏺</span>
+        <span class="org-name">외고산 옹기마을</span>
+        <a class="org-site-link" href="https://www.onggi.or.kr/" target="_blank" rel="noopener">사이트 →</a>
+      </div>
+      <div class="org-events">
+        <a class="org-ev" href="https://www.onggi.or.kr/" target="_blank" rel="noopener">
+          <div class="org-ev-left">
+            <div class="org-ev-badge green">체험</div>
+            <div class="org-ev-date">상시</div>
+          </div>
+          <div class="org-ev-right">
+            <div class="org-ev-title">옹기 빚기 체험 — 상시 운영</div>
+            <div class="org-ev-meta">📍 외고산 옹기마을 일대 · 상시 관람 · 무료</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+<!-- ORG_LIST_END -->
+</section>
+
+<!-- ════ 다음 주 예고 ════ -->
+<section class="sec" style="background:var(--gray-50); border-top: 2px dashed var(--gray-200);">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div class="sec-kicker" style="background:var(--gray-200); color:var(--gray-600);">다음 주 예고</div>
+    </div>
+<!-- NEXTWEEK_HEADING_START -->
+    <h2 class="sec-title" style="color:var(--gray-700);">11월 16일 ~ 11월 22일 주요 일정</h2>
+<!-- NEXTWEEK_HEADING_END -->
+    <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">📌 출처: ucf.or.kr 직접 확인</div>
+  </div>
+<!-- NEXTWEEK_CARDS_START -->
+  <div class="nw-grid">
+    <a class="nw-card" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1660" target="_blank" rel="noopener">
+      <div class="nw-badge b-green-o">전시</div>
+      <div class="nw-date">11/17(화)~11/28(토)</div>
+      <div class="nw-title">이명호 초대전</div>
+      <div class="nw-desc">📍 울주문화예술회관 [전시실] · 무료</div>
+    </a>
+    <a class="nw-card" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1715" target="_blank" rel="noopener">
+      <div class="nw-badge b-blue-o">기타</div>
+      <div class="nw-date">11/19(목)</div>
+      <div class="nw-title">환경사랑음악회</div>
+      <div class="nw-desc">📍 울주문화예술회관 [공연장] · 유료</div>
+    </a>
+    <a class="nw-card" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1709" target="_blank" rel="noopener">
+      <div class="nw-badge b-blue-o">클래식</div>
+      <div class="nw-date">11/20(금) 19:30</div>
+      <div class="nw-title">꿈의 오케스트라 ‘울주’ 제1회 정기연주회</div>
+      <div class="nw-desc">📍 서울주문화센터 [공연장] · 유료</div>
+    </a>
+    <a class="nw-card" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1710" target="_blank" rel="noopener">
+      <div class="nw-badge b-coral-o">영화</div>
+      <div class="nw-date">11/21(토) 10:30, 14:30</div>
+      <div class="nw-title">토요시네마 11월 영화 ＜오케이 마담2＞</div>
+      <div class="nw-desc">📍 온양문화복지센터 [공연장] · 무료</div>
+    </a>
+  </div>
+<!-- NEXTWEEK_CARDS_END -->
+</section>
+
+
+</div>
+<div class="tab-pane" id="tab-1">
+<!-- ════ 섹션 2: 문화유산 ════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div class="sec-kicker">문화유산 이야기</div>
+      <a class="sec-more" href="https://heritage.go.kr" target="_blank" rel="noopener">국가유산포털 →</a>
+    </div>
+<!-- HERITAGE_TITLE_START -->
+    <h2 class="sec-title">언양 문화유산 시리즈 — 반구대 암각화 심층</h2>
+    <p style="font-size:12px;color:var(--gray-400);margin-top:4px;">📚 시리즈 3부: 세계유산 등재 — 인류 첫 노래의 발견</p>
+<!-- HERITAGE_TITLE_END -->
+  </div>
+<!-- HERITAGE_CARDS_START -->
+  <div class="hc-list">
+
+    <a class="hc" href="https://heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1112602850000" target="_blank" rel="noopener">
+      <div class="hc-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/%EC%9A%B8%EC%A3%BC_%EB%8C%80%EA%B3%A1%EB%A6%AC_%EB%B0%98%EA%B5%AC%EB%8C%80_%EC%95%94%EA%B0%81%ED%99%94.jpg/960px-%EC%9A%B8%EC%A3%BC_%EB%8C%80%EA%B3%A1%EB%A6%AC_%EB%B0%98%EA%B5%AC%EB%8C%80_%EC%95%94%EA%B0%81%ED%99%94.jpg" alt="반구대 암각화 제작 기법" loading="lazy">
+        <span class="hc-grade">🪨 제작 시기·기법</span>
+      </div>
+      <div class="hc-body">
+        <div class="hc-num">01</div>
+        <div class="hc-name">7,000년 전 새겨진 인류의 첫 그림</div>
+        <div class="hc-desc">너비 약 8m·높이 약 4.5m 절벽에 <strong>고래·호랑이·사슴·사람 등 300여 점</strong>이 새겨져 있습니다. 신석기~청동기에 걸쳐 쪼아새김(타격)·갈아새김(마연) 기법이 함께 사용된, 지구상 가장 오래된 고래사냥 그림으로 평가됩니다.</div>
+        <span class="hc-link">국가유산포털에서 자세히 보기</span>
+      </div>
+    </a>
+
+    <a class="hc rev" href="https://unesco.or.kr/%EB%B0%98%EA%B5%AC%EC%B2%9C%EC%9D%98-%EC%95%94%EA%B0%81%ED%99%94/" target="_blank" rel="noopener">
+      <div class="hc-img">
+        <div class="hc-icon">🌍</div>
+        <span class="hc-grade">🏆 유네스코 세계유산 (2025.7)</span>
+      </div>
+      <div class="hc-body">
+        <div class="hc-num">02</div>
+        <div class="hc-name">유네스코 세계유산 등재 경과</div>
+        <div class="hc-desc">2025년 7월 12일 파리 제47차 세계유산위원회에서 <strong>「반구천의 암각화」가 한국 17번째 세계유산</strong>으로 정식 등재됐습니다. 대곡리 반구대 암각화(국보 285호)와 천전리 명문·암각화(국보 147호)를 묶은 단일 유산입니다.</div>
+        <span class="hc-link">유네스코한국위원회에서 자세히</span>
+      </div>
+    </a>
+
+    <a class="hc" href="https://www.ulsan.go.kr/s/bangudae/main.ulsan" target="_blank" rel="noopener">
+      <div class="hc-img">
+        <div class="hc-icon">🔭</div>
+        <span class="hc-grade">🛡 보존·관람 현황</span>
+      </div>
+      <div class="hc-body">
+        <div class="hc-num">03</div>
+        <div class="hc-name">보존 현황과 관람 안내</div>
+        <div class="hc-desc">대곡댐 영향으로 연중 일정 기간 침수되는 환경에서 보존 대책이 추진되고 있습니다. 현장에서는 약 200m 거리에서 <strong>디지털 망원경</strong>으로 관람하며, 울산암각화박물관(두동면)에서 실물 크기 모형과 영상을 만날 수 있습니다.</div>
+        <span class="hc-link">울산암각화박물관 안내</span>
+      </div>
+    </a>
+
+  </div><!-- /hc-list -->
+
+  <!-- 인물 스포트라이트 -->
+  <div style="margin-top:28px;">
+    <div class="sec-head" style="margin-bottom:16px;">
+      <div class="sec-kicker">이달의 인물</div>
+<!-- PERSON_TITLE_START -->
+      <h2 class="sec-title" style="font-size: 19px;">고려 무신·언양 김씨 시조 — 김취려 장군</h2>
+<!-- PERSON_TITLE_END -->
+    </div>
+<!-- PERSON_CARD_START -->
+    <div class="person-card">
+      <div class="person-left">
+        <div class="person-emoji">⚔️</div>
+        <div class="person-name">김취려 (金就礪)</div>
+        <div class="person-era">1172 · 언양 출생 — 1234 · 시호 위열(威烈)</div>
+      </div>
+      <div class="person-right">
+        <div class="person-tags">
+          <span class="p-tag b-teal">고려 무신·장군</span>
+          <span class="p-tag b-blue-o">13세기 거란 격퇴</span>
+          <span class="p-tag b-coral-o">언양 출신</span>
+        </div>
+        <div class="person-desc">
+          본관은 언양. 고려 고종 때 침입한 거란유종(契丹遺種)을 격퇴해 나라를 위기에서 구한 명장으로, 언양 김씨의 시조입니다. 수태사·문하시랑평장사·상장군 등 최고위 무관직을 두루 거치며 고종 묘정(廟庭)에 배향됐습니다.
+          <strong>언양읍성 성벽 외곽의 「김취려 장군 벽화길」</strong>에서 그의 활약을 만날 수 있습니다.
+        </div>
+        <a class="person-more" href="https://encykorea.aks.ac.kr/Article/E0010816" target="_blank" rel="noopener">한국민족문화대백과사전에서 자세히</a>
+      </div>
+    </div>
+<!-- PERSON_CARD_END -->
+  </div>
+</section>
+
+<!-- ════ 섹션 6: 예술 소식 ════ -->
+<!-- ART_NEWS_START -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-kicker">🎨 예술 소식</div>
+    <h2 class="sec-title">이번 주 문화 &amp; 예술 (2026년 11월)</h2>
+    <p style="font-size:12px;color:var(--gray-400);margin-top:4px;">출처: 울주문화재단 공연·전시 목록 · 공지사항 (확인일 2026-11-02)</p>
+  </div>
+  <ul class="news-list">
+    <li class="ni">
+      <span class="ni-cat b-green-o">전시</span>
+      <div>
+        <h4>2026 울주아트 지역작가 초대전 〈이명호 초대전〉 — 11/17(화)~11/28(토)</h4>
+        <p>울주문화예술회관 전시실에서 열리는 지역작가 초대전. 무료 관람. 일요일·월요일·공휴일 휴관, 관람 시간 10:00~17:30. 앞서 11/3~11/14에는 〈신귀술 초대전〉이 열립니다.</p>
+        <a class="ni-link" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1660" target="_blank" rel="noopener">전시 안내 보기</a>
+      </div>
+    </li>
+    <li class="ni">
+      <span class="ni-cat b-coral-o">전통 공연</span>
+      <div>
+        <h4>〈반구대 오디세이, 아기장수의 귀환〉 — 11/14(토) 14:00 · 17:00</h4>
+        <p>울주문화예술회관 공연장, 전석 5,000원(5세 이상, 러닝타임 60분). 온라인 예매는 공연 전일 오후 5시까지, 문의는 052-980-2270.</p>
+        <a class="ni-link" href="https://www.ucf.or.kr/culturearts/pe_detail.html?pfmIng=1&p_idx=1691" target="_blank" rel="noopener">공연 안내·예매</a>
+      </div>
+    </li>
+    <li class="ni">
+      <span class="ni-cat b-coral-o">문학</span>
+      <div>
+        <h4>오영수문학관 〈오영수 묵향에 취하다〉 특별기획전 — 3/3~12/31</h4>
+        <p>언양 출신 소설가 오영수를 기리는 오영수문학관의 연중 특별기획전. 무료 관람. 오영수문학관(언양읍 헌양길 280-12, 052-980-2250).</p>
+        <a class="ni-link" href="https://www.ucf.or.kr/oys/" target="_blank" rel="noopener">오영수문학관 안내</a>
+      </div>
+    </li>
+    <li class="ni">
+      <span class="ni-cat b-green-o">공지</span>
+      <div>
+        <h4>울주문화재단 공지 — 2027년 상반기 정기대관 공고 (11/2 게시)</h4>
+        <p>공연장·전시실을 빌려 쓰려는 단체를 위한 공고입니다. 동아리·학교 발표회를 준비한다면 대관 일정과 신청 방법을 공지사항에서 확인하세요.</p>
+        <a class="ni-link" href="https://www.ucf.or.kr/bd/list.html?b_code=notice" target="_blank" rel="noopener">울주문화재단 공지사항</a>
+      </div>
+    </li>
+  </ul>
+</section>
+<!-- ART_NEWS_END -->
+
+<!-- ════ 울주문화재단 강좌 안내 ════ -->
+<section class="sec" style="border-top:3px solid #e8f0fb;">
+  <div class="sec-head">
+    <div class="sec-row">
+      <div class="sec-kicker" style="color:#163d78;">🎓 강좌 안내</div>
+      <a class="sec-more" href="https://www.ucf.or.kr/culturearts/schedule.html" target="_blank" rel="noopener">전체 일정 →</a>
+    </div>
+    <h2 class="sec-title">울주문화재단 11월 강좌 프로그램 (2026)</h2>
+    <p style="font-size:13px; color:var(--gray-400); margin-top:4px;">울주문화예술회관 · 서울주문화센터 · 온양문화복지센터 · 오영수문학관 운영</p>
+  </div>
+  <div class="class-grid">
+    <div class="class-cat">
+      <div class="class-cat-title">🏃 체육·운동</div>
+      <ul class="class-list">
+        <li>헬스 (11~12월)</li>
+        <li>줌바 · 파워줌바 · 1000칼로리 줌바</li>
+        <li>점핑 · 스피닝</li>
+        <li>필라테스 / 요가 (아침·저녁)</li>
+        <li>라인댄스 · 밸리댄스 · 댄스로빅</li>
+        <li>댄스스포츠 (초급·고급)</li>
+        <li>기초근력트레이닝</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">🎨 예술·공예</div>
+      <ul class="class-list">
+        <li>도예 · 수묵화 · 민화</li>
+        <li>어반스케치 (초급·중급·심화)</li>
+        <li>드로잉스케치 · 여행스케치 · 사진</li>
+        <li>캘리그라피 · 초크아트</li>
+        <li>유럽풍 손뜨개</li>
+        <li>목공예 (소품·가구)</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">🎵 음악·공연</div>
+      <ul class="class-list">
+        <li>성악 (A·B반)</li>
+        <li>장구 (초급·응용반)</li>
+        <li>드럼 (화요·토요) · 토요난타</li>
+        <li>통기타 (주말·초등·힐링)</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">📚 인문·교양</div>
+      <ul class="class-list">
+        <li>원어민 영어토론</li>
+        <li>중국어 배우기</li>
+        <li>교향곡과 협주곡 속 악기 이야기</li>
+        <li>르네상스와 바로크 화가 이야기</li>
+        <li>타로카드</li>
+      </ul>
+    </div>
+    <div class="class-cat">
+      <div class="class-cat-title">👶 어린이·유아</div>
+      <ul class="class-list">
+        <li>어린이 발레교실 (5세·6세 이상)</li>
+        <li>어린이 음악줄넘기 (미취학·초등)</li>
+        <li>오감놀이 (5~25개월) · 우리아이 (6~14개월)</li>
+        <li>점핑클레이 · 트램폴린점핑</li>
+        <li>팡팡파닉스 · 초등영어 · 주산암산 · 창의보드</li>
+      </ul>
+    </div>
+  </div>
+  <a class="class-apply-btn" href="https://www.ucf.or.kr/culturearts/schedule.html" target="_blank" rel="noopener">
+    📋 강좌 전체 일정 · 신청하기 →
+  </a>
+</section>
+<!-- UCF_LECTURE_END -->
+
+
+</div>
+<div class="tab-pane" id="tab-2">
+<!-- ════ 섹션 5: 체육 소식 ════ -->
+<section class="sec" style="border-top:3px solid #e8f0fb;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#163d78;">⚽ 체육 소식</div>
+    <h2 class="sec-title">이번 주 스포츠 &amp; 생활체육</h2>
+  </div>
+<!-- SPORTS_START -->
+  <!-- 강좌 신청 안내 배너 -->
+  <div class="notice notice-blue" style="margin-bottom:8px;">
+    🏅 아래 강좌는 <strong>울주군공공시설예약서비스(CRS)</strong>에서 온라인으로 신청할 수 있습니다.
+    매월 초 새 강좌가 등록되며, 인기 강좌는 빠르게 마감됩니다.
+    <a href="https://crs.uljusiseol.or.kr/new_lecture/lecture" target="_blank" rel="noopener"
+       style="display:inline-block;margin-top:8px;padding:7px 16px;background:var(--blue);color:#fff;font-size:13.5px;font-weight:700;border-radius:6px;text-decoration:none;">
+      CRS 강좌 통합 신청 바로가기 →
+    </a>
+  </div>
+
+  <!-- 시설별 강좌 카드 -->
+  <div class="sf-list">
+
+    <!-- 울주군국민체육센터 -->
+    <div class="sf-block">
+      <div class="sf-header">
+        <div class="sf-icon">🏊</div>
+        <div class="sf-info">
+          <div class="sf-name">울주군국민체육센터</div>
+          <div class="sf-addr">📍 울주군 범서읍 대리로 10 (언양 인근) · ☎ 052-229-9000</div>
+        </div>
+        <a class="sf-site-link" href="https://crs.uljusiseol.or.kr/new_lecture/lecture?mem_id=B0000188" target="_blank" rel="noopener">강좌 신청</a>
+      </div>
+      <div class="sf-body">
+        <div class="sf-desc">언양·범서 주민 접근이 가장 편리한 종합 체육시설. 50m 수영장, 스쿼시장, 다목적실 보유. <strong>지역 주민 할인 적용.</strong></div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 11월 강습 — CRS에서 모집·운영 일정 확인</div>
+        <div class="sf-course-row">
+          <span class="sf-tag sf-tag-swim">🏊 수영 교정Ⅰ·Ⅱ·Ⅲ</span>
+          <span class="sf-tag sf-tag-swim">🏊 수영 연수·종합</span>
+          <span class="sf-tag sf-tag-swim">👶 어린이 수영 (초1~6)</span>
+          <span class="sf-tag sf-tag-swim">💦 아쿠아로빅</span>
+          <span class="sf-tag sf-tag-sport">🏸 배드민턴</span>
+          <span class="sf-tag sf-tag-sport">🏓 스쿼시 강습·자유</span>
+          <span class="sf-tag sf-tag-sport">🧒 어린이 스쿼시 (초4~6)</span>
+          <span class="sf-tag sf-tag-dance">💃 댄스 — 파워줌바·에어로빅·라인댄스·밸리댄스</span>
+          <span class="sf-tag sf-tag-fit">🤸 실버 스트레칭 (65세 이상)</span>
+          <span class="sf-tag sf-tag-swim">🌊 자유수영</span>
+        </div>
+        <div class="sf-notice">⏰ 강습 시간대 06:00 ~ 20:00 (시간대별 모집) · 휴관: 매주 월요일</div>
+      </div>
+    </div>
+
+    <!-- 울주종합체육센터 -->
+    <div class="sf-block">
+      <div class="sf-header">
+        <div class="sf-icon">🎳</div>
+        <div class="sf-info">
+          <div class="sf-name">울주종합체육센터</div>
+          <div class="sf-addr">📍 울주군 삼남읍 · ☎ 052-229-9506~7 (신청) / 9511~14 (강좌)</div>
+        </div>
+        <a class="sf-site-link" href="https://crs.uljusiseol.or.kr/new_lecture/lecture?mem_id=B0000199" target="_blank" rel="noopener">강좌 신청</a>
+      </div>
+      <div class="sf-body">
+        <div class="sf-desc">2024년 신규 개관. 50m 수영장 · 볼링장(12레인) · 스쿼시장 · 체육관 · 헬스장을 갖춘 울주 최대 복합체육시설. 총 <strong>237개 강좌</strong> 운영 중.</div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 11월 강습 — CRS에서 모집·운영 일정 확인</div>
+        <div class="sf-course-row">
+          <span class="sf-tag sf-tag-swim">🏊 수영 강습 (전 레벨 · 06~20시)</span>
+          <span class="sf-tag sf-tag-swim">💦 아쿠아로빅</span>
+          <span class="sf-tag sf-tag-swim">🌊 자유수영</span>
+          <span class="sf-tag sf-tag-sport">🏸 배드민턴 강습·자유</span>
+          <span class="sf-tag sf-tag-sport">🎳 볼링 강습·자유 (주말 포함)</span>
+          <span class="sf-tag sf-tag-sport">🏐 배구 강습</span>
+          <span class="sf-tag sf-tag-fit">💪 근력기구운동</span>
+          <span class="sf-tag sf-tag-fit">⚡ 서킷트레이닝</span>
+          <span class="sf-tag sf-tag-fit">🔥 점핑피트니스</span>
+          <span class="sf-tag sf-tag-yoga">🧘 요가 (빈야사·인·아침·임산부)</span>
+          <span class="sf-tag sf-tag-yoga">🩰 발레 &amp; 필라테스</span>
+          <span class="sf-tag sf-tag-yoga">📐 자세교정 강습</span>
+          <span class="sf-tag sf-tag-dance">💃 댄스 — K-POP·줌바·바디핏라인</span>
+          <span class="sf-tag sf-tag-kids">🧒 주말 K-POP 키즈 (초1~중3)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 온산문화체육센터 -->
+    <div class="sf-block">
+      <div class="sf-header">
+        <div class="sf-icon">⛳</div>
+        <div class="sf-info">
+          <div class="sf-name">온산문화체육센터</div>
+          <div class="sf-addr">📍 울주군 온산읍 · ☎ 052-229-9200</div>
+        </div>
+        <a class="sf-site-link" href="https://crs.uljusiseol.or.kr/new_lecture/lecture?mem_id=B0000189" target="_blank" rel="noopener">강좌 신청</a>
+      </div>
+      <div class="sf-body">
+        <div class="sf-desc">수영장·골프연습장·체육관·헬스장 보유. 특히 <strong>실내 골프강습</strong>이 다양하게 운영되며, 어린이 대상 키즈 전문 프로그램이 풍부합니다. 총 <strong>128개 강좌</strong> 운영 중.</div>
+        <div style="font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:6px;">🗓 2026년 11월 강습 — CRS에서 모집·운영 일정 확인</div>
+        <div class="sf-course-row">
+          <span class="sf-tag sf-tag-swim">🏊 수영 강습 (전 레벨)</span>
+          <span class="sf-tag sf-tag-swim">💦 아쿠아로빅 · 아쿠아피트니스</span>
+          <span class="sf-tag sf-tag-swim">🌊 아쿠아슬론 (신규)</span>
+          <span class="sf-tag sf-tag-swim">🌊 자유수영 · 주말수영</span>
+          <span class="sf-tag sf-tag-sport">⛳ 골프 강습 (08~19시, 다양한 시간대)</span>
+          <span class="sf-tag sf-tag-sport">⛳ 키즈골프 (초1~6 · 일요일)</span>
+          <span class="sf-tag sf-tag-sport">⛳ 토요·일요 가족골프</span>
+          <span class="sf-tag sf-tag-sport">🏸 배드민턴</span>
+          <span class="sf-tag sf-tag-sport">🏐 배구 (토요일)</span>
+          <span class="sf-tag sf-tag-sport">🏓 탁구</span>
+          <span class="sf-tag sf-tag-fit">💪 그룹헬스 · 자유헬스</span>
+          <span class="sf-tag sf-tag-fit">⚡ 서킷트레이닝 · 크로스핏</span>
+          <span class="sf-tag sf-tag-fit">🧍 체형교정 · 근막스트레칭</span>
+          <span class="sf-tag sf-tag-fit">💪 군민체력왕 (기초체력향상)</span>
+          <span class="sf-tag sf-tag-yoga">🧘 요가 (아침~저녁, 총 6시간대)</span>
+          <span class="sf-tag sf-tag-yoga">🩰 소도구 필라테스</span>
+          <span class="sf-tag sf-tag-dance">💃 줌바댄스</span>
+          <span class="sf-tag sf-tag-kids">🩰 키즈발레 (2019~2022년생)</span>
+          <span class="sf-tag sf-tag-kids">💃 키즈방송댄스 (2017~2021년생)</span>
+          <span class="sf-tag sf-tag-kids">🧘 키즈 요가&amp;필라테스 (토요일)</span>
+          <span class="sf-tag sf-tag-kids">🏸 필라발레 (중학생 이상)</span>
+          <span class="sf-tag sf-tag-sport">🥎 피크볼 특강 (무료)</span>
+        </div>
+        <div class="sf-notice">⏰ 강습 간대 06:00 ~ 20:00 · 주말 특별 강좌 별도 운영</div>
+      </div>
+    </div>
+
+  </div><!-- /sf-list -->
+
+  <!-- 동호회 소식 제보 -->
+  <div class="notice notice-teal" style="margin-top:18px;">
+    📣 <b>동호회·체육 소식 제보 환영!</b> 언양읍 내 축구·배드민턴·탁구·수영·등산·풋살 동호회나 생활체육 행사 정보를 제보해 주시면 다음 호에 소개해 드립니다.<br>
+    <a href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener"
+       style="display:inline-block;margin-top:9px;padding:8px 18px;background:#0b7a70;color:#fff;font-size:14px;font-weight:700;border-radius:6px;text-decoration:none;">
+      📋 체육 소식 제보하기 →
+    </a>
+  </div>
+
+<!-- SPORTS_END -->
+</section>
+
+
+</div>
+<div class="tab-pane" id="tab-3">
+<!-- ════ 섹션 3: 동호회·기관 안내 ════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-kicker">기관 · 단체 안내</div>
+    <h2 class="sec-title">언양·울주 주요 기관</h2>
+  </div>
+  <div class="org-grid">
+    <a class="org-card" href="https://www.onggi.or.kr/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-teal">🏺</div>
+        <div><div class="org-name">외고산 옹기마을</div><div class="org-type">전통공예 · 체험</div></div>
+      </div>
+      <div class="org-desc">국내 최대 옹기 생산지. 체험 공방·박물관·카페 운영. 옹기 빚기 체험 예약 가능. ☎ 052-237-7894</div>
+      <span class="org-link">체험 예약</span>
+    </a>
+    <a class="org-card" href="https://www.ucf.or.kr/uljuart/index.html" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-coral">🎪</div>
+        <div><div class="org-name">울주문화예술회관</div><div class="org-type">공연 · 전시</div></div>
+      </div>
+      <div class="org-desc">287석 프로시니엄 극장 + 전시실·다목적실. 공연 예매·강좌 신청 모두 가능. ☎ 052-980-2270</div>
+      <span class="org-link">예매·강좌 신청</span>
+    </a>
+    <a class="org-card" href="https://www.uljusiseol.or.kr/uljusports/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-blue">🏃</div>
+        <div><div class="org-name">울주군국민체육센터</div><div class="org-type">체육 · 스포츠</div></div>
+      </div>
+      <div class="org-desc">수영·헬스·에어로빅·구기 강좌 운영. 지역 주민 할인 혜택 적용.</div>
+      <span class="org-link">강좌 신청</span>
+    </a>
+    <a class="org-card" href="https://www.uljusiseol.or.kr/uljusc/index_main" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-blue">🏊</div>
+        <div><div class="org-name">울주종합체육센터</div><div class="org-type">체육 · 스포츠 (삼남읍)</div></div>
+      </div>
+      <div class="org-desc">2024년 신규 개관. 50m 수영장·볼링장·스쿼시·체육관·헬스. 강좌 예약은 CRS 시스템 이용. ☎ 052-229-9500</div>
+      <span class="org-link">강좌·예약 안내</span>
+    </a>
+    <a class="org-card" href="https://www.ucf.or.kr" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon oi-green">📚</div>
+        <div><div class="org-name">오영수 문학관</div><div class="org-type">문학 · 역사</div></div>
+      </div>
+      <div class="org-desc">언양 출신 소설가 오영수(1909~1979) 기념관. 「갯마을」 육필 원고·유품 전시.</div>
+      <span class="org-link">울주문화재단 안내</span>
+    </a>
+  </div>
+  <div class="notice notice-teal" style="margin-top:16px">
+    📣 <b>동호회·소모임 무료 홍보!</b> 언양 소식지에 여러분의 단체를 소개해 드립니다. 독서·그림·축구·등산·합창 등 장르 불문.<br>
+    <a href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener"
+       style="display:inline-block; margin-top:10px; padding:9px 20px; background:#0b7a70; color:#ffffff; font-size: 15.5px; font-weight:700; border-radius:6px; text-decoration:none; border:2px solid #065c54;">
+      📋 홍보 신청서 작성하기 →
+    </a>
+  </div>
+</section>
+
+<!-- ════ 퀵링크 알림판 ════ -->
+<div class="board">
+  <div class="board-title">📋 빠른 링크 — 자주 찾는 정보</div>
+  <div class="board-grid">
+    <a class="bc" href="https://www.ulsan.go.kr/s/bangucheonpetroglyphs/main.ulsan" target="_blank" rel="noopener">
+      <div class="bc-icon">🌍</div>
+      <strong>반구대 암각화 탐방</strong>
+      <p>언양읍 반구대안길 254. 방문자센터 해설 신청 가능.</p>
+      <span class="bc-link">공식 사이트 →</span>
+    </a>
+    <a class="bc" href="https://heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1121501530000" target="_blank" rel="noopener">
+      <div class="bc-icon">🏰</div>
+      <strong>언양읍성 문화재 정보</strong>
+      <p>연중 무료 개방. 성벽 벽화길·공원 산책 가능.</p>
+      <span class="bc-link">국가유산포털 →</span>
+    </a>
+    <a class="bc" href="https://www.ucf.or.kr/uljuart/index.html" target="_blank" rel="noopener">
+      <div class="bc-icon">🎭</div>
+      <strong>울주문화예술회관</strong>
+      <p>공연·전시 예매 및 강좌 신청. ☎ 052-263-0811</p>
+      <span class="bc-link">예매·신청 →</span>
+    </a>
+    <a class="bc" href="https://www.uljusiseol.or.kr/uljusports/" target="_blank" rel="noopener">
+      <div class="bc-icon">🏊</div>
+      <strong>울주군국민체육센터</strong>
+      <p>수영·헬스·강좌 등록. 지역 주민 할인 적용.</p>
+      <span class="bc-link">강좌 등록 →</span>
+    </a>
+    <a class="bc" href="https://www.onggi.or.kr/" target="_blank" rel="noopener">
+      <div class="bc-icon">🏺</div>
+      <strong>울산옹기축제</strong>
+      <p>2026년 행사는 5/1~5/3 외고산 옹기마을에서 열렸습니다. 다음 일정은 공식 사이트 공지 확인.</p>
+      <span class="bc-link">공식 사이트 →</span>
+    </a>
+    <a class="bc" href="https://ticket.ulju.ulsan.kr" target="_blank" rel="noopener">
+      <div class="bc-icon">🎟</div>
+      <strong>울주 공연 티켓 예매</strong>
+      <p>울주군 공연·행사 통합 예매 사이트.</p>
+      <span class="bc-link">티켓 예매 →</span>
+    </a>
+  </div>
+</div>
+
+<!-- ════ 이전 소식지 아카이브 ════ -->
+<div class="archive-sec" style="background:#e4f4f2; border-top:3px solid #0b7a70;">
+  <div class="archive-head" style="font-size: 17px; font-weight:800; color:#065c54; margin-bottom:14px;">
+    📂 이전 소식지 모아보기
+  </div>
+<p><a href="../#issue-archive">다른 발행본 읽기 →</a></p>
+</div>
+
+
+</div>
+
+<!-- ════ TAB 4: 청소년 참여 ════ -->
+<div class="tab-pane" id="tab-4">
+
+<!-- 안내 배너 -->
+<section class="sec" style="border-top:3px solid #7c3aed;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#7c3aed;">🎓 청소년 참여</div>
+    <h2 class="sec-title">관람이 아닌 <em>참여자</em>로 — 학생 무대·부스·스태프 모집</h2>
+  </div>
+  <p style="color:var(--gray-600);font-size:14px;margin:0 0 8px;">이 탭은 <strong>공연·댄스·밴드·미술·체육 등 운영자 또는 참가자로 직접 나설 수 있는 행사</strong>를 모아 안내합니다.<br>개최까지 여유가 있는 행사를 우선 소개하니, 팀이나 작품을 미리 준비해 보세요.</p>
+</section>
+
+<!-- 현재 모집 중 -->
+<section class="sec" style="margin-top:0;border-top:1px solid #ede9fe;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#7c3aed;">🟣 지금 신청 가능</div>
+    <h2 class="sec-title">현재 접수 중인 행사</h2>
+  </div>
+  <ul class="news-list">
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#ede9fe;color:#7c3aed;border-color:#c4b5fd;">겨울방학·특강</span>
+      <div>
+        <h4>울산청소년활동진흥센터 — 청소년 참여 프로그램 안내</h4>
+        <p>방학을 앞두고 밴드·댄스·미술·체험 등 청소년이 직접 참여·운영하는 프로그램 공고가 순차 게시됩니다. 학교·동아리 단위 또는 개인 신청 가능. 모집 일정은 공지사항에서 확인하세요.</p>
+        <a class="ni-link" href="https://www.yesulsan.kr/teenager/area.jsp" target="_blank" rel="noopener">울산청소년활동진흥센터 공지</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#ede9fe;color:#7c3aed;border-color:#c4b5fd;">전시·교육</span>
+      <div>
+        <h4>울산암각화박물관 — 가족·청소년 체험 프로그램</h4>
+        <p>세계유산 「반구천의 암각화」를 배우고 체험하는 프로그램. 가족·청소년 단위 참여 가능. 사전 예약제로 운영되며 자세한 회차·신청 방법은 박물관 홈페이지 공지 확인.</p>
+        <a class="ni-link" href="https://www.ulsan.go.kr/s/bangudae/main.ulsan" target="_blank" rel="noopener">울산암각화박물관 안내</a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- 여름·하반기 예정 행사 -->
+<section class="sec" style="margin-top:0;border-top:1px solid #ede9fe;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#059669;">📆 내년 모집 예정</div>
+    <h2 class="sec-title">준비하면 더 빛나는 행사 (개최 2개월 이상 전)</h2>
+  </div>
+  <ul class="news-list">
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">영화·스태프</span>
+      <div>
+        <h4>울산울주세계산악영화제 (UMFF) — 청소년 스태프·자원봉사</h4>
+        <p>매년 가을 개최. 영화제 스태프(안내·운영·통역 등) 모집은 보통 개최 두세 달 전인 7~8월에 공고합니다. 만 15세 이상 지원 가능. 봉사시간 인정 및 수료증 발급.</p>
+        <a class="ni-link" href="https://www.umff.kr/kor/" target="_blank" rel="noopener">UMFF 공식 사이트에서 공고 확인</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">미술·전시</span>
+      <div>
+        <h4>울산학생교육문화회관 전시기획 공모</h4>
+        <p>회화·조각·미디어아트·디자인·설치미술 등 자유주제 전시. 학생 단체·동아리 지원 가능. 공모 시기는 해마다 달라 울산시교육청 공지에서 확인하세요. 울산시교육청 문의: 052-210-5700</p>
+        <a class="ni-link" href="https://www.use.go.kr/" target="_blank" rel="noopener">울산시교육청 공지 확인</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">공연·밴드·댄스</span>
+      <div>
+        <h4>울주군 청소년 방학 문화예술 프로그램</h4>
+        <p>울주군 청소년수련관에서 방학마다 밴드·댄스·연극·미술 등 특강과 발표회를 운영합니다. 모집 공고는 각 수련관 공지사항에서 확인하세요.</p>
+        <a class="ni-link" href="https://www.uljusiseol.or.kr/ujyouth/" target="_blank" rel="noopener">울주 서부청소년수련관</a>
+      </div>
+    </li>
+
+    <li class="ni">
+      <span class="ni-cat" style="background:#d1fae5;color:#059669;border-color:#6ee7b7;">체육</span>
+      <div>
+        <h4>울주군 청소년 체육대회 — 종목별 학교·동호회 팀 참가</h4>
+        <p>매년 가을 개최. 축구·배드민턴·탁구·육상 등 종목별 학교·동호회 대표팀으로 참가. 참가 신청은 대회 전 울주군체육회(052-229-8700)로 접수하니 내년 일정이 나오면 공지를 확인하세요.</p>
+        <a class="ni-link" href="https://ulju.ulsan.kr/" target="_blank" rel="noopener">울주군청 공지 확인</a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- 청소년 기관 안내 -->
+<section class="sec" style="margin-top:0;border-top:1px solid #ede9fe;">
+  <div class="sec-head">
+    <div class="sec-kicker" style="color:#7c3aed;">🏠 언양·울주 청소년 기관</div>
+    <h2 class="sec-title">상시 프로그램 운영 기관</h2>
+  </div>
+  <div class="org-grid">
+    <a class="org-card" href="https://www.uljusiseol.or.kr/ujyouth/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">🧑‍🤝‍🧑</div>
+        <div><div class="org-name">울주 서부청소년수련관</div><div class="org-type">언양읍 소재</div></div>
+      </div>
+      <div class="org-desc">밴드·댄스·미술·체육 등 방과후·방학 프로그램 운영. 청소년 동아리 공간 지원. ☎ 052-264-1318</div>
+      <span class="org-link">프로그램 신청</span>
+    </a>
+    <a class="org-card" href="https://www.yesulsan.kr/teenager/area.jsp?crp=1" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">📋</div>
+        <div><div class="org-name">울산청소년활동진흥센터</div><div class="org-type">울산 전체 청소년 행사</div></div>
+      </div>
+      <div class="org-desc">울산 전 지역 청소년 참여 행사·모집 정보 통합 안내. 자원봉사·경연·공모 정보 게시. ☎ 052-227-0606</div>
+      <span class="org-link">행사 목록 보기</span>
+    </a>
+    <a class="org-card" href="https://ulsan.go.kr/y/yes/main.do" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">🌟</div>
+        <div><div class="org-name">울산광역시 YES 청소년</div><div class="org-type">시청 청소년 포털</div></div>
+      </div>
+      <div class="org-desc">울산시 청소년 정책·행사 통합 안내. 청소년 참여위원회·공모전·봉사 기회 정보 제공.</div>
+      <span class="org-link">울산 YES 포털</span>
+    </a>
+    <a class="org-card" href="https://www.1365.go.kr/" target="_blank" rel="noopener">
+      <div class="org-head">
+        <div class="org-icon" style="background:#ede9fe;font-size:20px;">🤲</div>
+        <div><div class="org-name">1365 자원봉사포털</div><div class="org-type">봉사시간 인정</div></div>
+      </div>
+      <div class="org-desc">지역 행사 자원봉사 신청·봉사시간 인정. 울산 지역 문화·체육 행사 봉사 모집 정보 검색 가능.</div>
+      <span class="org-link">봉사 찾기</span>
+    </a>
+  </div>
+  <div style="margin:16px 0 4px;padding:12px 16px;background:#f5f3ff;border-radius:10px;font-size:13px;color:#5b21b6;">
+    💡 <strong>소식지에 청소년 행사 정보를 제보하고 싶다면?</strong> 아래 설문 링크로 알려주시면 다음 호에 소개해 드립니다.<br>
+    <a href="https://forms.gle/XQPUVqfKiuCUV3dT9" target="_blank" rel="noopener" style="color:#7c3aed;font-weight:600;text-decoration:none;">👉 청소년 행사 제보하기 (구글 설문)</a>
+  </div>
+</section>
+
+</div><!-- /tab-4 -->
+
+<script>
+function showTab(idx) {
+  document.querySelectorAll('.tab-pane').forEach((p,i) => p.classList.toggle('active', i===idx));
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  // 탭 전환 시 스크롤을 탭 네비게이션 위치로
+  document.getElementById('main-tab-nav').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+<!-- ════ FOOTER ════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">언양 <span>문화·예술·체육</span> 소식지</div>
+    <div class="footer-links">
+      <a href="https://www.ucf.or.kr:478/" target="_blank" rel="noopener">울주문화재단</a>
+    <a href="https://ulsan.go.kr/y/yes/main.do" target="_blank" rel="noopener">울산모아</a>
+      <a href="https://www.uljusiseol.or.kr" target="_blank" rel="noopener">울주군시설관리공단</a>
+      <a href="https://ulsan.grandculture.net" target="_blank" rel="noopener">울산역사문화대전</a>
+      <a href="https://heritage.go.kr" target="_blank" rel="noopener">국가유산포털</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    울산광역시 울주군 언양읍 주민·학생·학부모를 위한 주간 문화 뉴스레터 · 매주 월요일 오전 9시 발행 · 무료 배포<br>
+    창간 2026년 4월 27일 · 현재 제14호 (2026년 11월 9일) · 이미지 출처: Wikimedia Commons(CC 라이선스) / 국가유산포털<br>
+    <span style="margin-top:6px; display:inline-block; color:rgba(255,255,255,.6); font-size:12px;">🏫 제작 · 운영 — 신언중학교 · <a href="https://sineon.github.io/eonyang-news/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75); text-decoration:underline;">sineon.github.io/eonyang-news</a></span>
+  </div>
+</footer>
+
+</div><!-- /wrap -->
+</div><!-- /page-bg -->
+</body>
+</html> 
