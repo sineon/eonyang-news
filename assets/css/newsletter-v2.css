@@ -541,19 +541,6 @@ img { display: block; max-width: 100%; }
 .hc-link:hover { border-color: var(--teal); }
 .hc-link::after { content: ' ↗'; font-size: 14.5px; }
 
-.history-catalog { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.history-catalog h3 { font-size: 17px; margin: 0 0 10px; }
-.history-entry { border: 1px solid var(--gray-200); border-radius: var(--radius-sm); background: #fff; margin-bottom: 8px; }
-.history-entry summary { cursor: pointer; padding: 12px 14px; color: var(--teal-dk); font-weight: 700; line-height: 1.5; }
-.history-entry summary:hover, .history-entry[open] summary { background: var(--teal-lt); }
-.history-entry summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
-.history-entry small { display: block; color: var(--gray-600); font-size: 12px; font-weight: 400; margin-top: 3px; }
-.history-entry-body { padding: 12px 14px; font-size: 14px; line-height: 1.7; }
-.history-entry-body p { margin: 0 0 10px; }
-.history-entry-body p:last-child { margin-bottom: 0; }
-.history-entry-body a { color: var(--teal-dk); text-decoration: underline; }
-@media (max-width: 680px) { .history-catalog { grid-template-columns: 1fr; gap: 14px; } }
-
 /* ═══════════════════════════════════
    PERSON SPOTLIGHT
 ═══════════════════════════════════ */

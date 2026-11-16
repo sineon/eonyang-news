@@ -1,19 +1,20 @@
-const CACHE = 'eonyang-exhibition-v3';
+const CACHE = 'eonyang-exhibition-v4';
 const ROOT = new URL('./', self.location.href);
 const INDEX = new URL('index.html', ROOT).href;
 const STYLE = new URL('assets/css/newsletter-v2.css', ROOT).href;
+const ARCHIVE_STYLE = new URL('assets/css/heritage-archive.css', ROOT).href;
 const CLIENT = new URL('assets/js/exhibition-v2.js', ROOT).href;
 const PHOTOS = [
   'https://upload.wikimedia.org/wikipedia/commons/5/53/View_of_downtown_Eonyang.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/%EC%9A%B8%EC%A3%BC_%EB%8C%80%EA%B3%A1%EB%A6%AC_%EB%B0%98%EA%B5%AC%EB%8C%80_%EC%95%94%EA%B0%81%ED%99%94.jpg/960px-%EC%9A%B8%EC%A3%BC_%EB%8C%80%EA%B3%A1%EB%A6%AC_%EB%B0%98%EA%B5%AC%EB%8C%80_%EC%95%94%EA%B0%81%ED%99%94.jpg'
 ];
-const CORE = [ROOT.href, STYLE, CLIENT];
+const CORE = [ROOT.href, STYLE, ARCHIVE_STYLE, CLIENT];
 
 function valid(response, key) {
   if (!response.ok || (response.url && !response.url.startsWith(ROOT.href))) return false;
   const mime = response.headers.get('content-type') || '';
   if (key === ROOT.href) return mime.includes('text/html');
-  if (key === STYLE) return mime.includes('text/css');
+  if (key === STYLE || key === ARCHIVE_STYLE) return mime.includes('text/css');
   return /(?:java|ecma)script/.test(mime);
 }
 
@@ -75,7 +76,7 @@ self.addEventListener('fetch', event => {
   } else if (PHOTOS.includes(url.href) && event.request.destination === 'image') {
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
-      return await cache.match(url.href) || fetch(event.request);
+      return await cache.match(url.href) || await caches.match(url.href) || fetch(event.request);
     })());
   }
 });

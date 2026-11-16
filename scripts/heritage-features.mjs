@@ -32,7 +32,10 @@ function renderArchive(previous, older) {
   const people = [...previous.people, ...older.map(([date, {person}]) => ({date, ...person}))];
   const renderList = (entries, renderBody) => entries.sort((a,b) => b.date.localeCompare(a.date)).map(entry =>
     `      <details class="history-entry">
-        <summary><span>${esc(entry.title)}</span><small>${esc(entry.label ?? monthLabel(entry.date))}</small></summary>
+        <summary>
+          <span class="history-entry-label"><strong>${esc(entry.title)}</strong> <small>${esc(entry.label ?? monthLabel(entry.date))}</small></span>
+          <span class="history-action" aria-hidden="true">▾</span>
+        </summary>
         <div class="history-entry-body">${renderBody(entry)}</div>
       </details>`).join('\n');
   const heritageBody = entry => entry.cards.map(card =>
@@ -42,7 +45,7 @@ function renderArchive(previous, older) {
   <div class="sec-head">
     <div class="sec-kicker">지난 이야기</div>
     <h2 class="sec-title" id="heritage-archive-title">문화유산과 인물 다시 읽기</h2>
-    <p class="arts-source">제목을 누르면 이 화면에서 지난 글을 읽을 수 있습니다.</p>
+    <p class="arts-source">글의 제목 줄을 누르면 본문이 펼쳐집니다.</p>
   </div>
   <div class="history-catalog">
     <div>
